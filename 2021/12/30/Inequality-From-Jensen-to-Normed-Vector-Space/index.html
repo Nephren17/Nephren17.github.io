@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Inequality: From Jensen to Normed Vector Space - Kyanites</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Kyanite,"> 
+    <meta name="description" content="
+The article can be mainly separated into 6 parts:
+
+About what is required to be a normed vector sp,"> 
+    <meta name="author" content="Fragments of Kyanite"> 
+    <link rel="alternative" href="atom.xml" title="Kyanites" type="application/atom+xml"> 
+    <link rel="icon" href="/img/telescope-removebg-preview%20(1).png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Inequality: From Jensen to Normed Vector Space - Kyanites"/>
+    <meta name="twitter:description" content="
+The article can be mainly separated into 6 parts:
+
+About what is required to be a normed vector sp,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Kyanites"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Inequality: From Jensen to Normed Vector Space - Kyanites"/>
+    <meta property="og:description" content="
+The article can be mainly separated into 6 parts:
+
+About what is required to be a normed vector sp,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Kyanites</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Inequality: From Jensen to Normed Vector Space</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Inequality: From Jensen to Normed Vector Space</h1>
+        <div class="stuff">
+            <span>十二月 30, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Inequality/" rel="tag">Inequality</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Linear-Algebra/" rel="tag">Linear Algebra</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Mathematics/" rel="tag">Mathematics</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><img src="https://s3.bmp.ovh/imgs/2021/12/0854eba989cd10ce.jpg" alt=""></p>
+<p>The article can be mainly separated into 6 parts:</p>
+<ol>
+<li>About what is required to be a normed vector space</li>
+<li>Start from Jensen Inequality</li>
+<li>From Jensen’s inequality to Hölder’s inequality</li>
+<li>From Hölder’s inequality to Minkowski’s Inequality</li>
+<li>What these inequalities mean when combined with normed vector space</li>
+<li>When p goes to infinity</li>
+</ol>
+<h3 id="1-About-what-is-required-to-be-a-normed-vector-space"><a href="#1-About-what-is-required-to-be-a-normed-vector-space" class="headerlink" title="1. About what is required to be a normed vector space"></a>1. About what is required to be a normed vector space</h3><p>A vector space, or a linear space, is a set of objects which can be added and multiplied by scalars. The operation of addition and multiplication should follow a set of specific rules. For more detailed information, you can visit <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Vector_space">https://en.wikipedia.org/wiki/Vector_space</a>.</p>
+<p>For normed vector space, some additional requirements should be added. For a space, of course, we want to measure the distance between two elements. But, how can we measure? And is there any requirement for our method to measure?</p>
+<p>In a normal way, we can define a distance for a 3-dimension space like that the distance between (a,b) and (c,d) is </p>
+<script type="math/tex; mode=display">
+\sqrt{(a-c)^2+(b-d)^2}</script><p>However, this can be easily changed if I want to invent a new way to measure distance. Using the same example, I can also set my distance like this:</p>
+<script type="math/tex; mode=display">
+\sqrt[3]{(a-b)^3+(c-d)^3}</script><p>No one can say this is problematic. So, what is distance, or what should it be like?</p>
+<p>Well, mathematicians say that you can define a “distance” as long as it meets 3 requirements: (We denote distance as ∥ · ∥， and said V and U to be elements of the vector space)</p>
+<ol>
+<li>∥V∥ ≥ 0 and ∥V∥ = 0 if and only if V = 0;</li>
+<li>For all the scalars a, ∥a · V∥ = |a| · ∥V∥</li>
+<li>∥U + V∥ ≤ ∥U∥ + ∥V∥</li>
+</ol>
+<p>We can discover that the third one is the hardest to be satisfied. However, there’s an interesting discovery: For all p belonging to natural numbers, these distances always meets the requirements: (U and V can be respectively written as (u1,u2,···, un) and (v1,v2,···,vn))</p>
+<script type="math/tex; mode=display">
+\sqrt[p]{(u_1-v_1)^p+(u_2-v_2)^p+······+(u_n-v_n)^p}</script><p>This is even true when p goes to infinity. What happens and why?</p>
+<h3 id="2-Start-from-Jensen-Inequality"><a href="#2-Start-from-Jensen-Inequality" class="headerlink" title="2. Start from Jensen Inequality"></a>2. Start from Jensen Inequality</h3><p>When a function is convex, we can apply Jensen’s Inequality to it. It estimates the properties of convex functions by assuming they behave linearly. </p>
+<p>Jensen’s Inequality tells us that, for a convex function f(x) (whose domain is [a,b]), and x1,x2,…,xn∈[a,b], we can know that</p>
+<script type="math/tex; mode=display">
+\frac{f(x_1)+f(x_2)+···+f(x_n)}{n}\ge f(\frac{x_1+x_2+···+x_n}{n})</script><p>Similarly, you can get the reverse result if f(x) is a concave function.</p>
+<p>The detailed information can be viewed at <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Jensen_inequality">https://en.wikipedia.org/wiki/Jensen_inequality</a>.</p>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Fcdbf6c81800a19d80b555b4c38fa828ba61e4621&amp;refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1643369034&amp;t=0888ef54e6e33ed7507b21564795b34d" alt=""></p>
+<h3 id="3-From-Jensen’s-inequality-to-Holder’s-inequality"><a href="#3-From-Jensen’s-inequality-to-Holder’s-inequality" class="headerlink" title="3. From Jensen’s inequality to Hölder’s inequality"></a>3. From Jensen’s inequality to Hölder’s inequality</h3><p>First, we need to know what’s Hölder’s inequality. Hölder’s inequality can be written as:</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n |x_jy_j| \le (\sum_{j=1}^n |x_j|^p)^{\frac{1}{p}}(\sum_{j=1}^n |x_j|^q)^{\frac{1}{q}}</script><p>p and q should satisfy that p∈N and 1/p +1/q =1.</p>
+<h5 id="Proof"><a href="#Proof" class="headerlink" title="Proof:"></a>Proof:</h5><p>let </p>
+<script type="math/tex; mode=display">
+\widetilde x_i=\frac{|x_i|}{\sqrt[p]{\sum_{j=1}^n |x_i|^p}},\space\space\space\widetilde y_i=\frac{|y_i|}{\sqrt[p]{\sum_{j=1}^n |y_i|^p}}</script><p>We can discover for Jensen’s inequality that</p>
+<script type="math/tex; mode=display">
+\prod_{i=1}^n a_i^{\lambda_i} \le \sum_{i=1}^n \lambda_ia_i\space\space\space\space\space\space    (\sum\lambda_i=1)</script><p>(which is easy to be proved by applying a log function on the RHS. Note that log function is concave and you can apply Jensen’s inequality to it)</p>
+<p>According to the upward formula, we can deduce that</p>
+<script type="math/tex; mode=display">
+\widetilde x_i · \widetilde y_i \le \frac{\widetilde x_i^p}{p} +\frac{\widetilde y_i^q}{q}\space\space\space\space\space\space (As \space \frac{1}{p}+\frac{1}{q}=1)</script><p>This can be transfered as</p>
+<script type="math/tex; mode=display">
+\frac{|x_i||y_i|}{\sqrt[p]{\sum_{j=1}^n |x_i|^p}\sqrt[q]{\sum_{j=1}^n |y_i|^q}}\le \frac{|x_i|^p}{p\sum_{j=1}^n |x_i|^p}+\frac{|y_i|^q}{p\sum_{j=1}^n |y_i|^q}</script><p>Add all the different <em>i</em>s  up</p>
+<script type="math/tex; mode=display">
+\frac{\sum_{j=1}^n |x_i||y_i|}{\sqrt[p]{\sum_{j=1}^n |x_i|^p}\sqrt[q]{\sum_{j=1}^n |y_i|^q}} \le \frac{\sum _{i=1}^n|x_i|^p}{p\sum_{j=1}^n |x_i|^p}+\frac{\sum _{i=1}^n|y_i|^q}{p\sum_{j=1}^n |y_i|^q}</script><p>As</p>
+<script type="math/tex; mode=display">
+\frac{\sum _{i=1}^n|x_i|^p}{p\sum_{j=1}^n |x_i|^p}+\frac{\sum _{i=1}^n|y_i|^q}{p\sum_{j=1}^n |y_i|^q}=\frac{1} {p}+\frac{1} {q}=1</script><p>It can be shorted as</p>
+<script type="math/tex; mode=display">
+\frac{ \sum_{ j=1 }^n |x_i||y_i| } { \sqrt[p]{\sum_{j=1}^n |x_i|^p}\sqrt[q]{ \sum_{j=1}^n |y_i|^q} } \le 1</script><p>So we can move the denominator to the RHS. This is the same as</p>
+<script type="math/tex; mode=display">
+\sum_{j=1}^n |x_jy_j| \le (\sum_{j=1}^n |x_j|^p)^{ \frac{1} {p} }(\sum_{j=1}^n |x_j|^q)^{\frac{1}{q}}</script><p>Now we’ve got Hölder’s inequality!</p>
+<h3 id="4-From-Holder’s-inequality-to-Minkowski’s-inequality"><a href="#4-From-Holder’s-inequality-to-Minkowski’s-inequality" class="headerlink" title="4. From Hölder’s inequality to Minkowski’s inequality"></a>4. From Hölder’s inequality to Minkowski’s inequality</h3><p>Let’s move on from Hölder’s inequality to Minkowski’s Inequality.</p>
+<p>Also, Minkowski’s Inequality can be written like this:</p>
+<script type="math/tex; mode=display">
+(\sum_{i=1}^n |x_i+y_i|^p)^\frac{1}{p} \le (\sum_{i=1}^n |x_i|^p)^\frac{1}{p}+(\sum_{i=1}^n |y_i|^p)^\frac{1}{p}</script><h5 id="Proof-1"><a href="#Proof-1" class="headerlink" title="Proof"></a>Proof</h5><p>The LHS can be written as</p>
+<script type="math/tex; mode=display">
+(\sum_{i=1}^n |x_i+y_i|^{p-1}·|x_i|+\sum_{i=1}^n |x_i+y_i|^{p-1}·|y_i|)^\frac{1}{p}</script><p>Applying Hölder’s inequality, we can know that</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n |x_i+y_i|^{p-1}·|x_i| \le (\sum_{i=1}^n|x_i+y_i|^p)^\frac{p-1}{p}(\sum_{i=1}^n|x_i|^p)^\frac{1}{p}\space\space\space\space\space(As \space\space\space \frac{1}{p}+\frac{p-1}{p}=1)</script><p>Similarly, we can have</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n |x_i+y_i|^{p-1}·|y_i| \le (\sum_{i=1}^n|x_i+y_i|^p)^\frac{p-1}{p}(\sum_{i=1}^n|y_i|^p)^\frac{1}{p}</script><p>Add the two inequalities together, and we can get</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n |x_i+y_i|^{p-1}·|x_i|+\sum_{i=1}^n |x_i+y_i|^{p-1}·|y_i| \le (\sum_{i=1}^n|x_i+y_i|^p)^\frac{p-1}{p}(\sum_{i=1}^n|x_i|^p)^\frac{1}{p}+(\sum_{i=1}^n|x_i+y_i|^p)^\frac{p-1}{p}(\sum_{i=1}^n|y_i|^p)^\frac{1}{p}</script><p>We can know that</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n |x_i+y_i|^p \le (\sum_{i=1}^n|x_i+y_i|^p)^\frac{p-1}{p}\space\space ((\sum_{i=1}^n|x_i|^p)^\frac{1}{p}+(\sum_{i=1}^n|y_i|^p)^\frac{1}{p})</script><p>Finally, we can move the extra part on the RHS to the LHS, and we can get</p>
+<script type="math/tex; mode=display">
+(\sum_{i=1}^n |x_i+y_i|^p)^\frac{1}{p} \le (\sum_{i=1}^n |x_i|^p)^\frac{1}{p}+(\sum_{i=1}^n |y_i|^p)^\frac{1}{p}</script><p>Now we’ve got Minkowski’s inequality!</p>
+<h3 id="5-What-these-inequalities-mean-when-combined-with-normed-vector-space"><a href="#5-What-these-inequalities-mean-when-combined-with-normed-vector-space" class="headerlink" title="5. What these inequalities mean when combined with normed vector space"></a>5. What these inequalities mean when combined with normed vector space</h3><p>Brilliant readers may have noticed that all these inequalities can be used to deal with vectors. We can rewrite the inequality in a vector-like way by assuming vectors X and Y to be like</p>
+<script type="math/tex; mode=display">
+X=(x_1,x_2,···,x_n),\space\space\space Y=(y_1,y_2,···,y_n)</script><p>So we discover that we can define a new way to measure the distance like</p>
+<script type="math/tex; mode=display">
+∥X∥_p=(\sum_{i=1}^n|x_i|^p)^\frac{1}{p}</script><p>Note that ∥X∥p is only a way to note this is a different way of calculating distance instead of the traditional |X|.</p>
+<p>According to Minkowski’s inequality</p>
+<script type="math/tex; mode=display">
+∥X+Y∥_p \le ∥X∥_p +∥Y∥_p</script><p>We can discover that this definition of distance works!</p>
+<h3 id="6-When-p-goes-to-infinity…"><a href="#6-When-p-goes-to-infinity…" class="headerlink" title="6. When p goes to infinity…"></a>6. When p goes to infinity…</h3><p>Well, in many cases, things get much more different when something goes to infinity. However, this definition still works when p goes to infinity!</p>
+<p>We can prove that when p goes to infinity</p>
+<script type="math/tex; mode=display">
+∥X∥_\infty = max \{ x_1,x_2,···.x_n \}</script><p>This can be done quite easily using the X tilde.</p>
+<h5 id="Proof-2"><a href="#Proof-2" class="headerlink" title="Proof"></a>Proof</h5><p>We can put the distance into the limit</p>
+<script type="math/tex; mode=display">
+\lim_{p\to\infty}∥X∥_p=\lim_ {p\to \infty} (\sum_{ i=1 } ^n|x_i|^p)^ \frac {1} {p}</script><p>Then we introduce X tilde</p>
+<script type="math/tex; mode=display">
+\widetilde x_i=\frac{ |x_i| } { \sqrt[p] {\sum_{j=1}^n |x_i|^p } }</script><p>We can know that</p>
+<script type="math/tex; mode=display">
+\lim_{ p\to\infty } ∥\tilde X∥ _p = \lim_{p\to \infty}(\sum_{ i=1 } ^n|\tilde x_i|^p)^\frac{ 1 } { p }</script><p>And we know that, when </p>
+<script type="math/tex; mode=display">
+x_i< max \{ x_1,x_2,···,x_n \}</script><p>then</p>
+<script type="math/tex; mode=display">
+\tilde x_i<1</script><p>So</p>
+<script type="math/tex; mode=display">
+\lim_{ p\to \infty }(|\tilde x_i|^p)=0</script><p>As</p>
+<script type="math/tex; mode=display">
+\lim_{p\to \infty}(\sum_{ i=1 } ^n|\tilde x_i|^p)^\frac{ 1 } { p }=\lim_{p\to \infty}(\sum_{i=1}^n\lim_{p\to \infty}|\tilde x_i|^p)^ \frac { 1 } { p }</script><p>And as</p>
+<script type="math/tex; mode=display">
+\sum_{ i=1 } ^n\lim_{ p\to \infty } |\tilde x_i|^p \le n\space\space\space\space\space\space\space(As\space|\tilde x_i| \le1)</script><p>And we can know a fact that</p>
+<script type="math/tex; mode=display">
+\lim_{m\to\infty}\sqrt[m]{y}=1\space when\space y>0</script><p>As</p>
+<script type="math/tex; mode=display">
+0\le\sum_{i=1}^n\lim_{p\to \infty}|\tilde x_i|^p\le n</script><p>Then applying the fact</p>
+<script type="math/tex; mode=display">
+\lim_{p\to \infty}(\sum_{i=1}^n|\tilde x_i|^p)^\frac{1}{p}=\lim_{p\to \infty}(\sum_{i=1}^n\lim_{p\to \infty}|\tilde x_i|^p)^\frac{1}{p}=1</script><p>So we can change tilde back to the normal form and finally get</p>
+<script type="math/tex; mode=display">
+∥X∥_\infty=max\{ x_1,x_2,···.x_n \}</script><p>That’s it! Thanks for reading this page and wish you have a good day!</p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Vector_space">https://en.wikipedia.org/wiki/Vector_space</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Jensen_inequality">https://en.wikipedia.org/wiki/Jensen_inequality</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Holder_inequality">https://en.wikipedia.org/wiki/Holder_inequality</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Minkowski_inequality">https://en.wikipedia.org/wiki/Minkowski_inequality</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Normed_vector_space">https://en.wikipedia.org/wiki/Normed_vector_space</a></li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="https://link.hhtjim.com/163/139774.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="https://link.hhtjim.com/163/864711417.mp3"></li>
+                        
+                    
+                        
+                            <li title="2" data-url="https://link.hhtjim.com/163/426343125.mp3"></li>
+                        
+                    
+                        
+                            <li title="3" data-url="https://link.hhtjim.com/163/22697447.mp3"></li>
+                        
+                    
+                        
+                            <li title="4" data-url="https://link.hhtjim.com/163/492390949.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
