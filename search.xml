@@ -392,4 +392,63 @@ x_i< max \{ x_1,x_2,···,x_n \}</script><p>then</p>
         <tag>eternal return</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Why Fourier&#39;s Series?</title>
+    <url>/2022/03/28/Why-Fourier-s-Series/</url>
+    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/03/1dbffcb6231fd779.png" alt=""></p>
+<p>When learning Fourier’s series, it is usually confusing why we need to learn such a troubling thing? And moreover, why did Fourier come up with this strange idea to represent all functions in a sin and cos way? This is actually an unexpected discovery when the great French mathematician and physicist was dealing with the heat-flow problem in physics.</p>
+<p>The problem in physics is about how heat transfers in a pole. Physicists found some patterns of the problem. In mathematics, it can be described as a partial differential equation.</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{\partial^2T}{\partial x^2}=k^2 \frac{\partial T}{\partial t} \space\space\space\space (T=T(x,t))\\
+T(0,t)=T(l,t)=0\\
+T(x,0)=f(x)
+\end{cases}</script><p>The function aims at finding out the temperature distribution on a pole. The length of the pole is <em>2l</em>, and at first, the temperature distribution is f(x) (x is the distance from a point to one end of the pole). We want to know how the temperature distribution will be after time t.</p>
+<p>The function is a really hard partial differential function, and we cannot solve it directly. When Fourier was dealing with the problem, he tried to separate the variables. He supposed the T can be written as</p>
+<script type="math/tex; mode=display">
+T(x,t) = \phi (x) \psi (t)</script><p>The first line of the function can be written as </p>
+<script type="math/tex; mode=display">
+\phi ''(x)\psi(t)=\phi(x)\psi'(t)</script><p>Then he let</p>
+<script type="math/tex; mode=display">
+-\lambda=\frac{\phi''(x)}{\phi(x)}=\frac{\psi'(t)}{\psi(t)}</script><p>Now the complicated function can be changed into this form:</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\phi''(x)+\lambda\phi(x)=0 \space\space\space\space( in \space which\space \phi(0)=\phi(l)=0)\\
+\psi'(t)+\lambda\psi(t)=0
+\end{cases}</script><p>This is a much easy form! The unsolvable partial differential equation is suddenly turned into such an easy question!</p>
+<p>To solve function in line first:</p>
+<script type="math/tex; mode=display">
+\phi(x)=b\space sin(\sqrt\lambda +c)</script><p>As</p>
+<script type="math/tex; mode=display">
+\phi(0)=\phi(l)=0</script><p>We can deduce that</p>
+<script type="math/tex; mode=display">
+sin\space c=0, \space\space\space so\space c=0</script><p>As</p>
+<script type="math/tex; mode=display">
+sin(\sqrt\lambda l)=0,\space\space\space so \space \sqrt\lambda l=n\pi</script><p>We can note</p>
+<script type="math/tex; mode=display">
+\phi_n(x)=b_n sin(\frac{n\pi}{l})</script><p>The corresponding lambda can be written as</p>
+<script type="math/tex; mode=display">
+\lambda_n=(\frac{n\pi}{l})^2</script><p>Then we continue to solve the function in the second line:</p>
+<script type="math/tex; mode=display">
+\psi(t)=e^{-\lambda t}=e^{-(\frac{n\pi}{l})^2t}</script><p>Finally, the solution to the heat-flow problem can be represented as</p>
+<script type="math/tex; mode=display">
+T_n(x,t)=\phi(x)\psi(t)=e^{-(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>For the more common conditions of the problem, the solution is the linear combination of all these Tns:</p>
+<script type="math/tex; mode=display">
+T(x,t)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>Then, we need to find the case which fits the t=0 case. We can notice that</p>
+<script type="math/tex; mode=display">
+f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>This is not so common! f(x) is not something special, but a function is previously decided! However, it can be represented by an infinite number of sin and cos functions adding up! Fourier noticed there must be some deeper things under the mathematic form. Tn of course is the solution (this can be verified by putting Tn back to the partial differential function), and in the real physical world, the heat also transfer. Fourier noticed there must be some deeper things under the mathematic form. So this means most functions can be represented in this way!</p>
+<p>So the questions are raised:</p>
+<p>What kind of functions can be represented as the sum of a lot of sin and cos functions?</p>
+<p>Can the sum converge? Where will it converge?</p>
+<p>If it can converge to f(x), how to decide the coefficient for each sin and cos function?</p>
+]]></content>
+      <categories>
+        <category>Mathematics, Physics, and other Natural Science</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>Fourier Series</tag>
+        <tag>Physics</tag>
+      </tags>
+  </entry>
 </search>
