@@ -100,27 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Note for Advanced Algebra</title>
-    <url>/2022/03/30/Note-for-Advanced-Algebra/</url>
-    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/03/30/267ba0cb9cb4dbdd.png" alt=""></p>
-<p>This is the note for the course Advanced Algebra taught by Professor WeiSheng Qiu from Peking University. The noter took the course through recorded video informally. Both the teaching language and the note language is Chinese. </p>
-<p>The course started with solving Linear equations. Then, it continues to talk about linear space, including subspace, rank, and other concepts. After that, it covers the calculation of matrices. Then, it begins to talk about another Algebra area about polynomial and rings. After introducing that, the course goes back to linear mapping. After that, bilinear function and normal vector space are introduced. Finally, the quadratic form is covered.</p>
-<p>Professor Qiu was very passionate and knowledgeable. During the lectures, he was always trying to tell students more about the mathematical world. His lectures contain many things related to basic knowledge, and he always explained how all the different concepts in algebra are connected with each other. His course developed algebra in a very compact way and introduced the wide applications of algebra.</p>
-<p>The cover of the note is Shiina Mashiro from <em>The Pet Girl of Sakurasou</em>. The reason for choosing her picture to be the cover is that she is a genius, and the noter believes only a genius can fully understand this course. The noter finds it extremely hard to understand the relationships between space and the concept of the ring. Besides, the first page of the note is the lyric of <em>Kimi ga Yume wo Tsuretekita (君が夢を連れてきた)</em>, the theme song of <em>The Pet Girl of Sakurasou</em>.</p>
-<p>Hope you can like this note.</p>
-<p>The note can be downloaded through onedrive. The link is <a href="https://1drv.ms/b/s!AjBQc2iDwpp7hiNZnhsKDLSZknPW?e=t6uRpk">https://1drv.ms/b/s!AjBQc2iDwpp7hiNZnhsKDLSZknPW?e=t6uRpk</a></p>
-<p>Also, it can be downloaded through Baidu Netdisk, the link is <a href="https://pan.baidu.com/s/19vsHRwxtBdAy-IZyM7oBqg?pwd=6rac">https://pan.baidu.com/s/19vsHRwxtBdAy-IZyM7oBqg?pwd=6rac</a> , and the accessing code is 6rac.</p>
-<p>This course can be found online, and the link is <a href="https://www.bilibili.com/video/BV1jR4y1M78W?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1jR4y1M78W?spm_id_from=333.999.0.0</a>.</p>
-]]></content>
-      <categories>
-        <category>Mathematics, Physics, and other Natural Science</category>
-      </categories>
-      <tags>
-        <tag>Mathematics</tag>
-        <tag>Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Inequality: From Jensen to Normed Vector Space</title>
     <url>/2021/12/30/Inequality-From-Jensen-to-Normed-Vector-Space/</url>
     <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2021/12/0854eba989cd10ce.jpg" alt=""></p>
@@ -247,23 +226,24 @@ x_i< max \{ x_1,x_2,···,x_n \}</script><p>then</p>
       </tags>
   </entry>
   <entry>
-    <title>Note for Analysis II</title>
-    <url>/2022/05/18/Note-for-Analysis-II/</url>
-    <content><![CDATA[<p><a href="https://imgtu.com/i/O5LcVg"><img src="https://s1.ax1x.com/2022/05/17/O5LcVg.png" alt="O5LcVg.png"></a></p>
-<p>This is the note for the course Analysis taught by Professor Yi Cheng from University of Science and Technology of China. The noter took the course through recorded video informally. Both the teaching language and the note language is Chinese. </p>
-<p>The course focused on developing student skills in proving and understanding mathematical concepts. The course goes from Analytic Geometry and then moved on to discuss the Multivariable Calculus. Then, the concepts of curvilinear integrals and surface integrals are discussed. After that, the theme changed to Fourier analysis. Finally, the Gamma function and Beta function are introduced.</p>
-<p>In the course, Professor Chen tells the whole story in a clear way. Due to the limitation of time, some proofs are not given. The professor sometimes likes to use examples from physics, which makes the questions become very clear and easy to understand.</p>
-<p>The cover of the notebook is Tomori Nao from <em>Charlotte</em>. The reason for choosing her picture to be the cover is that she is always curious and won’t stop until she finds the final answer. Besides, she likes photography very much. The noter thinks that being curious and observant are very helpful when learning analysis. </p>
-<p>Hope you will like it.</p>
-<p>The note can be downloaded through onedrive. The link is<a href="https://1drv.ms/b/s!AjBQc2iDwpp7hjSBEo0jhw6yrFyL?e=8abUDu">https://1drv.ms/b/s!AjBQc2iDwpp7hjSBEo0jhw6yrFyL?e=8abUDu</a></p>
-<p>Also, it can be downloaded through Baidu Netdisk, the link is<a href="https://pan.baidu.com/s/1KLTQaz69Xe5QGoUCRumEKw?pwd=u3ij">https://pan.baidu.com/s/1KLTQaz69Xe5QGoUCRumEKw?pwd=u3ij</a>  , and the accessing code is u3ij.</p>
-<p>This course can be found online, and the link is <a href="https://www.bilibili.com/video/BV1HV411J7sH?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1HV411J7sH?spm_id_from=333.999.0.0</a>.</p>
+    <title>Note for Advanced Algebra</title>
+    <url>/2022/03/30/Note-for-Advanced-Algebra/</url>
+    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/03/30/267ba0cb9cb4dbdd.png" alt=""></p>
+<p>This is the note for the course Advanced Algebra taught by Professor WeiSheng Qiu from Peking University. The noter took the course through recorded video informally. Both the teaching language and the note language is Chinese. </p>
+<p>The course started with solving Linear equations. Then, it continues to talk about linear space, including subspace, rank, and other concepts. After that, it covers the calculation of matrices. Then, it begins to talk about another Algebra area about polynomial and rings. After introducing that, the course goes back to linear mapping. After that, bilinear function and normal vector space are introduced. Finally, the quadratic form is covered.</p>
+<p>Professor Qiu was very passionate and knowledgeable. During the lectures, he was always trying to tell students more about the mathematical world. His lectures contain many things related to basic knowledge, and he always explained how all the different concepts in algebra are connected with each other. His course developed algebra in a very compact way and introduced the wide applications of algebra.</p>
+<p>The cover of the note is Shiina Mashiro from <em>The Pet Girl of Sakurasou</em>. The reason for choosing her picture to be the cover is that she is a genius, and the noter believes only a genius can fully understand this course. The noter finds it extremely hard to understand the relationships between space and the concept of the ring. Besides, the first page of the note is the lyric of <em>Kimi ga Yume wo Tsuretekita (君が夢を連れてきた)</em>, the theme song of <em>The Pet Girl of Sakurasou</em>.</p>
+<p>Hope you can like this note.</p>
+<p>The note can be downloaded through onedrive. The link is <a href="https://1drv.ms/b/s!AjBQc2iDwpp7hiNZnhsKDLSZknPW?e=t6uRpk">https://1drv.ms/b/s!AjBQc2iDwpp7hiNZnhsKDLSZknPW?e=t6uRpk</a></p>
+<p>Also, it can be downloaded through Baidu Netdisk, the link is <a href="https://pan.baidu.com/s/19vsHRwxtBdAy-IZyM7oBqg?pwd=6rac">https://pan.baidu.com/s/19vsHRwxtBdAy-IZyM7oBqg?pwd=6rac</a> , and the accessing code is 6rac.</p>
+<p>This course can be found online, and the link is <a href="https://www.bilibili.com/video/BV1jR4y1M78W?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1jR4y1M78W?spm_id_from=333.999.0.0</a>.</p>
 ]]></content>
       <categories>
         <category>Mathematics, Physics, and other Natural Science</category>
       </categories>
       <tags>
         <tag>Mathematics</tag>
+        <tag>Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -310,63 +290,30 @@ x_i< max \{ x_1,x_2,···,x_n \}</script><p>then</p>
       </tags>
   </entry>
   <entry>
-    <title>Why Fourier&#39;s Series?</title>
-    <url>/2022/03/28/Why-Fourier-s-Series/</url>
-    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/03/1dbffcb6231fd779.png" alt=""></p>
-<p>When learning Fourier’s series, it is usually confusing why we need to learn such a troubling thing? And moreover, why did Fourier come up with this strange idea to represent all functions in a sin and cos way? This is actually an unexpected discovery when the great French mathematician and physicist was dealing with the heat-flow problem in physics.</p>
-<p>The problem in physics is about how heat transfers in a pole. Physicists found some patterns of the problem. In mathematics, it can be described as a partial differential equation.</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-\frac{\partial^2T}{\partial x^2}=k^2 \frac{\partial T}{\partial t} \space\space\space\space (T=T(x,t))\\
-T(0,t)=T(l,t)=0\\
-T(x,0)=f(x)
-\end{cases}</script><p>The function aims at finding out the temperature distribution on a pole. The length of the pole is <em>2l</em>, and at first, the temperature distribution is f(x) (x is the distance from a point to one end of the pole). We want to know how the temperature distribution will be after time t.</p>
-<p>The function is a really hard partial differential function, and we cannot solve it directly. When Fourier was dealing with the problem, he tried to separate the variables. He supposed the T can be written as</p>
-<script type="math/tex; mode=display">
-T(x,t) = \phi (x) \psi (t)</script><p>The first line of the function can be written as </p>
-<script type="math/tex; mode=display">
-\phi ''(x)\psi(t)=\phi(x)\psi'(t)</script><p>Then he let</p>
-<script type="math/tex; mode=display">
--\lambda=\frac{\phi''(x)}{\phi(x)}=\frac{\psi'(t)}{\psi(t)}</script><p>Now the complicated function can be changed into this form:</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-\phi''(x)+\lambda\phi(x)=0 \space\space\space\space( in \space which\space \phi(0)=\phi(l)=0)\\
-\psi'(t)+\lambda\psi(t)=0
-\end{cases}</script><p>This is a much easy form! The unsolvable partial differential equation is suddenly turned into such an easy question!</p>
-<p>To solve function in line first:</p>
-<script type="math/tex; mode=display">
-\phi(x)=b\space sin(\sqrt\lambda +c)</script><p>As</p>
-<script type="math/tex; mode=display">
-\phi(0)=\phi(l)=0</script><p>We can deduce that</p>
-<script type="math/tex; mode=display">
-sin\space c=0, \space\space\space so\space c=0</script><p>As</p>
-<script type="math/tex; mode=display">
-sin(\sqrt\lambda l)=0,\space\space\space so \space \sqrt\lambda l=n\pi</script><p>We can note</p>
-<script type="math/tex; mode=display">
-\phi_n(x)=b_n sin(\frac{n\pi}{l})</script><p>The corresponding lambda can be written as</p>
-<script type="math/tex; mode=display">
-\lambda_n=(\frac{n\pi}{l})^2</script><p>Then we continue to solve the function in the second line:</p>
-<script type="math/tex; mode=display">
-\psi(t)=e^{-\lambda t}=e^{-(\frac{n\pi}{l})^2t}</script><p>Finally, the solution to the heat-flow problem can be represented as</p>
-<script type="math/tex; mode=display">
-T_n(x,t)=\phi(x)\psi(t)=e^{-(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>For the more common conditions of the problem, the solution is the linear combination of all these Tns:</p>
-<script type="math/tex; mode=display">
-T(x,t)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>Then, we need to find the case which fits the t=0 case. We can notice that</p>
-<script type="math/tex; mode=display">
-f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>This is not so common! f(x) is not something special, but a function is previously decided! However, it can be represented by an infinite number of sin and cos functions adding up! Fourier noticed there must be some deeper things under the mathematic form. Tn of course is the solution (this can be verified by putting Tn back to the partial differential function), and in the real physical world, the heat also transfer. Fourier noticed there must be some deeper things under the mathematic form. So this means most functions can be represented in this way!</p>
-<p>So the questions are raised:</p>
-<p>What kind of functions can be represented as the sum of a lot of sin and cos functions?</p>
-<p>Can the sum converge? Where will it converge?</p>
-<p>If it can converge to f(x), how to decide the coefficient for each sin and cos function?</p>
+    <title>Note for Analysis II</title>
+    <url>/2022/05/18/Note-for-Analysis-II/</url>
+    <content><![CDATA[<p><a href="https://imgtu.com/i/O5LcVg"><img src="https://s1.ax1x.com/2022/05/17/O5LcVg.png" alt="O5LcVg.png"></a></p>
+<p>This is the note for the course Analysis taught by Professor Yi Cheng from University of Science and Technology of China. The noter took the course through recorded video informally. Both the teaching language and the note language is Chinese. </p>
+<p>The course focused on developing student skills in proving and understanding mathematical concepts. The course goes from Analytic Geometry and then moved on to discuss the Multivariable Calculus. Then, the concepts of curvilinear integrals and surface integrals are discussed. After that, the theme changed to Fourier analysis. Finally, the Gamma function and Beta function are introduced.</p>
+<p>In the course, Professor Chen tells the whole story in a clear way. Due to the limitation of time, some proofs are not given. The professor sometimes likes to use examples from physics, which makes the questions become very clear and easy to understand.</p>
+<p>The cover of the notebook is Tomori Nao from <em>Charlotte</em>. The reason for choosing her picture to be the cover is that she is always curious and won’t stop until she finds the final answer. Besides, she likes photography very much. The noter thinks that being curious and observant are very helpful when learning analysis. </p>
+<p>Hope you will like it.</p>
+<p>The note can be downloaded through onedrive. The link is<a href="https://1drv.ms/b/s!AjBQc2iDwpp7hjSBEo0jhw6yrFyL?e=8abUDu">https://1drv.ms/b/s!AjBQc2iDwpp7hjSBEo0jhw6yrFyL?e=8abUDu</a></p>
+<p>Also, it can be downloaded through Baidu Netdisk, the link is<a href="https://pan.baidu.com/s/1KLTQaz69Xe5QGoUCRumEKw?pwd=u3ij">https://pan.baidu.com/s/1KLTQaz69Xe5QGoUCRumEKw?pwd=u3ij</a>  , and the accessing code is u3ij.</p>
+<p>This course can be found online, and the link is <a href="https://www.bilibili.com/video/BV1HV411J7sH?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1HV411J7sH?spm_id_from=333.999.0.0</a>.</p>
 ]]></content>
       <categories>
         <category>Mathematics, Physics, and other Natural Science</category>
       </categories>
       <tags>
         <tag>Mathematics</tag>
-        <tag>Fourier Series</tag>
-        <tag>Physics</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>blog</title>
+    <url>/2023/04/22/blog/</url>
+    <content><![CDATA[
+]]></content>
   </entry>
   <entry>
     <title>Set Up a Blog with Hexo!</title>
@@ -513,9 +460,94 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
       </tags>
   </entry>
   <entry>
-    <title>blog</title>
-    <url>/2023/04/22/blog/</url>
-    <content><![CDATA[
+    <title>Why Fourier&#39;s Series?</title>
+    <url>/2022/03/28/Why-Fourier-s-Series/</url>
+    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/03/1dbffcb6231fd779.png" alt=""></p>
+<p>When learning Fourier’s series, it is usually confusing why we need to learn such a troubling thing? And moreover, why did Fourier come up with this strange idea to represent all functions in a sin and cos way? This is actually an unexpected discovery when the great French mathematician and physicist was dealing with the heat-flow problem in physics.</p>
+<p>The problem in physics is about how heat transfers in a pole. Physicists found some patterns of the problem. In mathematics, it can be described as a partial differential equation.</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{\partial^2T}{\partial x^2}=k^2 \frac{\partial T}{\partial t} \space\space\space\space (T=T(x,t))\\
+T(0,t)=T(l,t)=0\\
+T(x,0)=f(x)
+\end{cases}</script><p>The function aims at finding out the temperature distribution on a pole. The length of the pole is <em>2l</em>, and at first, the temperature distribution is f(x) (x is the distance from a point to one end of the pole). We want to know how the temperature distribution will be after time t.</p>
+<p>The function is a really hard partial differential function, and we cannot solve it directly. When Fourier was dealing with the problem, he tried to separate the variables. He supposed the T can be written as</p>
+<script type="math/tex; mode=display">
+T(x,t) = \phi (x) \psi (t)</script><p>The first line of the function can be written as </p>
+<script type="math/tex; mode=display">
+\phi ''(x)\psi(t)=\phi(x)\psi'(t)</script><p>Then he let</p>
+<script type="math/tex; mode=display">
+-\lambda=\frac{\phi''(x)}{\phi(x)}=\frac{\psi'(t)}{\psi(t)}</script><p>Now the complicated function can be changed into this form:</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\phi''(x)+\lambda\phi(x)=0 \space\space\space\space( in \space which\space \phi(0)=\phi(l)=0)\\
+\psi'(t)+\lambda\psi(t)=0
+\end{cases}</script><p>This is a much easy form! The unsolvable partial differential equation is suddenly turned into such an easy question!</p>
+<p>To solve function in line first:</p>
+<script type="math/tex; mode=display">
+\phi(x)=b\space sin(\sqrt\lambda +c)</script><p>As</p>
+<script type="math/tex; mode=display">
+\phi(0)=\phi(l)=0</script><p>We can deduce that</p>
+<script type="math/tex; mode=display">
+sin\space c=0, \space\space\space so\space c=0</script><p>As</p>
+<script type="math/tex; mode=display">
+sin(\sqrt\lambda l)=0,\space\space\space so \space \sqrt\lambda l=n\pi</script><p>We can note</p>
+<script type="math/tex; mode=display">
+\phi_n(x)=b_n sin(\frac{n\pi}{l})</script><p>The corresponding lambda can be written as</p>
+<script type="math/tex; mode=display">
+\lambda_n=(\frac{n\pi}{l})^2</script><p>Then we continue to solve the function in the second line:</p>
+<script type="math/tex; mode=display">
+\psi(t)=e^{-\lambda t}=e^{-(\frac{n\pi}{l})^2t}</script><p>Finally, the solution to the heat-flow problem can be represented as</p>
+<script type="math/tex; mode=display">
+T_n(x,t)=\phi(x)\psi(t)=e^{-(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>For the more common conditions of the problem, the solution is the linear combination of all these Tns:</p>
+<script type="math/tex; mode=display">
+T(x,t)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>Then, we need to find the case which fits the t=0 case. We can notice that</p>
+<script type="math/tex; mode=display">
+f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>This is not so common! f(x) is not something special, but a function is previously decided! However, it can be represented by an infinite number of sin and cos functions adding up! Fourier noticed there must be some deeper things under the mathematic form. Tn of course is the solution (this can be verified by putting Tn back to the partial differential function), and in the real physical world, the heat also transfer. Fourier noticed there must be some deeper things under the mathematic form. So this means most functions can be represented in this way!</p>
+<p>So the questions are raised:</p>
+<p>What kind of functions can be represented as the sum of a lot of sin and cos functions?</p>
+<p>Can the sum converge? Where will it converge?</p>
+<p>If it can converge to f(x), how to decide the coefficient for each sin and cos function?</p>
+]]></content>
+      <categories>
+        <category>Mathematics, Physics, and other Natural Science</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+        <tag>Fourier Series</tag>
+        <tag>Physics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World!</title>
+    <url>/2021/12/21/hello-world/</url>
+    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2021/12/78ca01e6b7b7670b.jpg" style="zoom: 150%;" /></p>
+<h2 id="Welcome-to-the-personal-blog-of-Fragments-of-Kyanite"><a href="#Welcome-to-the-personal-blog-of-Fragments-of-Kyanite" class="headerlink" title="Welcome to the personal blog of Fragments of Kyanite!"></a>Welcome to the personal blog of Fragments of Kyanite!</h2><p>This site is mainly used to post some comments and articles. The topics mainly include</p>
+<ol>
+<li>Introductions and Ideas</li>
+<li>Art, Literature, and Philosophy</li>
+<li>Comics, Games, and Animation Films</li>
+<li>Mathematics, Physics, and other Natural Science</li>
+<li>Electrical and Computer Engineering</li>
+<li>Collection of sceneries and interesting sentences</li>
+<li>Techniques</li>
+</ol>
+<p>The content can be written in English or Chinese.</p>
+<p>In the left-upper corner of the blog page, there is a “play” button for music. Some pure pieces of music will be provided if you click that button.</p>
+<p>Wish you a pleasant journey in the blog!</p>
+<p><img src="https://s3.bmp.ovh/imgs/2021/12/e052bb3b2b00875a.png" style="zoom: 67%;" /></p>
+]]></content>
+      <categories>
+        <category>Introductions and Ideas</category>
+      </categories>
+      <tags>
+        <tag>Introductions</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Publications</title>
+    <url>//publications/</url>
+    <content><![CDATA[<p>Nan! I’m baga.</p>
 ]]></content>
   </entry>
   <entry>
@@ -558,38 +590,6 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 <li><div style="white-space: nowrap;">Third Prize in the Chinese National High School Math League <p align="right">Oct. 2020</p></div>&nbsp;</li>
 <li><div style="white-space: nowrap;">Second Prize in the Chinese National Physics Contest for Middle School Students <p align="right">Oct. 2019</p></div>&nbsp;</li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World!</title>
-    <url>/2021/12/21/hello-world/</url>
-    <content><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2021/12/78ca01e6b7b7670b.jpg" style="zoom: 150%;" /></p>
-<h2 id="Welcome-to-the-personal-blog-of-Fragments-of-Kyanite"><a href="#Welcome-to-the-personal-blog-of-Fragments-of-Kyanite" class="headerlink" title="Welcome to the personal blog of Fragments of Kyanite!"></a>Welcome to the personal blog of Fragments of Kyanite!</h2><p>This site is mainly used to post some comments and articles. The topics mainly include</p>
-<ol>
-<li>Introductions and Ideas</li>
-<li>Art, Literature, and Philosophy</li>
-<li>Comics, Games, and Animation Films</li>
-<li>Mathematics, Physics, and other Natural Science</li>
-<li>Electrical and Computer Engineering</li>
-<li>Collection of sceneries and interesting sentences</li>
-<li>Techniques</li>
-</ol>
-<p>The content can be written in English or Chinese.</p>
-<p>In the left-upper corner of the blog page, there is a “play” button for music. Some pure pieces of music will be provided if you click that button.</p>
-<p>Wish you a pleasant journey in the blog!</p>
-<p><img src="https://s3.bmp.ovh/imgs/2021/12/e052bb3b2b00875a.png" style="zoom: 67%;" /></p>
-]]></content>
-      <categories>
-        <category>Introductions and Ideas</category>
-      </categories>
-      <tags>
-        <tag>Introductions</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Publications</title>
-    <url>//publications/</url>
-    <content><![CDATA[<p>Nan! I’m baga.</p>
 ]]></content>
   </entry>
   <entry>
