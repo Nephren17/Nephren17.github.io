@@ -562,7 +562,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>index</title>
     <url>/2023/04/22/index/</url>
-    <content><![CDATA[<p><img src="https://github.com/Nephren17/Nephren17.github.io/blob/main/img/me-eecs.jpg?raw=true" style="zoom: 8%;" /></p>
+    <content><![CDATA[<p><img src="https://github.com/Nephren17/Nephren17.github.io/blob/main/img/me-eecs.jpg?raw=true" style="zoom: 11%;" /></p>
 <h1 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h1><p>I am an undergraduate in Data Science at the University of Michigan (<a href="https://cse.engin.umich.edu/">Umich</a>). Before transferring to Umich, I also studied at Shanghai Jiao Tong University (<a href="https://en.sjtu.edu.cn/">SJTU</a>) and majored in Electrical and Computer Engineering.</p>
 <p>My research interest lies broadly in control theory and AI4Sci (applying AI to scientific problems). Preciously, I researched on the extrapolation of ignition delay for unknown fuels from known fuels using neural networks. It is expected that a way to roughly understand the combustion properties of certain unknown fuels before experimenting can be found. Currently, I’m working on applying spiking neural network to the design of controller. </p>
 <p>I am applying for graduate programs and expect to graduate in the Summer of 2025. Please reach out to me if you are looking for Ph.D. students.</p>
