@@ -717,7 +717,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Research</title>
     <url>//research/</url>
-    <content><![CDATA[<h1 id="Research-Experience"><a href="#Research-Experience" class="headerlink" title="Research Experience"></a>Research Experience</h1><h3 id="AtomBot-Project"><a href="#AtomBot-Project" class="headerlink" title="AtomBot Project"></a>AtomBot Project</h3><p>Advisor: <a href="https://z.engin.umich.edu/"><strong>Y Z</strong></a>, Jan. 2024 — Present, University of Michigan, Ann Arbor, USA.</p>
+    <content><![CDATA[<h3 id="AtomBot-Project"><a href="#AtomBot-Project" class="headerlink" title="AtomBot Project"></a>AtomBot Project</h3><p>Advisor: <a href="https://z.engin.umich.edu/"><strong>Y Z</strong></a>, Jan. 2024 — Present, University of Michigan, Ann Arbor, USA.</p>
 <ul>
 <li>Build the simulation model for stochastic mechanics of single vibrating atombot.</li>
 <li>Design and realize the embedded control system for single atombot.</li>
