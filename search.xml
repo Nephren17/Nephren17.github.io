@@ -547,7 +547,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 <li><p>ECE 2030 Discrete Mathematics</p>
 </li>
 </ul>
-<h2 id="Programs"><a href="#Programs" class="headerlink" title="Programs"></a>Programs</h2><h3 id="Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control"><a href="#Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control" class="headerlink" title="Directed Reading Program in Dynamical Systems and Nonlinear Control"></a>Directed Reading Program in Dynamical Systems and Nonlinear Control</h3><p>May. 2024- Aug. 2024, University of Michigan</p>
+<h2 id="Programs"><a href="#Programs" class="headerlink" title="Programs"></a>Programs</h2><h4 id="Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control"><a href="#Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control" class="headerlink" title="Directed Reading Program in Dynamical Systems and Nonlinear Control"></a>Directed Reading Program in Dynamical Systems and Nonlinear Control</h4><p>May. 2024- Aug. 2024, University of Michigan</p>
 <p>Advised by <a href="https://sites.google.com/umich.edu/joe-huang/"><strong>Joe Huang</strong></a>, a PhD student advised by Professor Anthony Bloch and Professor Indika Rajapakse at Department of Mathematics, University of Michigan. Read the book <em>Differential Equations, Dynamical Systems, and an Introduction to Chaos</em> and <em>Nonlinear Systems</em> in the program.</p>
 <h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><h4 id="Grader-of-Introduction-to-Numerical-Methods-MATH-471"><a href="#Grader-of-Introduction-to-Numerical-Methods-MATH-471" class="headerlink" title="Grader of Introduction to Numerical Methods (MATH 471)"></a>Grader of Introduction to Numerical Methods (MATH 471)</h4><p>Jul. 2024- Aug. 2024, University of Michigan</p>
 <p>Worked with Professor <a href="https://websites.umich.edu/~andreip/"><strong>Andrei Prokhorov</strong></a> as a grader of an advanced undergraduate mathematics course. The course<br>covers numerical methods for linear algebra, differential equations and dynamical systems.</p>
@@ -717,7 +717,26 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Research</title>
     <url>//research/</url>
-    <content><![CDATA[<p>Nan! I’m baga.</p>
+    <content><![CDATA[<h1 id="Research-Experience"><a href="#Research-Experience" class="headerlink" title="Research Experience"></a>Research Experience</h1><h3 id="AtomBot-Project"><a href="#AtomBot-Project" class="headerlink" title="AtomBot Project"></a>AtomBot Project</h3><p>Advisor: <a href="https://z.engin.umich.edu/"><strong>Y Z</strong></a><br> Jan. 2024 — Present, University of Michigan, Ann Arbor, USA.</p>
+<ul>
+<li>Build the simulation model for stochastic mechanics of single vibrating atombot.</li>
+<li>Design and realize the embedded control system for single atombot.</li>
+</ul>
+<h3 id="Neural-Signal-Control-for-Bio-mechanical-Balancing"><a href="#Neural-Signal-Control-for-Bio-mechanical-Balancing" class="headerlink" title="Neural Signal Control for Bio-mechanical Balancing"></a>Neural Signal Control for Bio-mechanical Balancing</h3><p>Advisor: <a href="https://flyingpeach.github.io/"><strong>Jingshuang Li</strong></a></p>
+<p>Sep. 2023 — Present, University of Michigan, Ann Arbor, USA.</p>
+<ul>
+<li>Build a bio-mechanical human model of postural balancing on a log.</li>
+<li>Developed LQR and LQG controller to understand human behaviour.</li>
+<li>Raised a discrete-output-state LQR/LQG model correspond to simple calculation in spiking neuronal network.</li>
+<li>Implement the neural control to both torque model and muscle-force model.</li>
+</ul>
+<h3 id="Combustion-Studies-with-Machine-Learning"><a href="#Combustion-Studies-with-Machine-Learning" class="headerlink" title="Combustion Studies with Machine Learning"></a>Combustion Studies with Machine Learning</h3><p>Advisor: <a href="https://sites.ji.sjtu.edu.cn/dezhi-zhou/"><strong>Dezhi Zhou</strong></a> </p>
+<p>Sep. 2022 — Aug. 2023, Shanghai Jiao Tong University, Shanghai, China.</p>
+<ul>
+<li>Build artificial neural network and graph neural network model to predict the ignition delay of a certain kind of fuel.</li>
+<li>Explored a transfer learning method aimed at predicting ignition delay for various fuels with different molecular structure.</li>
+<li>Thesis: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4540712">Ignition Delay Prediction for Fuels with Different Molecule Structures via A Transfer Learning<br>Approach</a> (Submitted to the Journal <em>Engineering Applications of Artificial Intelligence</em>).</li>
+</ul>
 ]]></content>
   </entry>
 </search>
