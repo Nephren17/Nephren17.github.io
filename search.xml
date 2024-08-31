@@ -521,18 +521,26 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Experience</title>
     <url>//experience/</url>
-    <content><![CDATA[<h2 id="Courses"><a href="#Courses" class="headerlink" title="Courses"></a>Courses</h2><p>At Umich: </p>
+    <content><![CDATA[<h2 id="Selected-Courses"><a href="#Selected-Courses" class="headerlink" title="Selected Courses"></a>Selected Courses</h2><p><strong>At Umich</strong>: </p>
+<p><strong>Graduate Level Courses</strong>:</p>
 <ul>
 <li>MATH 658 Nonlinear Dynamics, Geometric Mechenism, and Control</li>
+<li>IOE  Stochastic Optimization</li>
 <li>EECS 598/498 Control Theory and Bio/Sensorimotor System</li>
+<li>ECE 598 Convex Optimization Methods in Control</li>
+<li>MATH 596 Analysis I (Complex Analysis for PhD candidates)</li>
 <li>MATH 526 Discrete Stochastic Process</li>
+</ul>
+<p><strong>Undergraduate Level Courses</strong>:</p>
+<ul>
 <li>MATH 471 Introduction to Numerical Methods</li>
 <li>MATH 445 Introduction to Information Theory</li>
+<li>EECS 442 Computer Vision</li>
 <li>STATS 413 Applied Regression</li>
 <li>MATH 451 Advanced Calculus</li>
 <li>PHYSICS 360 Honors Physics III</li>
 </ul>
-<p>At SJTU:</p>
+<p><strong>At SJTU:</strong></p>
 <ul>
 <li>ECE 4010 Probabilistic Methods in Engineering</li>
 <li>PSYC 3620 Psycology Research Methods</li>
