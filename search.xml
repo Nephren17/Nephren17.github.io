@@ -723,7 +723,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 <li>Build the simulation model for stochastic mechanics of single vibrating atombot.</li>
 <li>Design and realize the embedded control system for single atombot.</li>
 </ul>
-<p><img src="C:\Users\Nephr\AppData\Roaming\Typora\typora-user-images\image-20240728031510719.png" alt="image-20240728031510719"></p>
+<p><img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/main/img/atombot_showcase.png" style="zoom: 67%;" /></p>
 <h3 id="Neural-Signal-Control-for-Bio-mechanical-Balancing"><a href="#Neural-Signal-Control-for-Bio-mechanical-Balancing" class="headerlink" title="Neural Signal Control for Bio-mechanical Balancing"></a>Neural Signal Control for Bio-mechanical Balancing</h3><p>Advisor: <a href="https://flyingpeach.github.io/"><strong>Jingshuang (Lisa) Li</strong></a>, Sep. 2023 — Present, University of Michigan, Ann Arbor, USA.</p>
 <ul>
 <li>Build a bio-mechanical human model of postural balancing on a log.</li>
