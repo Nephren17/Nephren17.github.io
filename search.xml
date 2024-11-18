@@ -718,14 +718,14 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Research</title>
     <url>//research/</url>
-    <content><![CDATA[<h3 id="AtomBot-Project"><a href="#AtomBot-Project" class="headerlink" title="AtomBot Project"></a>AtomBot Project</h3><p>Advisor: <a href="https://z.engin.umich.edu/"><strong>Y Z</strong></a>, Jan. 2024 — Present, University of Michigan, Ann Arbor, USA.</p>
+    <content><![CDATA[<h3 id="AtomBot-Project"><a href="#AtomBot-Project" class="headerlink" title="AtomBot Project"></a>AtomBot Project</h3><p>Advisor: <a href="https://z.engin.umich.edu/people.html"><strong>Y Z</strong></a>, Jan. 2024 — Present, University of Michigan, Ann Arbor, USA.</p>
 <ul>
 <li>Designed and manufactured atombot-hydrogen electrically and mechanically.</li>
 <li>Realized simutanous control for multiple robot with a central server.</li>
 <li>Built a self-made motion capture system for multi-robot tracking.</li>
 <li>Built the simulation model for stochastic mechanics of single vibrating atombot.</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/main/img/atombot_showcase.png" style="zoom: 90%;" /></p>
+<p><img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/main/img/atombot_showcase.png" style="zoom: 87%;" /></p>
 <h3 id="Neural-Signal-Control-for-Bio-mechanical-Balancing"><a href="#Neural-Signal-Control-for-Bio-mechanical-Balancing" class="headerlink" title="Neural Signal Control for Bio-mechanical Balancing"></a>Neural Signal Control for Bio-mechanical Balancing</h3><p>Advisor: <a href="https://flyingpeach.github.io/"><strong>Jingshuang (Lisa) Li</strong></a>, Sep. 2023 — Present, University of Michigan, Ann Arbor, USA.</p>
 <ul>
 <li>Build a bio-mechanical human model of postural balancing on a log with muscle force as input.</li>
