@@ -521,35 +521,17 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Experience</title>
     <url>//experience/</url>
-    <content><![CDATA[<h2 id="Selected-Courses"><a href="#Selected-Courses" class="headerlink" title="Selected Courses"></a>Selected Courses</h2><p><strong>At Umich</strong>: </p>
-<p><strong>Graduate Level Courses</strong>:</p>
-<ul>
-<li>MATH 658 Nonlinear Dynamics, Geometric Mechenism, and Control <a href="https://github.com/Nephren17/MATH658-Note">(Notes)</a></li>
-<li>IOE 618 Stochastic Optimization</li>
-<li>EECS 598/498 Control Theory and Bio/Sensorimotor System</li>
-<li>ECE 598 Convex Optimization Methods in Control</li>
-<li>MATH 526 Discrete Stochastic Process  <a href="https://github.com/Nephren17/MATH526-Note">(Notes)</a></li>
-</ul>
-<p><strong>Undergraduate Level Courses</strong>:</p>
-<ul>
-<li>MATH 471 Introduction to Numerical Methods</li>
-<li>MATH 445 Introduction to Information Theory</li>
-<li>EECS 442 Computer Vision</li>
-<li>STATS 413 Applied Regression</li>
-<li>MATH 451 Advanced Calculus</li>
-<li>PHYSICS 360 Honors Physics III</li>
-</ul>
-<p><strong>At SJTU:</strong></p>
-<ul>
-<li>ECE 4010 Probabilistic Methods in Engineering</li>
-<li>PSYC 3620 Psycology Research Methods</li>
-<li>ECE 2700 Introduction to Logic Design</li>
-<li>ECE 2300 Electromegnetics</li>
-<li>ECE 2160 Introduction to Signals and Systems</li>
-<li>ECE 2030 Discrete Mathematics</li>
-</ul>
-<p><strong>Online courses</strong></p>
-<ul>
+    <content><![CDATA[<h2 id="Programs"><a href="#Programs" class="headerlink" title="Programs"></a>Programs</h2><h4 id="Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control"><a href="#Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control" class="headerlink" title="Directed Reading Program in Dynamical Systems and Nonlinear Control"></a>Directed Reading Program in Dynamical Systems and Nonlinear Control</h4><p>May. 2024- Aug. 2024, University of Michigan</p>
+<p>Advised by <a href="https://sites.google.com/umich.edu/joe-huang/"><strong>Joe Huang</strong></a>, a PhD student advised by Professor <a href="https://dept.math.lsa.umich.edu/~abloch/"><strong>Anthony Bloch</strong></a> and Professor <strong>Indika Rajapakse</strong> at Department of Mathematics, University of Michigan. Read the book <em>Differential Equations, Dynamical Systems, and an Introduction to Chaos</em> and <em>Nonlinear Systems</em> in the program.</p>
+<h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><h4 id="Grader-of-Introduction-to-Numerical-Methods-MATH-471"><a href="#Grader-of-Introduction-to-Numerical-Methods-MATH-471" class="headerlink" title="Grader of Introduction to Numerical Methods (MATH 471)"></a>Grader of Introduction to Numerical Methods (MATH 471)</h4><p>Jul. 2024- Aug. 2024, University of Michigan</p>
+<p>Worked with Professor <a href="https://websites.umich.edu/~andreip/"><strong>Andrei Prokhorov</strong></a> as a grader of an advanced undergraduate mathematics course. The course<br>covers numerical methods for linear algebra, differential equations and dynamical systems.</p>
+<h4 id="Teaching-Assistant-of-Electromegnetics-I-ECE-2300"><a href="#Teaching-Assistant-of-Electromegnetics-I-ECE-2300" class="headerlink" title="Teaching  Assistant of Electromegnetics I (ECE 2300)"></a>Teaching  Assistant of Electromegnetics I (ECE 2300)</h4><p>May. 2024- Aug. 2024, Shanghai Jiao Tong University</p>
+<p>Worked with professor <a href="https://nanaliu.weebly.com/"><strong>Nana Liu</strong></a> to manage the core elective course for ECE major enrolled by over 120 students. The main contents includes Maxwell’s equations, Static field, and Wave equations. Responsible for recitation classes, office hours, and gradings. <a href="https://github.com/Nephren17/ECE2300-TA-Material">(Teaching Materials)</a></p>
+<h4 id="Teaching-Assistant-of-Honors-Mathematics-IV-MATH-2860"><a href="#Teaching-Assistant-of-Honors-Mathematics-IV-MATH-2860" class="headerlink" title="Teaching  Assistant of Honors Mathematics IV (MATH 2860)"></a>Teaching  Assistant of Honors Mathematics IV (MATH 2860)</h4><p>Sep. 2023- Dec. 2023, Shanghai Jiao Tong University</p>
+<p>Worked with professor <a href="https://umji.sjtu.edu.cn/~horst/index.html"><strong>Horst Hohberger</strong></a> to manage the engineering foundation course enrolled by over 120 students. The main contents includes linear algebra and differential equations. Responsible for recitation classes, office hours, and gradings. <a href="https://github.com/Nephren17/MATH2860-TA-Material">(Teaching Materials)</a></p>
+<h4 id="Teaching-Assistant-of-Honors-Mathematics-III-MATH-2850"><a href="#Teaching-Assistant-of-Honors-Mathematics-III-MATH-2850" class="headerlink" title="Teaching  Assistant of Honors Mathematics III (MATH 2850)"></a>Teaching  Assistant of Honors Mathematics III (MATH 2850)</h4><p>May. 2023- Aug. 2023, Shanghai Jiao Tong University</p>
+<p>Worked with professor <a href="https://umji.sjtu.edu.cn/~horst/index.html"><strong>Horst Hohberger</strong></a> to manage the engineering foundation course enrolled by over 150 students. The main contents includes linear algebra and multi-variable calculus. Responsible for recitation classes, office hours, and gradings. <a href="https://github.com/Nephren17/MATH2850-TA-Material">(Teaching Materials)</a></p>
+<h2 id="Online-Courses"><a href="#Online-Courses" class="headerlink" title="Online Courses"></a>Online Courses</h2><ul>
 <li><a href="https://www.youtube.com/watch?v=Uh_-RZQIaEs&amp;list=PLxdnSsBqCrrF9KOQRB9ByfB0EUMwnLO9o&amp;index=1">Control Theory</a>, University of Washintong, by Christopher Lum</li>
 <li><a href="https://www.bilibili.com/video/BV1FL411w7Mx/?spm_id_from=333.999.0.0&amp;vd_source=a17cf2a11436a72227c8a1d1d96ca44a">Art Philosophy and Aesthetic Issues</a>, Fudan University, by Defeng Wang</li>
 <li><a href="https://www.bilibili.com/video/BV1Jt411p7jE/?spm_id_from=333.999.0.0&amp;vd_source=a17cf2a11436a72227c8a1d1d96ca44a">Convex Optimization</a>, University of Science and Technology of China, by Qing Ling</li>
@@ -560,16 +542,6 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 <li><a href="https://www.bilibili.com/video/BV1Lv411r7wa/?spm_id_from=333.999.0.0&amp;vd_source=a17cf2a11436a72227c8a1d1d96ca44a">Mathematical Analysis</a>, University of Science and Technology of China, by Yi Cheng</li>
 <li><a href="https://www.bilibili.com/video/BV1X7411F744/?spm_id_from=333.999.0.0&amp;vd_source=a17cf2a11436a72227c8a1d1d96ca44a">Modern Computer Graphics</a>, University of California, Santa Barbara, by Lingqi Yan</li>
 </ul>
-<h2 id="Programs"><a href="#Programs" class="headerlink" title="Programs"></a>Programs</h2><h4 id="Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control"><a href="#Directed-Reading-Program-in-Dynamical-Systems-and-Nonlinear-Control" class="headerlink" title="Directed Reading Program in Dynamical Systems and Nonlinear Control"></a>Directed Reading Program in Dynamical Systems and Nonlinear Control</h4><p>May. 2024- Aug. 2024, University of Michigan</p>
-<p>Advised by <a href="https://sites.google.com/umich.edu/joe-huang/"><strong>Joe Huang</strong></a>, a PhD student advised by Professor <a href="https://dept.math.lsa.umich.edu/~abloch/"><strong>Anthony Bloch</strong></a> and Professor <strong>Indika Rajapakse</strong> at Department of Mathematics, University of Michigan. Read the book <em>Differential Equations, Dynamical Systems, and an Introduction to Chaos</em> and <em>Nonlinear Systems</em> in the program.</p>
-<h2 id="Teaching"><a href="#Teaching" class="headerlink" title="Teaching"></a>Teaching</h2><h4 id="Grader-of-Introduction-to-Numerical-Methods-MATH-471"><a href="#Grader-of-Introduction-to-Numerical-Methods-MATH-471" class="headerlink" title="Grader of Introduction to Numerical Methods (MATH 471)"></a>Grader of Introduction to Numerical Methods (MATH 471)</h4><p>Jul. 2024- Aug. 2024, University of Michigan</p>
-<p>Worked with Professor <a href="https://websites.umich.edu/~andreip/"><strong>Andrei Prokhorov</strong></a> as a grader of an advanced undergraduate mathematics course. The course<br>covers numerical methods for linear algebra, differential equations and dynamical systems.</p>
-<h4 id="Teaching-Assistant-of-Electromegnetics-I-ECE-2300"><a href="#Teaching-Assistant-of-Electromegnetics-I-ECE-2300" class="headerlink" title="Teaching  Assistant of Electromegnetics I (ECE 2300)"></a>Teaching  Assistant of Electromegnetics I (ECE 2300)</h4><p>May. 2024- Aug. 2024, Shanghai Jiao Tong University</p>
-<p>Worked with professor <a href="https://nanaliu.weebly.com/"><strong>Nana Liu</strong></a> to manage the core elective course for ECE major enrolled by over 120 students. The main contents includes Maxwell’s equations, Static field, and Wave equations. Responsible for recitation classes, office hours, and gradings. <a href="https://github.com/Nephren17/ECE2300-TA-Material">(Teaching Materials)</a></p>
-<h4 id="Teaching-Assistant-of-Honors-Mathematics-IV-MATH-2860"><a href="#Teaching-Assistant-of-Honors-Mathematics-IV-MATH-2860" class="headerlink" title="Teaching  Assistant of Honors Mathematics IV (MATH 2860)"></a>Teaching  Assistant of Honors Mathematics IV (MATH 2860)</h4><p>Sep. 2023- Dec. 2023, Shanghai Jiao Tong University</p>
-<p>Worked with professor <a href="https://umji.sjtu.edu.cn/~horst/index.html"><strong>Horst Hohberger</strong></a> to manage the engineering foundation course enrolled by over 120 students. The main contents includes linear algebra and differential equations. Responsible for recitation classes, office hours, and gradings. <a href="https://github.com/Nephren17/MATH2860-TA-Material">(Teaching Materials)</a></p>
-<h4 id="Teaching-Assistant-of-Honors-Mathematics-III-MATH-2850"><a href="#Teaching-Assistant-of-Honors-Mathematics-III-MATH-2850" class="headerlink" title="Teaching  Assistant of Honors Mathematics III (MATH 2850)"></a>Teaching  Assistant of Honors Mathematics III (MATH 2850)</h4><p>May. 2023- Aug. 2023, Shanghai Jiao Tong University</p>
-<p>Worked with professor <a href="https://umji.sjtu.edu.cn/~horst/index.html"><strong>Horst Hohberger</strong></a> to manage the engineering foundation course enrolled by over 150 students. The main contents includes linear algebra and multi-variable calculus. Responsible for recitation classes, office hours, and gradings. <a href="https://github.com/Nephren17/MATH2850-TA-Material">(Teaching Materials)</a></p>
 <h2 id="Student-Organization"><a href="#Student-Organization" class="headerlink" title="Student Organization"></a>Student Organization</h2><h4 id="Vice-President-of-the-Student-Science-and-Technology-Innovation-Association-at-SJTU-UMJI"><a href="#Vice-President-of-the-Student-Science-and-Technology-Innovation-Association-at-SJTU-UMJI" class="headerlink" title="Vice President of the Student Science and Technology Innovation Association at SJTU-UMJI"></a>Vice President of the Student Science and Technology Innovation Association at SJTU-UMJI</h4><p>Sept. 2022 - Aug. 2023, Shanghai Jiao Tong University</p>
 <p>Worked as the vice president of the organization. During tenure,  organized the “Freshman Robotics Competition” and serve as the head referee, organized several workshops while serving as the keynote speaker for the lecture on optimization methods. </p>
 <h4 id="Student-Advisor-at-SJTU-UMJI-Advising-Center"><a href="#Student-Advisor-at-SJTU-UMJI-Advising-Center" class="headerlink" title="Student Advisor at SJTU-UMJI Advising Center"></a>Student Advisor at SJTU-UMJI Advising Center</h4><p>Apr. 2023 - Apr. 2024, Shanghai Jiao Tong University</p>
@@ -752,6 +724,43 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 <li>Thesis: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4540712">Ignition Delay Prediction for Fuels with Different Molecule Structures via A Transfer Learning<br>Approach</a> (Submitted to the Journal <em>Energy and AI</em>).</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/main/img/combustion_research.png" style="zoom: 67%;" /></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Courses</title>
+    <url>//courses/</url>
+    <content><![CDATA[<h2 id="Selected-Courses"><a href="#Selected-Courses" class="headerlink" title="Selected Courses"></a>Selected Courses</h2><p><strong>At Umich</strong>: </p>
+<p><strong>Graduate Level Courses</strong>:</p>
+<ul>
+<li>MATH 658 Nonlinear Dynamics, Geometric Mechenism, and Control <a href="https://github.com/Nephren17/MATH658-Note">(Notes)</a></li>
+<li>IOE 618 Stochastic Optimization</li>
+<li>EECS 598/498 Control Theory and Bio/Sensorimotor System</li>
+<li>ECE 598 Convex Optimization Methods in Control</li>
+<li>MATH 526 Discrete Stochastic Process  <a href="https://github.com/Nephren17/MATH526-Note">(Notes)</a></li>
+</ul>
+<p><strong>Undergraduate Level Courses</strong>:</p>
+<ul>
+<li>MATH 471 Introduction to Numerical Methods</li>
+<li>MATH 445 Introduction to Information Theory</li>
+<li>EECS 442 Computer Vision</li>
+<li>STATS 413 Applied Regression</li>
+<li>MATH 451 Advanced Calculus</li>
+<li>PHYSICS 360 Honors Physics III</li>
+</ul>
+<p><strong>At SJTU:</strong></p>
+<ul>
+<li>ECE 4010 Probabilistic Methods in Engineering</li>
+<li>PSYC 3620 Psycology Research Methods</li>
+<li>ECE 2700 Introduction to Logic Design</li>
+<li>ECE 2300 Electromegnetics</li>
+<li>ECE 2160 Introduction to Signals and Systems</li>
+<li>ECE 2030 Discrete Mathematics</li>
+</ul>
+<h2 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h2><p><strong>Integrating Circle Criterion into State-feedback H-2/H-infinity Control Frameworks</strong>, Course Project for <em>ECE 598 Convex Optimization Methods in Control</em> at Umich. [<a href="https://docs.google.com/presentation/d/1hiwe_TJAzKx5h9Fm5wLLfPz9tYqA50rtEoBAPXa9bAc/edit?usp=sharing">Slides</a>]</p>
+<p><strong>Control strategy of Human’s Postural Balancing on a Log</strong>, Course Project for <em>EECS 598/498 Control Theory and Bio/Sensorimotor System</em> at Umich. [<a href="https://docs.google.com/presentation/d/1RyjDCHsFVz1OyF8IdQMCS-nP61jOoj3E0qUN18yWz_k/edit?usp=sharing">Slides</a>]</p>
+<p><strong>Flipping Tennis Racket: Intermediate-axes Stability of Rigid Body and Control</strong>, Presentation for <em>Directed Reading Program</em> of Department of Mathematics at Umich. [<a href="https://docs.google.com/presentation/d/1kikTpEMJy9FIjU1FoH6PXsQCC6Yurx1Z/edit?usp=sharing&amp;ouid=110988874259149432345&amp;rtpof=true&amp;sd=true">Slides</a>]</p>
+<p><strong>Null Sky: A Brick Breaker Game Developed with Elm</strong>, Course Project for <em>ENGR 100 Introduction to Engineering</em> at SJTU. [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/demo/2022/p1team12/">Game Website</a>] [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/project/2022/p1">Course Website</a>]</p>
+<p><strong>Brave the Castle: A Card-based Roguelike Game Developed with Elm</strong>, Course Project for <em>ENGR 100 Introduction to Engineering</em> at SJTU. [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/demo/2022/p2team12/">Game Website</a>] [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/project/2022/p2">Course Website</a>]</p>
 ]]></content>
   </entry>
 </search>
