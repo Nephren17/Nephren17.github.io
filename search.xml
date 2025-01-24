@@ -711,7 +711,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 <li>Build a bio-mechanical human model of postural balancing on a log with muscle force as input.</li>
 <li>Developed LQR and LQG controller to understand human behavior.</li>
 <li>Raised a discrete-output-state LQR/LQG model correspond to simple calculation in spiking neuronal network.</li>
-<li>Paper: <a href="https://arxiv.org/abs/2410.02957v1">Human Balancing on a Log: A Switched Multi-Layer Controller</a> (Submitted to the Conference <em>American Control Conference</em>). A youtube video showing the performance can be found <a href="https://www.youtube.com/watch?v=g7qfnd7hzqA">here</a>.</li>
+<li>Paper: <a href="https://arxiv.org/abs/2410.02957v1">Human Balancing on a Log: A Switched Multi-Layer Controller</a> (Accepted by <em>American Control Conference</em>). A youtube video showing the performance can be found <a href="https://www.youtube.com/watch?v=g7qfnd7hzqA">here</a>.</li>
 </ul>
 <h3 id="Combustion-Studies-with-Machine-Learning"><a href="#Combustion-Studies-with-Machine-Learning" class="headerlink" title="Combustion Studies with Machine Learning"></a>Combustion Studies with Machine Learning</h3><p>Advisor: <a href="https://sites.ji.sjtu.edu.cn/dezhi-zhou/"><strong>Dezhi Zhou</strong></a> , Sep. 2022 — Aug. 2023, Shanghai Jiao Tong University, Shanghai, China.</p>
 <ul>
