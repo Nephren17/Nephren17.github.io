@@ -698,7 +698,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Research</title>
     <url>//research/</url>
-    <content><![CDATA[<div style="display: flex; align-items: center;">
+    <content><![CDATA[<h1 id="Research-Projects"><a href="#Research-Projects" class="headerlink" title="Research Projects"></a>Research Projects</h1><div style="display: flex; align-items: center;">
   <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/PXL_atombot.gif" style="width: 27%; margin-right: 20px;"/>
   <div>
     <h3>AtomBot Project</h3>
@@ -712,8 +712,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   </div>
 </div>
 
-
-
+<p>​    </p>
 <div style="display: flex; align-items: center;gap: 25px; padding: 10px;">
   <iframe width="40%" height="230" style="margin-right: 20px;" 
     src="https://www.youtube.com/embed/g7qfnd7hzqA" 
@@ -732,8 +731,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   </div>
 </div>
 
-
-
+<p>​    </p>
 <div style="display: flex; align-items: center;">
   <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/main/img/combustion_research.png" style="width: 27%; margin-right: 20px;"/>
   <div>
@@ -747,7 +745,9 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   </div>
 </div>
 
-]]></content>
+
+
+<h1 id="Course-Projects-and-Notes"><a href="#Course-Projects-and-Notes" class="headerlink" title="Course Projects and Notes"></a>Course Projects and Notes</h1>]]></content>
   </entry>
   <entry>
     <title>Courses</title>
