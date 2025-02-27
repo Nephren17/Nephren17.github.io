@@ -682,17 +682,16 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   </entry>
   <entry>
     <title>Research Projects</title>
-    <url>//research_courses/</url>
+    <url>//research%20and%20courses/</url>
     <content><![CDATA[<div style="display: flex; align-items: center;">
   <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/PXL_atombot.gif" style="width: 35%; margin-right: 20px;"/>
   <div>
       <p><h4>Atombot Project</h4></p>
-    <p><strong>Advisor:</strong> <a href="https://z.engin.umich.edu/people.html">Y Z</a>, Jan. 2024 — Dec. 2024, University of Michigan.</p>
+    <p><strong>Advisor:</strong> <a href="https://z.engin.umich.edu/people.html">Y Z</a>, Jan. 2024 — Jan. 2024, University of Michigan.</p>
     <ul>
       <li>Designed and manufactured atombot-hydrogen electrically and mechanically.</li>
       <li>Realized simultaneous control for multiple robots with a central server.</li>
       <li>Built a self-made motion capture system for multi-robot tracking.</li>
-      <li>Built the simulation model for stochastic mechanics of single vibrating atombot.</li>
     </ul>
   </div>
 </div>
@@ -704,7 +703,8 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   </iframe>
        <div style="flex: 1; text-align: left;">
            <p><h4>Human Balancing on a Log: A Switched Multi-Layer Controller</h4><p>
-    <p>Jiayi Zhao, <strong><u>Mo Yang</u></strong>, Jing Shuang (Lisa) Li. (2024). Accepted by American Control Conference. <a href="https://z.engin.umich.edu/people.html">Preprint available</a>.</p>
+    <p>Jiayi Zhao, <strong><u>Mo Yang</u></strong>, Jing Shuang (Lisa) Li. (2024). Accepted by American Control Conference. <a href="https://arxiv.org/abs/2410.02957v1">Preprint available</a>.</p>
+    <p><strong>Advisor:</strong> <a href="https://flyingpeach.github.io/">Lisa Li</a>, Sep. 2023 — Sep. 2024, University of Michigan.</p>
     <ul>
       <li>Build a bio-mechanical human model of postural balancing on a log with muscle force as input.</li>
       <li>Developed LQR and LQG for baseline controller to understand human behavior.</li>
@@ -725,7 +725,6 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
     </ul>
   </div>
 </div>
-
 
 
 
