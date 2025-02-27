@@ -698,10 +698,9 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   <entry>
     <title>Research</title>
     <url>//research/</url>
-    <content><![CDATA[<h1 id="Research-Projects"><a href="#Research-Projects" class="headerlink" title="Research Projects"></a>Research Projects</h1><div style="display: flex; align-items: center;">
+    <content><![CDATA[<h2 id="Research-Projects"><a href="#Research-Projects" class="headerlink" title="Research Projects"></a>Research Projects</h2><h4 id="AtomBot-Project"><a href="#AtomBot-Project" class="headerlink" title="AtomBot Project"></a>AtomBot Project</h4><div style="display: flex; align-items: center;">
   <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/PXL_atombot.gif" style="width: 27%; margin-right: 20px;"/>
   <div>
-    <h3>AtomBot Project</h3>
     <p><strong>Advisor:</strong> <a href="https://z.engin.umich.edu/people.html">Y Z</a>, Jan. 2024 — Dec. 2024, University of Michigan.</p>
     <ul>
       <li>Designed and manufactured atombot-hydrogen electrically and mechanically.</li>
@@ -713,14 +712,13 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 </div>
 
 <p>​    </p>
-<div style="display: flex; align-items: center;gap: 25px; padding: 10px;">
+<h4 id="Human-Balancing-on-a-Log-A-Switched-Multi-Layer-Controller"><a href="#Human-Balancing-on-a-Log-A-Switched-Multi-Layer-Controller" class="headerlink" title="Human Balancing on a Log: A Switched Multi-Layer Controller"></a>Human Balancing on a Log: A Switched Multi-Layer Controller</h4><div style="display: flex; align-items: center;gap: 25px; padding: 10px;">
   <iframe width="40%" height="230" style="margin-right: 20px;" 
     src="https://www.youtube.com/embed/g7qfnd7hzqA" 
     frameborder="0" allowfullscreen>
   </iframe>
 <div> 
 <div>    
-<h3>Human Balancing on a Log: A Switched Multi-Layer Controller </h3>
       <p>Jiayi Zhao, <strong><u>Mo Yang</u></strong>, Jing Shuang (Lisa) Li. (2024). Accepted by American Control Conference. <a href="https://z.engin.umich.edu/people.html">Preprint available</a>.
     <p><strong>Advisor:</strong> <a href="https://flyingpeach.github.io/">Jingshuang (Lisa) Li</a>, Jan. 2024 — Dec. 2024, University of Michigan.</p>
     <ul>
@@ -731,7 +729,8 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
   </div>
 </div>
 
-<p>​    </p>
+
+<p>​    #### Ignition Delay Prediction for Fuels with Diverse Molecular Structures Using Transfer Learning-Based Neural Networks</p>
 <div style="display: flex; align-items: center;">
   <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/main/img/combustion_research.png" style="width: 27%; margin-right: 20px;"/>
   <div>
@@ -746,8 +745,17 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 </div>
 
 
-
-<h1 id="Course-Projects-and-Notes"><a href="#Course-Projects-and-Notes" class="headerlink" title="Course Projects and Notes"></a>Course Projects and Notes</h1>]]></content>
+<h2 id="Course-Projects"><a href="#Course-Projects" class="headerlink" title="Course Projects"></a>Course Projects</h2><p><strong>Integrating Circle Criterion into State-feedback H-2/H-infinity Control Frameworks</strong>, Course Project for <em>ECE 598 Convex Optimization Methods in Control</em> at Umich. [<a href="https://docs.google.com/presentation/d/1hiwe_TJAzKx5h9Fm5wLLfPz9tYqA50rtEoBAPXa9bAc/edit?usp=sharing">Slides</a>] [<a href="https://drive.google.com/file/d/1N08es5JjZNjhUldxErv7ilV4G-uV75MG/view?usp=sharing">Report</a>]</p>
+<p><strong>Control strategy of Human’s Postural Balancing on a Log</strong>, Course Project for <em>EECS 598/498 Control Theory and Bio/Sensorimotor System</em> at Umich. [<a href="https://docs.google.com/presentation/d/1RyjDCHsFVz1OyF8IdQMCS-nP61jOoj3E0qUN18yWz_k/edit?usp=sharing">Slides</a>]</p>
+<p><strong>Flipping Tennis Racket: Intermediate-axes Stability of Rigid Body and Control</strong>, Presentation for <em>Directed Reading Program</em> of Department of Mathematics at Umich. [<a href="https://docs.google.com/presentation/d/1kikTpEMJy9FIjU1FoH6PXsQCC6Yurx1Z/edit?usp=sharing&amp;ouid=110988874259149432345&amp;rtpof=true&amp;sd=true">Slides</a>]</p>
+<p><strong>HeartCam: Real-Time Heart Rate Detection</strong>, Course Project for <em>EECS 442 Computer Vision</em> at Umich. [<a href="https://zjyang.dev/heartcam">Demo</a>]</p>
+<p><strong>Flow Can Positively Affect Subjective Well-being</strong>, Course Project for <em>PSYC 3620 Psycology Research Methods</em> at SJTU. [<a href="https://docs.google.com/presentation/d/17GaqWv0vKXs_C6aBYROYfHfmPIUFdJp-/edit?usp=sharing&amp;ouid=110988874259149432345&amp;rtpof=true&amp;sd=true">Slides</a>] [<a href="https://drive.google.com/file/d/1cJyxXRiaLBZsEk64Iak8ymrNQozab1bC/view?usp=sharing">Poster</a>]</p>
+<p><strong>Null Sky: A Brick Breaker Game Developed with Elm</strong>, Course Project for <em>ENGR 100 Introduction to Engineering</em> at SJTU. [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/demo/2022/p1team12/">Game Website</a>] [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/project/2022/p1">Course Website</a>]</p>
+<p><strong>Brave the Castle: A Card-based Roguelike Game Developed with Elm</strong>, Course Project for <em>ENGR 100 Introduction to Engineering</em> at SJTU. [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/demo/2022/p2team12/">Game Website</a>] [<a href="https://focs.ji.sjtu.edu.cn/silverfocs/project/2022/p2">Course Website</a>]</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p><strong>MATH 658 Nonlinear Dynamics, Geometric Mechenism, and Control</strong>, WN2024, University of Michigan, taught by Anthony Bloch <a href="https://github.com/Nephren17/MATH658-Note">(Notes)</a></p>
+<p><strong>ECE 598 Convex Optimization Methods in Control</strong>, FA 2024, University of Michigan,taught by Peter Seiler</p>
+<p><strong>MATH 526 Discrete Stochastic Process</strong>, FA2023, University of Michigan, taught by Melih Iseri  <a href="https://github.com/Nephren17/MATH526-Note">(Notes)</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Courses</title>
