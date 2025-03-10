@@ -574,8 +574,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 </div>
 
 
-<p>Last but not least, here is a random sentence for you:</p>
-<p>html</p>
+<p>Last but not least, here is a random sentence from <a href="https://hitokoto.cn/">Hitokoto</a> for you:</p>
 <div id="hitokoto-index" style="margin-top: 20px; text-align: center;">
   <div class="sentence">『Loading...』</div>
   <div class="from"></div>
