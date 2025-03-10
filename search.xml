@@ -574,108 +574,109 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 </div>
 
 
-<p>Last but not least, here is a random sentence from Hitokoto:</p>
-<div id="hitokoto-index" style="margin-top: 20px; text-align: center;"></div>
+<p>Last but not least, here is a random sentence for you:</p>
+<p>html</p>
+<div id="hitokoto-index" style="margin-top: 20px; text-align: center;">
+  <div class="sentence">『Loading...』</div>
+  <div class="from"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 配置参数（可自定义）
-  const allowedWorks = ['CLANNAD', '未闻花名', '四月是你的谎言','月色真美','银魂,'Fate/Stay Night']; // 支持带或不带书名号
-  const category = 'a'; // 动画类
-  const apiUrl = `https://v1.hitokoto.cn?c=${category}`;
-  let retryCount = 0;
+  // 配置参数
+  const allowedWorks = [
+    '末日时在做什么?有没有空?可以来拯救吗?', '未闻花名', '天气之子', '为美好的世界献上祝福',
+    '樱花庄的宠物女孩', '可塑性记忆', 'Princess Principle', '死后文', '精灵旅社','紫罗兰的永恒花园',
+    'KANON', '日常', '中二病也要谈恋爱！','叛逆的鲁路修','Fate Stay/night','千与千寻','文学少女','知晓天空之蓝的人啊','仰望半月的夜空'
+  ];
+  const sentencesUrl = 'https://raw.githubusercontent.com/hitokoto-osc/sentences-bundle/master/sentences/a.json';
 
-  // 规范化作品名（移除书名号）
-  function normalizeName(name) {
-    return name.replace(/《|》/g, '');
-  }
-
-  // 获取句子
-  function fetchSentence() {
-    fetch(apiUrl)
+  // 数据加载与处理
+  function loadSentences() {
+    fetch(sentencesUrl)
       .then(response => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
       })
-      .then(data => {
-        console.log('API 返回数据:', data);
+      .then(fullData => {
+        console.log('原始数据结构验证:', fullData); // 调试输出
 
-        // 规范化和匹配逻辑
-        const normalizedFrom = normalizeName(data.from || '');
-        const isMatched = allowedWorks.some(work => 
-          normalizedFrom === normalizeName(work)
-        );
-
-        if (isMatched) {
-          renderMatch(data);
-        } else if (retryCount < 5) {
-          retryCount++;
-          console.warn(`未匹配，已尝试 ${retryCount} 次`);
-          fetchSentence(); // 继续重试
-        } else {
-          renderFallback(data);
+        // 数据结构验证
+        if (!Array.isArray(fullData)) {
+          throw new Error('数据格式异常：根节点应为数组');
         }
+
+        // 过滤目标句子
+        const validData = fullData.filter(item => {
+          const cleanFrom = (item.from || '').replace(/《|》/g, '').trim();
+          return allowedWorks.some(work => 
+            cleanFrom === work.replace(/《|》/g, '').trim()
+          );
+        });
+
+        if (validData.length === 0) {
+          throw new Error('未找到匹配句子，请检查allowedWorks配置');
+        }
+
+        startRandomRotation(validData);
       })
       .catch(error => {
-        console.error('请求失败:', error);
-        renderError();
+        console.error('数据加载失败:', error);
+        document.getElementById('hitokoto-index').innerHTML = `
+          <div style="color: #ff4d4f; padding: 12px">
+            <p>错误：${error.message}</p>
+            <small>请确认 <a href="${sentencesUrl}" target="_blank">数据源</a> 可访问</small>
+          </div>
+        `;
       });
   }
 
-  // 渲染匹配结果
-  function renderMatch(data) {
-    const container = document.getElementById('hitokoto-index');
-    container.innerHTML = `
-      <div class="sentence">『${data.hitokoto}』</div>
-      <div class="from">—— ${data.from ? `《${normalizeName(data.from)}》` : ''}</div>
-    `;
-    retryCount = 0;
+  // 随机轮播逻辑
+  function startRandomRotation(validData) {
+    let lastIndex = -1;
+
+    function getRandomIndex() {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * validData.length);
+      } while (randomIndex === lastIndex && validData.length > 1); // 避免连续重复
+      return randomIndex;
+    }
+
+    function updateDisplay() {
+      const randomIndex = getRandomIndex();
+      const { hitokoto, from } = validData[randomIndex];
+      document.querySelector('.sentence').textContent = `『${hitokoto}』`;
+      document.querySelector('.from').textContent = `—— 《${from}》`;
+      lastIndex = randomIndex;
+    }
+
+    // 初始显示 + 定时刷新
+    updateDisplay();
+    setInterval(updateDisplay, 7000);
   }
 
-  // 降级显示最后一次结果
-  function renderFallback(data) {
-    const container = document.getElementById('hitokoto-index');
-    container.innerHTML = `
-      <div class="sentence">『${data.hitokoto}』</div>
-      <div class="from fallback">—— ${data.from ? `《${normalizeName(data.from)}》` : ''}</div>
-    `;
-    retryCount = 0;
-  }
-
-  // 错误处理
-  function renderError() {
-    const container = document.getElementById('hitokoto-index');
-    container.innerHTML = '<div class="error">⚠️ 网络异常，请检查连接</div>';
-  }
-
-  // 初始化
-  fetchSentence();
+  // 启动加载
+  loadSentences();
 });
 </script>
 
 <style>
-#hitokoto-index {
-  margin-top: 60px;
-  min-height: 80px;
-}
-
 .sentence {
-  display: inline-block;
   font-size: 1.5em;
   color: #444;
   line-height: 1.6;
   max-width: 80%;
   margin: 0 auto;
+  min-height: 4em;
 }
 
 .from {
-  font-size: 0.95em;
   color: #666;
-  margin-top: 8px;
-}
-
-.from.fallback {
-  color: #999;
+  font-size: 0.95em;
+  text-align: right; /* 关键修改：右对齐 */
+  margin-top: 0; /* 关键修改：移除空行 */
+  padding-right: 20%; /* 调整右对齐位置 */
 }
 
 .error {
@@ -684,7 +685,9 @@ document.addEventListener('DOMContentLoaded', function() {
   border-radius: 4px;
   background: #fff0f0;
 }
-</style>]]></content>
+</style>
+
+]]></content>
   </entry>
   <entry>
     <title>Courses</title>
