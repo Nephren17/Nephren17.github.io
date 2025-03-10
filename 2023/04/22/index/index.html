@@ -36,5 +36,114 @@
 </div>
 
 
+<p>Last but not least, here is a random sentence from Hitokoto:</p>
+<div id="hitokoto-index" style="margin-top: 20px; text-align: center;"></div>
 
-</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/research_courses/"> Research and Courses</a></li><li class="nav_item"><a class="nav-page" href="/experience/"> Experience</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2025 by Mo Yang</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 配置参数（可自定义）
+  const allowedWorks = ['CLANNAD', '未闻花名', '四月是你的谎言','月色真美','银魂,'Fate/Stay Night']; // 支持带或不带书名号
+  const category = 'a'; // 动画类
+  const apiUrl = `https://v1.hitokoto.cn?c=${category}`;
+  let retryCount = 0;
+
+  // 规范化作品名（移除书名号）
+  function normalizeName(name) {
+    return name.replace(/《|》/g, '');
+  }
+
+  // 获取句子
+  function fetchSentence() {
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(data => {
+        console.log('API 返回数据:', data);
+
+        // 规范化和匹配逻辑
+        const normalizedFrom = normalizeName(data.from || '');
+        const isMatched = allowedWorks.some(work => 
+          normalizedFrom === normalizeName(work)
+        );
+
+        if (isMatched) {
+          renderMatch(data);
+        } else if (retryCount < 5) {
+          retryCount++;
+          console.warn(`未匹配，已尝试 ${retryCount} 次`);
+          fetchSentence(); // 继续重试
+        } else {
+          renderFallback(data);
+        }
+      })
+      .catch(error => {
+        console.error('请求失败:', error);
+        renderError();
+      });
+  }
+
+  // 渲染匹配结果
+  function renderMatch(data) {
+    const container = document.getElementById('hitokoto-index');
+    container.innerHTML = `
+      <div class="sentence">『${data.hitokoto}』</div>
+      <div class="from">—— ${data.from ? `《${normalizeName(data.from)}》` : ''}</div>
+    `;
+    retryCount = 0;
+  }
+
+  // 降级显示最后一次结果
+  function renderFallback(data) {
+    const container = document.getElementById('hitokoto-index');
+    container.innerHTML = `
+      <div class="sentence">『${data.hitokoto}』</div>
+      <div class="from fallback">—— ${data.from ? `《${normalizeName(data.from)}》` : ''}</div>
+    `;
+    retryCount = 0;
+  }
+
+  // 错误处理
+  function renderError() {
+    const container = document.getElementById('hitokoto-index');
+    container.innerHTML = '<div class="error">⚠️ 网络异常，请检查连接</div>';
+  }
+
+  // 初始化
+  fetchSentence();
+});
+</script>
+
+<style>
+#hitokoto-index {
+  margin-top: 60px;
+  min-height: 80px;
+}
+
+.sentence {
+  display: inline-block;
+  font-size: 1.5em;
+  color: #444;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.from {
+  font-size: 0.95em;
+  color: #666;
+  margin-top: 8px;
+}
+
+.from.fallback {
+  color: #999;
+}
+
+.error {
+  color: #ff4d4f;
+  padding: 12px;
+  border-radius: 4px;
+  background: #fff0f0;
+}
+</style></article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/research_courses/"> Research and Courses</a></li><li class="nav_item"><a class="nav-page" href="/experience/"> Experience</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2025 by Mo Yang</div><div class="theme-info">Powered by <a target="_blank" href="https://hexo.io" rel="nofollow noopener">Hexo</a> & <a target="_blank" href="https://github.com/PhosphorW/hexo-theme-academia" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/js/main.js"></script></body></html>
