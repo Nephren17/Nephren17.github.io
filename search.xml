@@ -538,7 +538,7 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
     <url>/2023/04/22/index/</url>
     <content><![CDATA[<h1 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h1><p>I am an undergraduate in Data Science at the University of Michigan (<a href="https://cse.engin.umich.edu/">Umich</a>). Before transferring to Umich, I also studied at Shanghai Jiao Tong University (<a href="https://en.sjtu.edu.cn/">SJTU</a>) and majored in Electrical and Computer Engineering.</p>
 <p>My research interest lies in <strong>robot control</strong>, <strong>cell manipulation</strong> and <strong>medical robotics</strong>. We hope to utilize precise control of medical robots to conduct precise cell manipulation, especially for oocyte genetic testing. Please feel free to reach me out if there is opportunity for possible research collaboration.</p>
-<h1 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h1><div style="display: flex; align-items: center;">     <img src="https://legendsclassic.com/wp-content/uploads/2022/08/MICH-Circle.png" alt="University of Michigan Logo" width="55" style="margin-right: 10px;">     <p>         <strong>B.S.E in Data Science, Minor in Mathematics</strong><br>         University of Michigan, Sept. 2023 - May. 2025 (expected)     </p> </div>
+<h1 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h1><div style="display: flex; align-items: center;">     <img src="https://legendsclassic.com/wp-content/uploads/2022/08/MICH-Circle.png" alt="University of Michigan Logo" width="55" style="margin-right: 10px;">     <p>         <strong>B.S.E. in Data Science, Minor in Mathematics</strong><br>         University of Michigan, Sept. 2023 - May. 2025 (expected)     </p> </div>
 
 <div style="display: flex; align-items: center;">     <img src="https://cdc2023.ieeecss.org/wp-content/uploads/2023/09/logo-SJTU-768x768.png" alt="SJTU Logo" width="60" style="margin-right: 10px;">     <p>         <strong>B.S. in Electrical and Computer Engineering</strong><br>         Shanghai Jiao Tong University, Sept. 2021 - Aug. 2025  (expected)     </p> </div>
 
@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const allowedWorks = [
   '春夜宴从弟桃花园序',    '末日时在做什么?有没有空?可以来拯救吗?', '未闻花名', '天气之子', '为美好的世界献上祝福',
     '樱花庄的宠物女孩', '可塑性记忆', 'Princess Principle', '死后文', '精灵旅社','紫罗兰的永恒花园',
-    'KANON', '日常', '中二病也要谈恋爱！','叛逆的鲁路修','Fate Stay/night','千与千寻','文学少女','知晓天空之蓝的人啊','仰望半月的夜空','唐多令·芦叶满汀洲','赠别','钗头凤·红酥手','登金陵凤凰台','浪淘沙令·帘外雨潺潺','庄子·外篇·知北游','蝶恋花·槛菊愁烟兰泣露','秋词','庄子·外篇·秋水','庄子·内篇·大宗师','鹧鸪天·雪照山城玉指寒','长相思·一重山','秋风辞'
+    'KANON', '日常', '中二病也要谈恋爱！','叛逆的鲁路修','Fate Stay/night','千与千寻','文学少女','知晓天空之蓝的人啊','仰望半月的夜空','唐多令·芦叶满汀洲','赠别','钗头凤·红酥手','登金陵凤凰台','浪淘沙令·帘外雨潺潺','庄子·外篇·知北游','蝶恋花·槛菊愁烟兰泣露','秋词','庄子·外篇·秋水','庄子·内篇·大宗师','鹧鸪天·雪照山城玉指寒','长相思·一重山','秋风辞','一剪梅·舟过吴江'
   ];
 
   // 两个数据源的 URL
