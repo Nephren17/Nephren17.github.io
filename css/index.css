@@ -1,3 +1,10 @@
+.flink-avatar,
+.flink-img {
+  width: 320px !important;
+  height: 320px !important;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .page pre,
 .page .highlight {
   overflow: auto;
