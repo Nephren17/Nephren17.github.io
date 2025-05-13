@@ -612,50 +612,43 @@ f(x)=\sum^\infin_{n=0}b_ne^{(\frac{n\pi}{l})^2t}sin(\frac{n\pi}{l}x)</script><p>
 
 
 <h1 id="Recent-Research"><a href="#Recent-Research" class="headerlink" title="Recent Research"></a>Recent Research</h1><div style="display: flex; align-items: center;">
-  <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/PXL_atombot.gif" style="width: 35%; margin-right: 20px;"/>
+  <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/PXL_atombot.gif" style="width: 27%; margin-right: 20px;"/>
   <div>
-    <p><h4>Atombot Project</h4></p>
+    <p><h4>[Poster] Atombot: Collective behaviour of Viberation-driven Swarm Robots</h4></p>
+    <p><strong><u>Mo Yang</u></strong>, Neil Beri, Briggs Damman, Sean Ko, Marco Boone, Beck Krebs, Haesue Baik, Calvin Condon, Aron Tse Rong Choo, Paul Campbell, Jill Schell, Yong Ma, Sallee Klein,Carolyn Kuranz, Y Z. (2024). Displayed at 2024 SURE poster session, University of Michigan.
+</p>
     <p><strong>Advisor:</strong> <a href="https://z.engin.umich.edu/people.html">Y Z</a>.</p>
-    <ul>
-      <li>Designed and manufactured atombot-hydrogen electrically and mechanically.</li>
-      <li>Realized simultaneous control for multiple robots with a central server.</li>
-      <li>Built a self-made motion capture system for multi-robot tracking.</li>
-    </ul>
-  </div>
-</div>
 
 
 
 <div style="display: flex; align-items: center;">
-  <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/Fig7Video_Muscle.gif" style="width: 35%; margin-right: 20px;"/>
+  <img src="https://raw.githubusercontent.com/Nephren17/Nephren17.github.io/refs/heads/main/img/Fig7Video_Muscle.gif" style="width: 27%; margin-right: 20px;"/>
   <div>
     <p><h4>Human Balancing on a Log: A Switched Multi-Layer Controller</h4><p>
     <p>Jiayi Zhao, <strong><u>Mo Yang</u></strong>, Jing Shuang (Lisa) Li. (2024). Accepted by American Control Conference. <a href="https://arxiv.org/abs/2410.02957v2">Online available</a>.</p>
     <p><strong>Advisor:</strong> <a href="https://flyingpeach.github.io/">Jing Shuang (Lisa) Li</a>.</p>
-    <ul>
-      <li>Build a bio-mechanical human model of postural balancing on a log with muscle force as input.</li>
-      <li>Developed LQR and LQG for baseline controller to understand human behavior.</li>
-      <li>Raised a discrete-output-state LQR/LQG model correspond to simple calculation in spiking neuronal network.</li>
-    </ul>
-  </div>
-</div>
 
 
 
 
 
-<h1 id="Awards-and-Scholarships"><a href="#Awards-and-Scholarships" class="headerlink" title="Awards and Scholarships"></a>Awards and Scholarships</h1><ul>
-<li>James B. Angell Scholar, University of Michigan (Feb. 2025)</li>
-<li>Roger King Scholarship, University of Michigan (Aug. 2024)</li>
-<li>Summer Undergraduate Research in Engineering (SURE) Stipend, University of Michigan (May. 2024)</li>
-<li>Dean’s Honor List at College of Engineering, University of Michigan for FA2023, WN2024, FA2024 (Dec. 2023, Jun. 2024, Jan. 2025)</li>
-<li>UM-SJTU Joint Institute Student Development Scholarship (Apr. 2023)</li>
-<li>Silver Medal in The University Physics Competition (Dec. 2022)</li>
-<li>SJTU Undergraduate Excellent Scholarship (Oct. 2022)</li>
-<li>Third Prize in the Chinese National High School Math League (Oct. 2020)</li>
-<li>Second Prize in the Chinese National Physics Contest for Middle School Students  (Oct. 2019)</li>
-</ul>
-<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><div style="display: flex; align-items: center;">
+# Awards and Scholarships
+
+- James B. Angell Scholar, University of Michigan (Feb. 2025)
+- Roger King Scholarship, University of Michigan (Aug. 2024)
+- Summer Undergraduate Research in Engineering (SURE) Stipend, University of Michigan (May. 2024)
+- Dean’s Honor List at College of Engineering, University of Michigan for FA2023, WN2024, FA2024 (Dec. 2023, Jun. 2024, Jan. 2025)
+- UM-SJTU Joint Institute Student Development Scholarship (Apr. 2023)
+- Silver Medal in The University Physics Competition (Dec. 2022)
+- SJTU Undergraduate Excellent Scholarship (Oct. 2022)
+- Third Prize in the Chinese National High School Math League (Oct. 2020)
+- Second Prize in the Chinese National Physics Contest for Middle School Students  (Oct. 2019)
+
+
+
+# Misc
+
+<div style="display: flex; align-items: center;">
   <div style="flex: 0.6; max-width: 200px;">
     <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=1_D1RqZY_YVxRWUsUQMK-ICFarYlsA76BdnS5F7C0Ts"></script>
   </div>
