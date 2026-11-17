@@ -83,7 +83,7 @@ const SFX={
   ui:()=>tone(660,0.05,'square',0.04),laser:()=>tone(1400,0.08,'sawtooth',0.03,500),fire:()=>noise(0.06,0.04),
   whip:()=>{noise(0.08,0.2);tone(900,0.08,'square',0.05,200);}
 };
-SFX.crit=()=>{tone(1250,0.09,'triangle',0.07,2300);};SFX.kill=()=>{tone(70,0.22,'sine',0.16,28);noise(0.12,0.14);};
+SFX.block=()=>{tone(1100,0.04,'square',0.05,700);noise(0.03,0.05);};SFX.crit=()=>{tone(1250,0.09,'triangle',0.07,2300);};SFX.kill=()=>{tone(70,0.22,'sine',0.16,28);noise(0.12,0.14);};
 const sfx=n=>SFX[n]&&SFX[n]();
 
 /* ============ 音乐（Kevin MacLeod / incompetech.com，CC BY 4.0，需署名，见 assets/music/CREDITS.md）：探索 Fluffing a Duck / BOSS 战 Pixel Peeker Polka，N 键开关 ============ */
@@ -118,10 +118,10 @@ const ACTOR_NAMES={bobo:'WW',aken:'可可',lala:'小火',tiefu:'年年'};
 for(const k in CH){CH[k].key='ch_'+k;CH[k].anim=ACTOR_MAP[k];if(ACTOR_NAMES[k])CH[k].name=ACTOR_NAMES[k];}
 CH.mimi.desc='浮游巨盾·青蓝重劈';CH.mimi.ult='四面盾落·全屏晕眩';
 /* 每个干员一个只有她会的动作 */
-const TRAIT={mimi:'特技 · 在桌子下按住 S 躲起来',bobo:'特技 · 空中再按跳 = 炸弹跳',aken:'特技 · 跳得特别高，闪避是滑铲',lala:'特技 · 空中按住跳 = 喷火飞行',tiefu:'特技 · 按住 K 举锅格挡'};
-CH.mimi.desc='三连重劈 · 能钻桌底躲招';CH.bobo.desc='抛榴弹 · 空中炸弹跳';CH.aken.desc='快速连击 · 高跳与滑铲';CH.lala.desc='喷火 · 能飞一小会';CH.tiefu.desc='重击 · 举锅格挡反击';
-function underDesk(){   // 迷迷个子小：站在书桌 / 茶几 / 终端台下面时可以钻进去
-  const px=P.x+17;for(const f of WORLD.furniture){if(!['desk','tea_table','console'].includes(f.type))continue;
+const TRAIT={mimi:'特技 · 靠着家具按住 S 躲起来',bobo:'特技 · 空中再按跳 = 炸弹跳',aken:'特技 · 跳得特别高，闪避是滑铲',lala:'特技 · 空中按住跳 = 喷火飞行',tiefu:'特技 · 按住 K 举锅格挡'};
+CH.mimi.desc='三连重劈 · 能躲进家具里';CH.bobo.desc='抛榴弹 · 空中炸弹跳';CH.aken.desc='快速连击 · 高跳与滑铲';CH.lala.desc='喷火 · 能飞一小会';CH.tiefu.desc='重击 · 举锅格挡反击';
+function underDesk(){   // 迷迷个子小：桌子底下、柜子和书架里、沙发和花架后面都能躲（吊台不行）
+  const px=P.x+17;for(const f of WORLD.furniture){if(f.type==='hanging_platform')continue;
     if(px>f.x+10&&px<f.x+f.w-10&&f.y<P.y+12&&f.y+f.h>=P.y+P.h-24)return f;}
   return null;
 }
@@ -156,12 +156,12 @@ const ATK={
   meimei:{cd:.26,dmg:11,fw:[115,52],vt:[66,92],kb:80}
 };
 const EQ={
-  plate:{n:'食堂不锈钢餐盘',d:'下劈伤害+30%',c:'#cfd8dc'},battery:{n:'报废电池',d:'能量获取+30%',c:'#9ccc65'},
+  plate:{n:'食堂不锈钢餐盘',d:'下落攻击伤害 +30%',c:'#cfd8dc'},battery:{n:'报废电池',d:'能量获取+30%',c:'#9ccc65'},
   sauce:{n:'过期辣椒酱',d:'攻击附带灼烧',c:'#e53935'},can:{n:'小火龙喷火罐',d:'全队攻击+10%',c:'#ff8a65'},
   spring:{n:'工程部废旧弹簧',d:'跳跃高度+12%',c:'#b0bec5'},hose:{n:'消防水带',d:'受到伤害-15%',c:'#ef5350'},
-  pan:{n:'电磁弹射平底锅',d:'下劈拍飞并眩晕敌人',c:'#ffd54f',art:['plate','battery']},
+  pan:{n:'电磁弹射平底锅',d:'下落攻击拍飞并眩晕敌人',c:'#ffd54f',art:['plate','battery']},
   jet:{n:'地狱辣度喷射器',d:'全员普攻追加火焰波',c:'#ff7043',art:['sauce','can']},
-  boots:{n:'永动机弹跳靴',d:'连续下劈伤害层层递增',c:'#4fc3f7',art:['spring','hose']}
+  boots:{n:'永动机弹跳靴',d:'下落攻击冲击范围 +50%',c:'#4fc3f7',art:['spring','hose']}
 };
 const FLOORS=['1F 船员休息舱','2F 温室甲板','3F 驻舰办事处','4F 观察禁闭室','5F 医疗部走廊','6F 顶层中央厨房'];
 
@@ -371,13 +371,17 @@ function damageEnemy(e,d,o){
       if(o.launch){e.vy=-560;e.vx=sgn(e.x+e.w/2-cx)*520;e.launched=true;}
       if(o.stun)e.stun=Math.max(e.stun,o.stun);}
     else{if(o.stun)e.stun=Math.max(e.stun,o.stun*0.3);
+      // 每一下都有反应：身体被顶开一截、挤压、受击动作；架势中只是小幅格挡抖动
+      e.hitAt=G.t;e.jolt=hd*(o.guard?5:o.heavy||crit?20:12);
+      if(!o.guard){e.hurtAt=G.t;const rm=e.room;e.x=clamp(e.x+hd*(o.heavy?9:5),rm.x0+10,rm.x1-e.w-10);}
+      else fx.push({k:'ring',x:e.x+e.w/2-hd*e.w*0.5,y:e.y+e.h*0.45,r:34,life:0.16,max:0.16,col:'#dfe8f5'});
       if(e.stun<=0.3){e.brkBar+=d*BRK_RATE;if(e.brkBar>=100)bossBreak(e);}}
     G.combo++;G.comboT=2.5;G.maxCombo=Math.max(G.maxCombo,G.combo);if(G.combo%(aug('combo')?3:5)===0)addStacks(1);
     G.lastCombat=0;
     G.energy=Math.min(100,G.energy+(o.heavy?4:1.6)*(eq('battery')?1.3:1)*(1+0.12*gearN('en')));
     if(stk('cook'))heal(d*0.004*stk('cook'));
     if(cur().id==='meimei')heal(d*(P.buff&&P.buff.type==='blood'?0.15:0.08));
-    G.hitstop=Math.max(G.hitstop,(o.heavy?0.11:0.05)+(crit?0.03:0));shake(o.heavy?9:4);sfx(o.heavy?'heavy':'hit');if(crit)sfx('crit');G.kx=hd*(o.heavy?12:5);if(o.heavy||crit)G.zoom=Math.max(G.zoom||0,0.012);
+    G.hitstop=Math.max(G.hitstop,(o.heavy?0.11:0.05)+(crit?0.03:0));shake(e.boss?(o.guard?3:o.heavy||crit?13:8):(o.heavy?10:5));sfx(o.guard?'block':o.heavy?'heavy':'hit');if(crit)sfx('crit');G.kx=hd*(o.heavy?14:7);if(o.heavy||crit)G.zoom=Math.max(G.zoom||0,0.012);
     dirSpark(e.x+e.w/2,e.y+e.h/2,o.heavy?12:6,hd,crit?'#ffd27a':'#eaf6ff');
   }
   if(e.hp<=0)killEnemy(e,o);
@@ -440,7 +444,7 @@ function hurtPlayer(d,sx){
   if(P.shield>0){P.shield=0;P.inv=0.6;ono(P.x+17,P.y-40,'护盾吸收！',24,'#80deea');sfx('pd');return;}
   if(eq('hose'))d*=0.85;
   G.hp-=d;P.inv=0.9;G.combo=0;G.noHit=false;P.focusT=0;num(P.x+17,P.y-10,Math.round(d),'#ff5252');G.lastCombat=0;
-  P.artHurtAt=G.t;P.artAttackAt=-999;P.pendingStrike=null;
+  P.artHurtAt=G.t;P.artAttackAt=-999;P.pendingStrike=null;P.plunge=null;
   if(!P.blocking){P.vx=sgn(P.x+17-sx)*340;P.vy=-340;P.hurtT=0.2;P.dashT=0;}
   G.hitstop=0.12;shake(14);sfx('hurt');G.hurtFx=0.4;G.kx=-sgn(P.x+17-sx)*14;
   if(G.hp<=0){
@@ -550,6 +554,37 @@ function performAttack(c,dir,queued=false,step=0){
   }
   if((eq('jet')||unity('cook')||hot)&&P.fireCd<=0){P.fireCd=unity('cook')?0.16:0.3;fireWave(outDmg(hot?14:9,sm));}
   for(let i=projectileStart;i<projs.length;i++)projs[i].actor=CH[id].anim;
+}
+/* ============ 下落攻击：空中 S+攻击，笔直俯冲到地面，落地一圈冲击波（和普通攻击是两套东西） ============
+ * 俯冲途中穿过的敌人各吃一次伤害；落地冲击按下落高度加成（最多 +50% 伤害、+30% 范围）；踩到医疗无人机会弹起。 */
+const PLG={mimi:[115,26],aken:[85,15],lala:[105,13],bobo:[125,22],tiefu:[135,30],meimei:[90,16]};   // [冲击半径, 落地伤害]
+function startPlunge(c){
+  P.plunge={y0:P.y,once:new Set()};P.vx=0;P.vy=1500;P.atkCd=0.6;P.jumping=false;P.pendingStrike=null;P.atkAnim=0.5;
+  const clip=ART.clip((CH[c.id].anim||'')+'_attack'),imp=clip&&clip.events.find(e=>e.name==='impact');P.artAttackAt=G.t-(imp?imp.frame/clip.fps:0);
+  sfx('dash');ring(P.x+17,P.y+28,46,WORLD.palette[CH[c.id].anim]?.[0]||'#fff');
+}
+function plungeTick(c){
+  const id=c.id,col=WORLD.palette[CH[id].anim]?.[0]||'#fff';
+  fx.push({k:'ghost',x:P.x+17,y:P.y+P.h,life:0.14,max:0.14,id,face:P.face});
+  fx.push({k:'streak',x:P.x+17+rnd(-18,18),y:P.y-14,a:Math.PI/2,len:100,life:0.12,max:0.12,col});
+  P.atkAnim=0.3;P.artAttackAt=Math.max(P.artAttackAt,G.t-0.38);
+  const box={x:P.x-8,y:P.y+P.h-20,w:P.w+16,h:60};
+  for(const e of enemies){if(e.dead||!e.bouncy||!ov(box,e))continue;P.plunge=null;P.vy=-820;P.pogo++;P.airDash=1;sfx('pogo');spark(e.x+e.w/2,e.y,8,'#8f8');return;}
+  hitEnemies(box,outDmg(PLG[id][1]*0.6,starMul(c))*(eq('plate')?1.3:1),{once:P.plunge.once,actor:CH[id].anim});
+}
+function plungeLand(c){
+  const id=c.id,[R0,d0]=PLG[id],fall=clamp((P.y-P.plunge.y0)/300,0,1),R=R0*(1+0.3*fall)*(eq('boots')?1.5:1),cx=P.x+17,fy=P.y+P.h,col=WORLD.palette[CH[id].anim]?.[0]||'#fff';
+  let dm=outDmg(d0*(1+0.5*fall),starMul(c))*(eq('plate')?1.3:1);
+  const o={heavy:1,kb:340,actor:CH[id].anim,explosive:id==='mimi'||id==='bobo',burn:id==='lala'||eq('sauce')};
+  if(eq('pan')){o.stun=1.5;o.launch=1;dm*=1.2;}if(id==='tiefu')o.stun=Math.max(o.stun||0,0.8);
+  P.plunge=null;P.atkCd=0.3;P.vx=0;
+  hitEnemies({x:cx-R,y:fy-80,w:R*2,h:100},dm,o);
+  ring(cx,fy,R,col);ring(cx,fy,R*0.6,'#ffffff');fx.push({k:'pop',x:cx,y:fy,r:R*0.5,life:0.14,max:0.14});dust(cx,fy,14);
+  WORLD.emit(CH[id].anim||'mimi',cx,fy-24,1.3,true,P.face);
+  if(id==='mimi')for(const d of[-1,1])fx.push({k:'cleave',x:cx+d*62,y:fy+14,face:d,life:0.32,max:0.32});
+  if(id==='bobo')fx.push({k:'boom',x:cx,y:fy-20,r:R*0.8,life:0.22,max:0.22});
+  if(id==='lala')for(let i=0;i<14;i++)fx.push({k:'flame',x:cx+rnd(-R,R),y:fy,vx:rnd(-40,40),vy:rnd(-300,-120),life:.4,max:.4,size:rnd(10,20)});
+  shake(12);G.zoom=Math.max(G.zoom||0,0.025);G.hitstop=Math.max(G.hitstop,0.07);sfx(id==='bobo'?'boom':'heavy');
 }
 function onScreen(e){return e.x+e.w>cam.x&&e.x<cam.x+W&&e.y+e.h>cam.y&&e.y<cam.y+H&&!e.dead&&!e.bouncy&&!(e.boss&&!e.active);}
 function ult(c){
@@ -697,7 +732,7 @@ function updPlayer(dt){
   else{if(P.hiding)P.hideCd=Math.max(P.hideCd,1);P.hiding=false;P.hideT=0;}
   P.slow=zones.some(z=>z.type==='paddy'&&P.x+P.w>z.x&&P.x<z.x+z.w&&P.y+P.h>z.y-20);
   const sp=330*(1+0.02*stk('slide'))*(1+0.04*gearN('spd'))*(1+0.07*(G.mom||0))*(P.slow?0.45:1)*(P.hiding?0.4:1);
-  P.blocking=false;P.drop=P.dropT>0;
+  P.blocking=false;P.drop=P.dropT>0||!!P.plunge;   // 下落攻击会穿过家具和平台，一直砸到地面
   if(P.dashT>0){
     P.dashT-=dt;P.vx=P.ddx*P.dsp*(P.slow?0.6:1);P.vy=P.ddy*P.dsp;
     fx.push({k:'ghost',x:P.x+17,y:P.y+P.h,life:0.18,max:0.18,id,face:P.face});
@@ -708,8 +743,9 @@ function updPlayer(dt){
     else if(id==='tiefu'&&K.dodge()){P.blocking=true;P.blockT+=dt;P.vx*=0.8;}
     else{P.blockT=0;if(P.lunge<=0)P.vx=mv*sp+(P.rx||0);if(mv)P.face=mv;}
     P.vy=Math.min(P.vy+GRAV*dt,1150);
+    if(P.plunge){P.vx=0;P.vy=1500;}   // 下落攻击：笔直砸向地面
     // 小火：空中按住跳 = 喷火飞行（燃料 0.9 秒，落地回满）
-    if(id==='lala'&&!P.onGround&&K.jump()&&!P.jumping&&(P.fuel??0.9)>0&&P.hurtT<=0){
+    if(id==='lala'&&!P.onGround&&!P.plunge&&K.jump()&&!P.jumping&&(P.fuel??0.9)>0&&P.hurtT<=0){
       P.fuel=(P.fuel??0.9)-dt;P.vy=Math.max(P.vy-GRAV*dt*1.9,-150);P.flying=true;
       for(let i=0;i<2;i++)fx.push({k:'flame',x:P.x+17+rnd(-8,8),y:P.y+P.h,vx:rnd(-40,40),vy:rnd(260,420),life:.28,max:.28,size:rnd(8,15)});
       if((P.flyTk=(P.flyTk||0)-dt)<=0){P.flyTk=0.25;hitEnemies({x:P.x-14,y:P.y+P.h,w:P.w+28,h:120},outDmg(4,starMul(c)),{burn:1});if(Math.random()<.5)sfx('fire');}
@@ -728,7 +764,7 @@ function updPlayer(dt){
   if(P.vy>=0)P.jumping=false;
   // 闪避
   if(K.pDodge()&&id!=='tiefu'&&P.dashCd<=0&&P.dashT<=0&&P.hurtT<=0&&(P.onGround||P.airDash>0||unity('slide'))){
-    P.pendingStrike=null;P.artAttackAt=-999;P.atkAnim=0;
+    P.pendingStrike=null;P.artAttackAt=-999;P.atkAnim=0;P.plunge=null;
     let dx=mv||P.face,dy=0;
     if(unity('slide')){dy=(K.down()?1:0)-(K.up()?1:0);if(dy&&!mv)dx=0;const l=Math.hypot(dx,dy)||1;dx/=l;dy/=l;}
     P.ddx=dx;P.ddy=dy;P.dsp=900;P.dashT=0.18;P.sliding=false;
@@ -741,10 +777,11 @@ function updPlayer(dt){
   }
   if(id==='tiefu'&&K.pDodge()){P.blockT=0;tone(200,0.06,'square',0.05);}
   // 攻击 / 大招
-  if(K.atk()&&P.atkCd<=0&&P.dashT<=0&&!P.blocking&&!P.hiding&&P.hurtT<=0)attack(c,(K.down()&&!P.onGround)?'down':K.up()?'up':'fwd');
+  if(K.atk()&&P.atkCd<=0&&P.dashT<=0&&!P.blocking&&!P.hiding&&P.hurtT<=0&&!P.plunge){if(K.down()&&!P.onGround)startPlunge(c);else attack(c,K.up()?'up':'fwd');}
   if(K.pUlt()){if(G.energy>=100){G.energy=0;ult(c);}else tip('能量不足（攻击命中可积攒）',1.2);}
   const wasGround=P.onGround,fallSpeed=P.vy;
   moveBody(P,dt);
+  if(P.plunge){plungeTick(c);if(P.plunge&&P.onGround)plungeLand(c);}
   if(!wasGround&&P.onGround&&fallSpeed>120)P.artLandAt=G.t;
   if(!wasGround&&P.onGround&&fallSpeed>420){dust(P.x+17,P.y+P.h,7);tone(90,0.05,'sine',0.05,50);}
   if(P.y>WH)P.y=2700;
@@ -1217,15 +1254,25 @@ function drawEnemy(e){
     if(pad){g.fillStyle='#43a047';g.fillRect(cx-3,e.y+10,6,14);g.fillRect(cx-7,e.y+14,14,6);}else ell(cx,e.y+16,5,5,'#ff5252',INK,2);
   }else if(e.type==='dummy'){
     rr(cx-4,e.y+20,8,e.h-20,2,'#8d6e63',INK,3);rr(cx-18,e.y+22,36,8,3,'#c8a165',INK,3);ell(cx,e.y+12,13,13,body('#e6c36a'),INK,3);txt('×  ×',cx,e.y+11,10,INK);
-  }else if(e.boss===1){
-    bossAtkFx1(e,cx);
-    if(fl)g.filter='brightness(3)';
-    bossMarks(e,cx);chibi(cx,by,1.4,BOSSDEF[1],e.face,T,{walk:Math.abs(e.vx)>10,angry:!e.dead,dizzy:e.stun>0});
-  }else if(e.boss===2){
-    ell(cx,1496,30,6,'#0003');
-    if(e.st==='cast'){g.save();g.globalCompositeOperation='lighter';const R=70+Math.sin(T*20)*8,gr=g.createRadialGradient(cx,e.y+40,R*0.5,cx,e.y+40,R);gr.addColorStop(0,'rgba(174,213,129,0)');gr.addColorStop(0.8,'rgba(174,213,129,.5)');gr.addColorStop(1,'rgba(174,213,129,0)');g.fillStyle=gr;g.fillRect(cx-R,e.y+40-R,R*2,R*2);g.restore();}
-    if(fl)g.filter='brightness(3)';
-    bossMarks(e,cx);chibi(cx,by,1.4,BOSSDEF[2],e.face,T,{dizzy:e.stun>0,open:e.st!=='idle'});
+  }else if(e.boss){
+    if(e.boss===1)bossAtkFx1(e,cx);else ell(cx,1496,30,6,'#0003');
+    if(e.boss===2&&e.st==='cast'){g.save();g.globalCompositeOperation='lighter';const R=70+Math.sin(T*20)*8,gr=g.createRadialGradient(cx,e.y+40,R*0.5,cx,e.y+40,R);gr.addColorStop(0,'rgba(174,213,129,0)');gr.addColorStop(0.8,'rgba(174,213,129,.5)');gr.addColorStop(1,'rgba(174,213,129,0)');g.fillStyle=gr;g.fillRect(cx-R,e.y+40-R,R*2,R*2);g.restore();}
+    bossMarks(e,cx);
+    // 动作：出招有抬手和挥出，被打有受击动作；身体会被顶开、挤压
+    if(e.dst!==e.st){e.dst=e.st;e.stAt=G.t;}
+    const el=G.t-(e.stAt||0),hurtT=G.t-(e.hurtAt??-9),hitT=G.t-(e.hitAt??-9);
+    let o2;
+    if(e.stun>0.3)o2={action:'hurt',animTime:0.3,animLoop:false};
+    else if(hurtT<0.26)o2={action:'hurt',animTime:hurtT,animLoop:false};
+    else if(e.st==='tele'||e.st==='crouch'||e.st==='summon'||e.st==='cast')o2={action:'attack',animTime:Math.min(0.2,el),animLoop:false};
+    else if(e.st==='strike'||e.st==='fan'||e.st==='ring')o2={action:'attack',animTime:0.25+el%0.4,animLoop:false};
+    else if(e.st==='leap')o2={action:e.vy<0?'jump':'fall'};
+    else o2={action:Math.abs(e.vx)>10?'run':'idle'};
+    e.jolt=(e.jolt||0)*0.78;const jx=e.jolt,sq=hitT<0.1?1-hitT/0.1:0;
+    g.save();g.translate(cx+jx,by);g.scale(1+0.1*sq,1-0.08*sq);g.rotate(jx*0.004);g.translate(-cx,-by);
+    chibi(cx,by,1.4,BOSSDEF[e.boss],e.face,T,o2);
+    if(fl){g.globalCompositeOperation='lighter';chibi(cx,by,1.4,BOSSDEF[e.boss],e.face,T,o2);chibi(cx,by,1.4,BOSSDEF[e.boss],e.face,T,o2);}   // 闪白（不用 ctx.filter，那个每帧要 60 多毫秒）
+    g.restore();
   }
   g.restore();
   if(!e.boss&&!e.bouncy&&e.hp<e.maxhp){bar(cx-22,e.y-12,44,3,e.hp/e.maxhp,'#ff6b7f');}
@@ -1306,17 +1353,44 @@ function bloom(){   // 便宜的泛光：缩到 1/8，自乘两次只留下高�
 function sceneLayers(){
   drawBg();
   const boss=state!=='title'&&enemies.some(e=>e.boss&&e.active&&!e.dead);
-  G.dim=(G.dim||0)+((boss?0.62:0.2)-(G.dim||0))*0.06;
+  G.dim=(G.dim||0)+((boss?0.62:0.36)-(G.dim||0))*0.06;
   g.fillStyle=`rgba(6,10,26,${G.dim})`;g.fillRect(-40,-40,W+80,H+80);
   drawWorld();
 }
-function drawScene(){const z=1+(G.zoom||0);if(z>1.001){g.save();g.translate(W/2,H/2);g.scale(z,z);g.translate(-W/2,-H/2);sceneLayers();g.restore();}else sceneLayers();bloom();}
+/* 场景里真正能互动的家具要比背景里画着的家具更醒目：外圈描一层光边，能站的顶面有一道金线。
+   迷迷在场时，能躲进去的家具光边变成冰蓝色。 */
+const SIL={};
+function silhouette(type,col){
+  const key=type+col;if(SIL[key])return SIL[key];const im=WORLD.images[type];if(!im)return null;
+  const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const x=c.getContext('2d');x.drawImage(im,0,0);x.globalCompositeOperation='source-in';x.fillStyle=col;x.fillRect(0,0,c.width,c.height);
+  return SIL[key]=c;
+}
+function furnitureGlow(){
+  const mimi=cur().id==='mimi',px=P.x+17;
+  for(const f of WORLD.furniture){if(f.x>cam.x+W+80||f.x+f.w<cam.x-80||f.y>cam.y+H+100||f.y+f.h<cam.y-200)continue;
+    const hang=f.type==='hanging_platform',sil=silhouette(f.type,mimi&&!hang?'#8fe3ff':'#e8b96a');if(!sil)continue;
+    const top=hang?f.y-f.h*.84:f.y-f.h*.065,near=Math.abs(px-(f.x+f.w/2))<f.w/2+90&&Math.abs(P.y-f.y)<260;
+    g.globalAlpha=near?0.75+0.2*Math.sin(T*6):0.42;
+    for(const [ox,oy] of [[-3,0],[3,0],[0,-3],[0,3]])g.drawImage(sil,f.x+ox,top+oy,f.w,f.h);
+    g.globalAlpha=1;}
+}
+function furnitureTops(){
+  g.save();g.globalCompositeOperation='lighter';
+  for(const f of WORLD.furniture){if(f.x>cam.x+W+80||f.x+f.w<cam.x-80||f.y>cam.y+H+100||f.y<cam.y-60)continue;
+    const x0=f.x+f.w*.06,w=f.w*.88,gr=g.createLinearGradient(0,f.y-12,0,f.y+2);gr.addColorStop(0,'rgba(232,185,106,0)');gr.addColorStop(1,'rgba(232,185,106,.4)');
+    g.fillStyle=gr;g.fillRect(x0,f.y-12,w,14);g.fillStyle='rgba(255,236,190,.95)';g.fillRect(x0,f.y-1,w,2);}
+  g.restore();
+}
+function drawScene(){
+  const sh=G.shake>0?G.shake:0,z=1+(G.zoom||0)+sh*0.0018,sx=sh?rnd(-sh,sh):0,sy=sh?rnd(-sh,sh)*0.7:0;   // 晃动时略微放大，边缘不露底
+  g.fillStyle='#060a14';g.fillRect(0,0,W,H);
+  g.save();g.translate(W/2+sx+(G.kx||0),H/2+sy);g.scale(z,z);g.translate(-W/2,-H/2);sceneLayers();g.restore();bloom();
+}
 function dust(x,y,n){for(let i=0;i<n;i++)fx.push({k:'dust',x:x+rnd(-14,14),y:y-rnd(0,6),vx:rnd(-70,70),vy:-rnd(10,50),life:rnd(.25,.45),max:.45,size:rnd(5,10)});}
 function drawWorld(){
-  const sx=G.shake>0?rnd(-G.shake,G.shake):0,sy=G.shake>0?rnd(-G.shake,G.shake):0;
-  g.save();g.translate(-Math.round(cam.x)+sx+(G.kx||0),-Math.round(cam.y)+sy);
+  g.save();g.translate(-Math.round(cam.x),-Math.round(cam.y));
   drawSolids();
-  WORLD.drawFurniture(g);drawSensors();
+  furnitureGlow();WORLD.drawFurniture(g);furnitureTops();drawSensors();
   {const ab=enemies.find(e=>e.boss&&e.active&&!e.dead);   // BOSS 战：舞台地面的发光线
     if(ab){const fy=ab.boss===1?2800:1500,c=ab.boss===1?'255,176,96':'170,255,150',x0=ab.room.x0,x1=ab.room.x1;
       g.save();g.globalCompositeOperation='lighter';const gr=g.createLinearGradient(0,fy-22,0,fy+10);gr.addColorStop(0,`rgba(${c},0)`);gr.addColorStop(0.7,`rgba(${c},.28)`);gr.addColorStop(1,`rgba(${c},0)`);g.fillStyle=gr;g.fillRect(x0,fy-22,x1-x0,32);
@@ -1405,7 +1479,7 @@ function drawPlayer(){
   const c=cur(),d=CH[c.id],cx=P.x+17,by=P.y+P.h;
   if(P.onGround){g.fillStyle='rgba(0,0,0,.32)';g.beginPath();g.ellipse(cx,by+2,28,6,0,0,7);g.fill();}
   if(P.hiding){bar(cx-22,by+10,44,3,1-P.hideT/2.5,'#8fe3ff');t2('嘘…',cx,P.desk?P.desk.y-14:P.y-20,13,'#8fe3ff','center',800);}
-  else if(P.desk&&P.hideCd<=0)t2('按住 S 钻进去',cx,P.desk.y-14,12,'#8fe3ff','center',700);
+  else if(P.desk&&P.hideCd<=0)t2('按住 S 躲进去',cx,P.desk.y-14,12,'#8fe3ff','center',700);
   if(c.id==='lala'&&!P.onGround&&(P.fuel??0.9)<0.9)bar(cx-22,by+10,44,3,Math.max(0,P.fuel)/0.9,'#ffb060');
   if(P.inv>0&&P.dashI<=0&&Math.floor(T*20)%2)return;
   if(P.teamShield>0){g.globalAlpha=0.35+0.15*Math.sin(T*10);ell(cx,P.y+24,50,50,'#ffd54f',INK,3);g.globalAlpha=1;}
@@ -1413,7 +1487,7 @@ function drawPlayer(){
   if(P.buff){const col=P.buff.type==='hot'?'#ff7043':'#ff1744';g.globalAlpha=0.3+0.2*Math.sin(T*14);ell(cx,P.y+26,38,42,col);g.globalAlpha=1;}
   g.save();
   if(P.dashT>0){g.translate(cx,by);g.transform(1,0,-P.ddx*0.3,1,0,0);g.translate(-cx,-by);}
-  if(P.hiding){g.translate(cx,by);g.scale(1.1,0.58);g.translate(-cx,-by);g.globalAlpha=0.85;}
+  if(P.hiding){if(P.desk&&['desk','tea_table','console'].includes(P.desk.type)){g.translate(cx,by);g.scale(1.1,0.58);g.translate(-cx,-by);g.globalAlpha=0.85;}else g.globalAlpha=0.14;}   // 桌下是缩着，柜子里 / 沙发后几乎看不见
   const hurt=G.t-P.artHurtAt<(ART.clip((d.anim||'mimi')+'_hurt')?.duration||.3);
   const attacking=P.atkAnim>0||G.t-P.artAttackAt<.5;
   const moving=Math.abs(P.vx)>20;
@@ -1511,7 +1585,7 @@ function drawHUD(){
     g.save();g.beginPath();g.rect(0,252,W,126);g.clip();chibi(260,520,3.2,CH[f.id],1,0,{});g.restore();
     t2(f.text,700,316,40,UI.tx,'center',900);g.restore();}
   t2('Tab 队伍 · M 地图 · N 音乐',W-16,H-14,11,UI.dim,'right');
-  if(G.t<14&&!b){const a=G.t>12?(14-G.t)/2:Math.min(1,G.t);g.globalAlpha=a;const keysH=[['A D','移动'],['空格','跳跃'],['J','攻击'],['K','闪避'],['S+J','空中下劈'],['L','大招']];let x=640-keysH.length*58;   // 开局操作提示，14 秒后消失
+  if(G.t<14&&!b){const a=G.t>12?(14-G.t)/2:Math.min(1,G.t);g.globalAlpha=a;const keysH=[['A D','移动'],['空格','跳跃'],['J','攻击'],['K','闪避'],['S+J','空中下落攻击'],['L','大招']];let x=640-keysH.length*58;   // 开局操作提示，14 秒后消失
     for(const [k,l] of keysH){g.font=F2(13,800);const kw=Math.max(30,g.measureText(k).width+16);g.fillStyle='rgba(10,17,30,.85)';g.beginPath();g.roundRect(x,H-106,kw,26,5);g.fill();g.strokeStyle=UI.edge;g.lineWidth=1;g.stroke();t2(k,x+kw/2,H-92,13,UI.gold,'center',800);t2(l,x+kw+8,H-92,13,UI.tx);x+=kw+8+g.measureText(l).width+26;}g.globalAlpha=1;}
 }
 
