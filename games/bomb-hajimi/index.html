@@ -19,13 +19,15 @@ canvas{display:block;margin:0 auto;cursor:crosshair}
 <a id="credits-link" href="credits.html" target="_blank" rel="noopener">试玩说明 / 音乐署名</a>
 <script src="assets/metadata/animations.js?v=60b2ffd2f59bfaec"></script>
 <script src="assets/animation-player.js?v=8fe3e6a69add20de"></script>
+<script src="assets/air-combat.js?v=867b7d5f4d360649"></script>
 <script src="assets/world/manifest.js?v=d80cbe944e879f82"></script>
-<script src="assets/world/world-runtime.js?v=612f0340ac6ab214"></script>
+<script src="assets/world/world-runtime.js?v=c447feb4e7ded59b"></script>
 <script>
 'use strict';
 /* ============ 基础 ============ */
 const cv=document.getElementById('c'),g=cv.getContext('2d'),W=1280,H=720,INK='#2b2233';
 const ART=new HajimiAnimation('assets/');
+const AIR_COMBAT=window.HajimiAirCombat;
 const WORLD=new HajimiWorld('assets/world/');
 let GAME_READY=false;
 const startupActors=['mimi','ww','niannian','keke','xiaohuo','du','shushu','mimi_follower','ww_follower','niannian_follower','keke_follower','xiaohuo_follower','bug','cart','chest','vending','drone'];
@@ -119,7 +121,7 @@ for(const k in CH){CH[k].key='ch_'+k;CH[k].anim=ACTOR_MAP[k];if(ACTOR_NAMES[k])C
 CH.mimi.desc='浮游巨盾·青蓝重劈';CH.mimi.ult='四面盾落·全屏晕眩';
 /* 每个干员一个只有她会的动作 */
 const TRAIT={mimi:'特技 · 靠着家具按住 S 躲起来',bobo:'特技 · 空中再按跳 = 炸弹跳',aken:'特技 · 跳得特别高，闪避是滑铲',lala:'特技 · 空中按住跳 = 喷火飞行',tiefu:'特技 · 按住 K 举锅格挡'};
-CH.mimi.desc='三连重劈 · 能躲进家具里';CH.bobo.desc='抛榴弹 · 空中炸弹跳';CH.aken.desc='快速连击 · 高跳与滑铲';CH.lala.desc='喷火 · 能飞一小会';CH.tiefu.desc='重击 · 举锅格挡反击';
+CH.mimi.desc='巨盾连击 · 空中下砸震地';CH.bobo.desc='空中投弹 · 炸弹二段跳';CH.aken.desc='高跳滑铲 · 空中下斩';CH.lala.desc='喷火缓降 · 短时飞行';CH.tiefu.desc='重刃坠击 · 格挡反击';
 function underDesk(){   // 迷迷个子小：桌子底下、柜子和书架里、沙发和花架后面都能躲（吊台不行）
   const px=P.x+17;for(const f of WORLD.furniture){if(f.type==='hanging_platform')continue;
     if(px>f.x+10&&px<f.x+f.w-10&&f.y<P.y+12&&f.y+f.h>=P.y+P.h-24)return f;}
@@ -156,7 +158,7 @@ const ATK={
   meimei:{cd:.26,dmg:11,fw:[115,52],vt:[66,92],kb:80}
 };
 const EQ={
-  plate:{n:'食堂不锈钢餐盘',d:'下落攻击伤害 +30%',c:'#cfd8dc'},battery:{n:'报废电池',d:'能量获取+30%',c:'#9ccc65'},
+  plate:{n:'食堂不锈钢餐盘',d:'向下攻击伤害 +30%',c:'#cfd8dc'},battery:{n:'报废电池',d:'能量获取+30%',c:'#9ccc65'},
   sauce:{n:'过期辣椒酱',d:'攻击附带灼烧',c:'#e53935'},can:{n:'小火龙喷火罐',d:'全队攻击+10%',c:'#ff8a65'},
   spring:{n:'工程部废旧弹簧',d:'跳跃高度+12%',c:'#b0bec5'},hose:{n:'消防水带',d:'受到伤害-15%',c:'#ef5350'},
   pan:{n:'电磁弹射平底锅',d:'下落攻击拍飞并眩晕敌人',c:'#ffd54f',art:['plate','battery']},
@@ -192,7 +194,7 @@ function newGame(){
     banner:{t:3.5,text:FLOORS[0]},kills:0,revives:0,tip:{t:0,text:''},shop:[],cp:{x:150,y:2744},loseBy:'mob',winT:0,unityBanner:0,unitySeen:{},flash:0};
   P={x:150,y:2744,w:34,h:56,vx:0,vy:0,face:1,onGround:false,coy:0,jbuf:0,jumping:false,airDash:1,dashT:0,dashCd:0,dashI:0,ddx:1,ddy:0,dsp:900,
     pd:false,inv:0,atkCd:0,atkAnim:0,atkDir:'fwd',pogo:0,lunge:0,hurtT:0,dropT:0,drop:false,shield:0,teamShield:0,blocking:false,blockT:0,buff:null,fireCd:0,swT:0,slow:false,sliding:false,once:null,cmb:0,
-    artAttackAt:-999,artHurtAt:-999,artLandAt:-999,artState:'idle',artStateAt:0,artActor:'mimi',pendingStrike:null,focusT:0};
+    artAttackAt:-999,artHurtAt:-999,artLandAt:-999,artState:'idle',artStateAt:0,artActor:'mimi',pendingStrike:null,plunge:null,groundSurface:null,focusT:0};
   cam={x:0,y:2200};
   solids=[
     {x:-200,y:2800,w:4000,h:300},{x:-200,y:0,w:200,h:3000},{x:3600,y:0,w:200,h:3000},
@@ -461,7 +463,7 @@ function lose(){
 }
 function respawn(){
   state='play';G.hp=maxHp();G.energy=Math.min(G.energy,50);for(const k in G.stacks)G.stacks[k]=0;G.combo=0;
-  P.x=G.cp.x;P.y=G.cp.y;P.vx=P.vy=0;P.inv=2;P.buff=null;P.dashT=0;
+  P.x=G.cp.x;P.y=G.cp.y;P.vx=P.vy=0;P.inv=2;P.buff=null;P.dashT=0;P.plunge=null;P.drop=false;P.groundSurface=null;
   projs.length=0;zones.length=0;
   for(const d in doors)doors[d].off=true;
   enemies=enemies.filter(e=>!(e.room==='boss'));
@@ -489,6 +491,7 @@ function fireWave(dmg){projs.push({k:'wave',x:P.x+17+P.face*20,y:P.y+30,vx:P.fac
 const WIND=0.06; // 按键到判定的延迟（原来迷迷要等 0.33 秒，手感发粘）
 const momentumMul=()=>1-0.07*(G.mom||0);
 function attack(c,dir){
+  if(AIR_COMBAT.attackMode(c.id,dir,P.onGround)==='plunge'){startPlunge(c);return;}
   const mo=momentumMul();
   if(c.id==='mimi'){
     if(P.pendingStrike)return;
@@ -517,9 +520,9 @@ function performAttack(c,dir,queued=false,step=0){
   if(hot){dm*=2.2;o.brk=1;o.burn=1;}
   if(dir==='down'){if(eq('plate'))dm*=1.3;if(eq('pan')){o.stun=1.5;o.launch=1;dm*=1.2;}if(eq('boots'))dm*=1+0.2*Math.min(P.pogo,10);}
   P.atkCd=queued?Math.max(P.atkCd,.06):cd;P.atkAnim=queued?Math.max(P.atkAnim,.16):0.16;P.atkDir=dir;let n=0;
-  if(id==='bobo'&&dir!=='down'){
-    const up=dir==='up';
-    projs.push({k:'nade',x:cx+P.face*14,y:P.y+14,vx:up?P.face*110:P.face*430+P.vx*0.3,vy:up?-820:-430,r:10,dmg:dm,friendly:1,life:2,grav:1500,boomR:85*rg*(1+0.03*stk('boom'))});
+  if(id==='bobo'){
+    const launch=AIR_COMBAT.bombThrow(dir,P.face,P.vx);
+    projs.push({k:'nade',x:cx+(launch.fromFeet?0:P.face*14),y:launch.fromFeet?P.y+P.h-4:P.y+14,vx:launch.vx,vy:launch.vy,r:10,dmg:dm,friendly:1,life:2,grav:1500,boomR:85*rg*(1+0.03*stk('boom'))});
     sfx('jump');
   }else{
     let [rw,rh]=dir==='fwd'?a.fw:a.vt;if(dir==='fwd')rw*=rg;else rh*=rg;
@@ -555,13 +558,16 @@ function performAttack(c,dir,queued=false,step=0){
   if((eq('jet')||unity('cook')||hot)&&P.fireCd<=0){P.fireCd=unity('cook')?0.16:0.3;fireWave(outDmg(hot?14:9,sm));}
   for(let i=projectileStart;i<projs.length;i++)projs[i].actor=CH[id].anim;
 }
-/* ============ 下落攻击：空中 S+攻击，笔直俯冲到地面，落地一圈冲击波（和普通攻击是两套东西） ============
- * 俯冲途中穿过的敌人各吃一次伤害；落地冲击按下落高度加成（最多 +50% 伤害、+30% 范围）；踩到医疗无人机会弹起。 */
-const PLG={mimi:[115,26],aken:[85,15],lala:[105,13],bobo:[125,22],tiefu:[135,30],meimei:[90,16]};   // [冲击半径, 落地伤害]
+/* 只有巨盾与重刃会下砸。其余干员的向下攻击仍是投弹、下斩或喷火。
+ * 下砸穿过家具、吊台、回桥和医疗无人机；只在实体楼板上触发冲击。 */
 function startPlunge(c){
-  P.plunge={y0:P.y,once:new Set()};P.vx=0;P.vy=1500;P.atkCd=0.6;P.jumping=false;P.pendingStrike=null;P.atkAnim=0.5;
+  const cfg=AIR_COMBAT.profile(c.id);
+  if(cfg.type!=='plunge'||P.onGround||P.plunge||P.hurtT>0||P.dashT>0)return false;
+  P.plunge={actor:c.id,y0:P.y,once:new Set()};P.drop=true;P.vx=0;P.vy=cfg.speed;P.atkCd=0.6;P.jumping=false;P.pendingStrike=null;P.atkAnim=0.5;
+  P.atkDir='down';
   const clip=ART.clip((CH[c.id].anim||'')+'_attack'),imp=clip&&clip.events.find(e=>e.name==='impact');P.artAttackAt=G.t-(imp?imp.frame/clip.fps:0);
   sfx('dash');ring(P.x+17,P.y+28,46,WORLD.palette[CH[c.id].anim]?.[0]||'#fff');
+  return true;
 }
 function plungeTick(c){
   const id=c.id,col=WORLD.palette[CH[id].anim]?.[0]||'#fff';
@@ -569,22 +575,21 @@ function plungeTick(c){
   fx.push({k:'streak',x:P.x+17+rnd(-18,18),y:P.y-14,a:Math.PI/2,len:100,life:0.12,max:0.12,col});
   P.atkAnim=0.3;P.artAttackAt=Math.max(P.artAttackAt,G.t-0.38);
   const box={x:P.x-8,y:P.y+P.h-20,w:P.w+16,h:60};
-  for(const e of enemies){if(e.dead||!e.bouncy||!ov(box,e))continue;P.plunge=null;P.vy=-820;P.pogo++;P.airDash=1;sfx('pogo');spark(e.x+e.w/2,e.y,8,'#8f8');return;}
-  hitEnemies(box,outDmg(PLG[id][1]*0.6,starMul(c))*(eq('plate')?1.3:1),{once:P.plunge.once,actor:CH[id].anim});
+  hitEnemies(box,outDmg(AIR_COMBAT.profile(id).damage*.6,starMul(c))*(eq('plate')?1.3:1),{once:P.plunge.once,actor:CH[id].anim});
 }
 function plungeLand(c){
-  const id=c.id,[R0,d0]=PLG[id],fall=clamp((P.y-P.plunge.y0)/300,0,1),R=R0*(1+0.3*fall)*(eq('boots')?1.5:1),cx=P.x+17,fy=P.y+P.h,col=WORLD.palette[CH[id].anim]?.[0]||'#fff';
-  let dm=outDmg(d0*(1+0.5*fall),starMul(c))*(eq('plate')?1.3:1);
-  const o={heavy:1,kb:340,actor:CH[id].anim,explosive:id==='mimi'||id==='bobo',burn:id==='lala'||eq('sauce')};
-  if(eq('pan')){o.stun=1.5;o.launch=1;dm*=1.2;}if(id==='tiefu')o.stun=Math.max(o.stun||0,0.8);
+  if(!P.plunge||P.plunge.actor!==c.id||!AIR_COMBAT.canImpact(P))return false;
+  const id=c.id,cfg=AIR_COMBAT.profile(id),fall=clamp((P.y-P.plunge.y0)/300,0,1),R=cfg.radius*(1+0.3*fall)*(eq('boots')?1.5:1),cx=P.x+17,fy=P.y+P.h,col=WORLD.palette[CH[id].anim]?.[0]||'#fff';
+  let dm=outDmg(cfg.damage*(1+0.5*fall),starMul(c))*(eq('plate')?1.3:1);
+  const o={heavy:1,kb:340,actor:CH[id].anim,explosive:id==='mimi',burn:eq('sauce'),stun:cfg.stun};
+  if(eq('pan')){o.stun=Math.max(o.stun||0,1.5);o.launch=1;dm*=1.2;}
   P.plunge=null;P.atkCd=0.3;P.vx=0;
   hitEnemies({x:cx-R,y:fy-80,w:R*2,h:100},dm,o);
   ring(cx,fy,R,col);ring(cx,fy,R*0.6,'#ffffff');fx.push({k:'pop',x:cx,y:fy,r:R*0.5,life:0.14,max:0.14});dust(cx,fy,14);
   WORLD.emit(CH[id].anim||'mimi',cx,fy-24,1.3,true,P.face);
   if(id==='mimi')for(const d of[-1,1])fx.push({k:'cleave',x:cx+d*62,y:fy+14,face:d,life:0.32,max:0.32});
-  if(id==='bobo')fx.push({k:'boom',x:cx,y:fy-20,r:R*0.8,life:0.22,max:0.22});
-  if(id==='lala')for(let i=0;i<14;i++)fx.push({k:'flame',x:cx+rnd(-R,R),y:fy,vx:rnd(-40,40),vy:rnd(-300,-120),life:.4,max:.4,size:rnd(10,20)});
-  shake(12);G.zoom=Math.max(G.zoom||0,0.025);G.hitstop=Math.max(G.hitstop,0.07);sfx(id==='bobo'?'boom':'heavy');
+  shake(12);G.zoom=Math.max(G.zoom||0,0.025);G.hitstop=Math.max(G.hitstop,0.07);sfx('heavy');
+  return true;
 }
 function onScreen(e){return e.x+e.w>cam.x&&e.x<cam.x+W&&e.y+e.h>cam.y&&e.y<cam.y+H&&!e.dead&&!e.bouncy&&!(e.boss&&!e.active);}
 function ult(c){
@@ -701,25 +706,21 @@ function takeAug(k){
 }
 function switchTo(i){
   if(i>=G.team.length||i===G.act||P.swT>0)return;
+  if(P.plunge){P.plunge=null;P.drop=P.dropT>0;P.vy=Math.min(P.vy,700);P.atkAnim=0;}
   G.act=i;P.swT=0.25;P.buff=null;P.blocking=false;P.pendingStrike=null;P.artAttackAt=-999;P.artHurtAt=-999;spark(P.x+17,P.y+28,14,CH[cur().id].hair,300);ring(P.x+17,P.y+28,50,CH[cur().id].cloth);sfx('ui');
   ono(P.x+17,P.y-36,CH[cur().id].name+'！',24,'#fff');
 }
 
 /* ============ 物理 ============ */
 function moveBody(b,dt){
-  b.hitWall=false;b.x+=b.vx*dt;
-  for(const s of solids){if(s.off||s.oneway||!ov(b,s))continue;
-    if(b.vx>0)b.x=s.x-b.w;else if(b.vx<0)b.x=s.x+s.w;else continue;b.hitWall=true;b.vx=0;}
-  const pb=b.y+b.h;b.y+=b.vy*dt;b.onGround=false;
-  for(const s of solids){if(s.off||!ov(b,s))continue;
-    if(s.oneway){if(b.vy>=0&&pb<=s.y+0.5&&!b.drop){b.y=s.y-b.h;b.vy=0;b.onGround=true;}continue;}
-    if(b.vy>0){b.y=s.y-b.h;b.onGround=true;b.vy=0;}else if(b.vy<0){b.y=s.y+s.h;b.vy=0;}}
+  AIR_COMBAT.moveBody(b,dt,solids,b===P&&!!P.plunge);
 }
 function solidAt(x,y){for(const s of solids)if(!s.off&&!s.oneway&&x>s.x&&x<s.x+s.w&&y>s.y&&y<s.y+s.h)return true;return false;}
 
 /* ============ 玩家更新 ============ */
 function updPlayer(dt){
   const c=cur(),id=c.id;
+  if(P.plunge&&P.plunge.actor!==id){P.plunge=null;P.drop=false;P.atkAnim=0;}
   if(P.pendingStrike){const q=P.pendingStrike;q.t-=dt;if(q.c.id!==id||P.hurtT>0)P.pendingStrike=null;
     else if(q.t<=0){P.pendingStrike=null;performAttack(q.c,q.dir,true,q.step);}}
   for(const k of ['atkCd','dashCd','inv','dashI','swT','dropT','shield','teamShield','lunge','jbuf','fireCd','atkAnim','hurtT','focusT'])if(P[k]>0)P[k]-=dt;
@@ -743,7 +744,7 @@ function updPlayer(dt){
     else if(id==='tiefu'&&K.dodge()){P.blocking=true;P.blockT+=dt;P.vx*=0.8;}
     else{P.blockT=0;if(P.lunge<=0)P.vx=mv*sp+(P.rx||0);if(mv)P.face=mv;}
     P.vy=Math.min(P.vy+GRAV*dt,1150);
-    if(P.plunge){P.vx=0;P.vy=1500;}   // 下落攻击：笔直砸向地面
+    if(P.plunge){P.vx=0;P.vy=AIR_COMBAT.profile(id).speed;}
     // 小火：空中按住跳 = 喷火飞行（燃料 0.9 秒，落地回满）
     if(id==='lala'&&!P.onGround&&!P.plunge&&K.jump()&&!P.jumping&&(P.fuel??0.9)>0&&P.hurtT<=0){
       P.fuel=(P.fuel??0.9)-dt;P.vy=Math.max(P.vy-GRAV*dt*1.9,-150);P.flying=true;
@@ -753,7 +754,7 @@ function updPlayer(dt){
   }
   if(K.pJump())P.jbuf=0.12;
   // WW：空中再按一次跳 = 脚下引爆把自己炸上去（每次离地一次）
-  if(id==='bobo'&&K.pJump()&&!P.onGround&&P.coy<=0&&!P.rj&&P.dashT<=0&&P.hurtT<=0){P.rj=1;P.jbuf=0;P.vy=-840;P.jumping=false;explode(P.x+17,P.y+P.h+12,85,outDmg(14,starMul(c)),true);}
+  if(id==='bobo'&&K.pJump()&&!P.onGround&&P.coy<=0&&!P.rj&&P.dashT<=0&&P.hurtT<=0){P.rj=1;P.jbuf=0;P.vy=-840;P.jumping=false;explode(P.x+17,P.y+P.h+12,85,outDmg(14,starMul(c)),true,{actor:'ww'});}
   if(P.onGround){P.coy=0.1;P.airDash=1;P.pogo=0;P.rj=0;P.fuel=0.9;}else P.coy-=dt;
   if(P.jbuf>0&&P.coy>0&&P.dashT<=0&&P.hurtT<=0){
     if(K.down())P.dropT=0.2;else{P.vy=-JV*(eq('spring')?1.12:1)*(id==='aken'?1.2:1);P.jumping=true;   // 可可跳得特别高
@@ -777,11 +778,11 @@ function updPlayer(dt){
   }
   if(id==='tiefu'&&K.pDodge()){P.blockT=0;tone(200,0.06,'square',0.05);}
   // 攻击 / 大招
-  if(K.atk()&&P.atkCd<=0&&P.dashT<=0&&!P.blocking&&!P.hiding&&P.hurtT<=0&&!P.plunge){if(K.down()&&!P.onGround)startPlunge(c);else attack(c,K.up()?'up':'fwd');}
+  if(K.atk()&&P.atkCd<=0&&P.dashT<=0&&!P.blocking&&!P.hiding&&P.hurtT<=0&&!P.plunge)attack(c,K.down()&&!P.onGround?'down':K.up()?'up':'fwd');
   if(K.pUlt()){if(G.energy>=100){G.energy=0;ult(c);}else tip('能量不足（攻击命中可积攒）',1.2);}
   const wasGround=P.onGround,fallSpeed=P.vy;
   moveBody(P,dt);
-  if(P.plunge){plungeTick(c);if(P.plunge&&P.onGround)plungeLand(c);}
+  if(P.plunge){plungeTick(c);if(P.plunge&&AIR_COMBAT.canImpact(P))plungeLand(c);}
   if(!wasGround&&P.onGround&&fallSpeed>120)P.artLandAt=G.t;
   if(!wasGround&&P.onGround&&fallSpeed>420){dust(P.x+17,P.y+P.h,7);tone(90,0.05,'sine',0.05,50);}
   if(P.y>WH)P.y=2700;
@@ -1496,7 +1497,7 @@ function drawPlayer(){
   if(P.artState!==action||P.artActor!==d.anim){P.artState=action;P.artStateAt=G.t;P.artActor=d.anim;}
   const runSpeed=P.dashT>0?1.7:Math.max(.45,Math.min(1.5,Math.abs(P.vx)/330));
   const animTime=action==='hurt'?G.t-P.artHurtAt:action==='attack'?G.t-P.artAttackAt:action==='land'?G.t-P.artLandAt:(G.t-P.artStateAt)*(action==='run'?runSpeed:1);
-  chibi(cx,by,1,d,P.face,T,{action,animTime,animLoop:action==='run'||action==='idle'||(action==='attack'&&c.id!=='mimi'),walk:P.onGround&&Math.abs(P.vx)>20,open:P.atkAnim>0,angry:!!P.buff});
+  chibi(cx,by,1,d,P.face,T,{action,animTime,animLoop:action==='run'||action==='idle'||(action==='attack'&&c.id!=='mimi'&&!P.plunge),walk:P.onGround&&Math.abs(P.vx)>20,open:P.atkAnim>0,angry:!!P.buff});
   g.restore();
   // 武器
   if(d.anim)return;
@@ -1585,7 +1586,7 @@ function drawHUD(){
     g.save();g.beginPath();g.rect(0,252,W,126);g.clip();chibi(260,520,3.2,CH[f.id],1,0,{});g.restore();
     t2(f.text,700,316,40,UI.tx,'center',900);g.restore();}
   t2('Tab 队伍 · M 地图 · N 音乐',W-16,H-14,11,UI.dim,'right');
-  if(G.t<14&&!b){const a=G.t>12?(14-G.t)/2:Math.min(1,G.t);g.globalAlpha=a;const keysH=[['A D','移动'],['空格','跳跃'],['J','攻击'],['K','闪避'],['S+J','空中下落攻击'],['L','大招']];let x=640-keysH.length*58;   // 开局操作提示，14 秒后消失
+  if(G.t<14&&!b){const a=G.t>12?(14-G.t)/2:Math.min(1,G.t);g.globalAlpha=a;const keysH=[['A D','移动'],['空格','跳跃'],['J','攻击'],['K','闪避'],['S+J',AIR_COMBAT.profile(c.id).name],['L','大招']];let x=640-keysH.length*58;   // 开局操作提示，14 秒后消失
     for(const [k,l] of keysH){g.font=F2(13,800);const kw=Math.max(30,g.measureText(k).width+16);g.fillStyle='rgba(10,17,30,.85)';g.beginPath();g.roundRect(x,H-106,kw,26,5);g.fill();g.strokeStyle=UI.edge;g.lineWidth=1;g.stroke();t2(k,x+kw/2,H-92,13,UI.gold,'center',800);t2(l,x+kw+8,H-92,13,UI.tx);x+=kw+8+g.measureText(l).width+26;}g.globalAlpha=1;}
 }
 
@@ -1721,7 +1722,7 @@ function drawTitle(){
     for(let i=0;i<5;i++){g.save();g.translate(640+(i-2)*150,130+Math.sin(T*3+i)*8);g.rotate([-0.1,0.06,-0.04,0.08,-0.06][i]);txt(s2[i],5,7,136,INK,INK,20);txt(s2[i],0,0,136,cl[i],'#fff',9);g.restore();}
     txt('云鲸号甜品偷吃大作战！',640,250,32,'#fff',INK,8);
     const b=1+Math.sin(T*5)*0.04;g.save();g.translate(640,560);g.scale(b,b);rr(-190,-38,380,76,22,'#ff5252',INK,6);txt('点击开始偷吃',0,2,38,'#fff',INK,7);g.restore();
-    rr(250,628,780,70,14,'#fffbe9ee',INK,4);txt('WASD/方向键 移动跳跃 · J/左键 攻击 · K/Shift 闪避 · 空中 S+J 下劈弹跳',640,650,16,INK);txt('L/右键 大招 · E 交互 · 1~4 切换主控 · B/Tab 招募面板',640,676,16,INK);return;}
+    rr(250,628,780,70,14,'#fffbe9ee',INK,4);txt('WASD/方向键 移动跳跃 · J/左键 攻击 · K/Shift 闪避 · 空中 S+J 角色专属向下攻击',640,650,16,INK);txt('L/右键 大招 · E 交互 · 1~4 切换主控 · B/Tab 招募面板',640,676,16,INK);return;}
   burst(640,250,560,300,18,-0.1+Math.sin(T)*0.02);g.fillStyle='#fffbe9';g.fill();g.strokeStyle=INK;g.lineWidth=7;g.stroke();
   const s='炸弹哈基迷',cols=['#ff5252','#ff7043','#ffb300','#ff5d8f','#7c4dff'];
   for(let i=0;i<5;i++){
@@ -1741,7 +1742,7 @@ function drawTitle(){
   const bs=1+Math.sin(T*5)*0.04;g.save();g.translate(640,480);g.scale(bs,bs);rr(-190,-38,380,76,22,'#ff5252',INK,6);txt('点击开始偷吃',0,2,38,'#fff',INK,7);g.restore();
   rr(390,548,500,128,14,'#fffbe9ee',INK,4);
   txt('WASD/方向键 移动跳跃   J/左键 攻击   K/Shift 闪避',640,572,16,INK);
-  txt('空中 S+J 下劈弹跳   L/右键 大招   E 交互',640,598,16,INK);
+  txt('空中 S+J 角色专属向下攻击   L/右键 大招   E 交互',640,598,16,INK);
   txt('1~4 切换主控干员   B/Tab 招募面板',640,624,16,INK);
   txt('从船员休息舱一路向上，抢走顶层的限定甜品吧！',640,654,15,'#c0392b');
 }

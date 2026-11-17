@@ -169,7 +169,7 @@ class HajimiWorld {
     ctx.font=F(60);ctx.fillStyle='#fff0ca';ctx.fillText('炸弹哈基迷',615,250);ctx.font=F(22);ctx.fillStyle='#ebd3b1';ctx.fillText('家具之上，还有另一条路。',620,299);
     ctx.font='16px "Microsoft YaHei",sans-serif';ctx.fillStyle='#b1c1ce';ctx.fillText('翻过书桌，穿行竖井，找出藏书夹层的捷径。',620,352);ctx.fillText('避开安保探照灯，带上伙伴穿过守关者的房间。',620,384);
     rr(620,434,390,60,12,'#e2b575','#f7d79b',2);ctx.font=F(23);ctx.fillStyle='#172332';ctx.fillText('开始夜航   J / Enter / 点击',642,472);
-    ctx.font='14px "Microsoft YaHei",sans-serif';ctx.fillStyle='#c0ceda';ctx.fillText('A/D 移动  ·  空格跳跃  ·  J 攻击  ·  K 闪避',620,537);ctx.fillText('E 交互  ·  M 探索地图  ·  数字键切换干员',620,566);ctx.restore();return true;
+    ctx.font='14px "Microsoft YaHei",sans-serif';ctx.fillStyle='#c0ceda';ctx.fillText('A/D 移动  ·  空格跳跃  ·  J 攻击  ·  K 闪避',620,537);ctx.fillText('E 交互  ·  M 探索地图  ·  数字键切换干员',620,566);ctx.fillText('空中 S+J：角色专属向下攻击',620,595);ctx.restore();return true;
   }
   drawMap(ctx,full=false){
     const bx=full?125:W-205,by=full?86:18,bw=full?1030:188,bh=full?560:145;
