@@ -19,9 +19,9 @@ canvas{display:block;margin:0 auto;cursor:crosshair}
 <a id="credits-link" href="credits.html" target="_blank" rel="noopener">试玩说明 / 音乐署名</a>
 <script src="assets/metadata/animations.js?v=60b2ffd2f59bfaec"></script>
 <script src="assets/animation-player.js?v=8fe3e6a69add20de"></script>
-<script src="assets/air-combat.js?v=765d5f13cd465b93"></script>
+<script src="assets/air-combat.js?v=017a847a34b22ec1"></script>
 <script src="assets/world/manifest.js?v=d80cbe944e879f82"></script>
-<script src="assets/world/world-runtime.js?v=c447feb4e7ded59b"></script>
+<script src="assets/world/world-runtime.js?v=144ba9ac1ba10992"></script>
 <script>
 'use strict';
 /* ============ 基础 ============ */
@@ -121,7 +121,7 @@ for(const k in CH){CH[k].key='ch_'+k;CH[k].anim=ACTOR_MAP[k];if(ACTOR_NAMES[k])C
 CH.mimi.desc='浮游巨盾·青蓝重劈';CH.mimi.ult='四面盾落·全屏晕眩';
 /* 每个干员一个只有她会的动作 */
 const TRAIT={mimi:'特技 · 靠着家具按住 S 躲起来',bobo:'特技 · 空中再按跳 = 炸弹跳',aken:'特技 · 跳得特别高，闪避是滑铲',lala:'特技 · 空中按住跳 = 喷火飞行',tiefu:'特技 · 按住 K 举锅格挡'};
-CH.mimi.desc='巨盾连击 · 空中下砸震地';CH.bobo.desc='空中投弹 · 炸弹二段跳';CH.aken.desc='高跳滑铲 · 空中下斩';CH.lala.desc='喷火缓降 · 短时飞行';CH.tiefu.desc='重刃坠击 · 格挡反击';
+CH.mimi.desc='地面连击 · 空中 J 下砸';CH.bobo.desc='空中投弹 · 炸弹二段跳';CH.aken.desc='高跳滑铲 · 空中下斩';CH.lala.desc='喷火缓降 · 短时飞行';CH.tiefu.desc='重刃坠击 · 格挡反击';
 function underDesk(){   // 迷迷个子小：桌子底下、柜子和书架里、沙发和花架后面都能躲（吊台不行）
   const px=P.x+17;for(const f of WORLD.furniture){if(f.type==='hanging_platform')continue;
     if(px>f.x+10&&px<f.x+f.w-10&&f.y<P.y+12&&f.y+f.h>=P.y+P.h-24)return f;}
@@ -1205,11 +1205,11 @@ function drawSolids(){
     if(s.cover){drawCover(s);continue;}
     if(s.hull){drawHull(s);continue;}
     if(WORLD.drawSolid(g,s))continue;
-    if(s.oneway){g.fillStyle='#232a40';g.fillRect(s.x,s.y,s.w,s.h);g.fillStyle='#e8b96a';g.fillRect(s.x,s.y,s.w,2);g.fillStyle='rgba(0,0,0,.35)';g.fillRect(s.x+4,s.y+s.h,s.w-8,4);}
+    if(s.oneway){g.fillStyle='#232a40';g.fillRect(s.x,s.y,s.w,s.h);g.fillStyle='rgba(0,0,0,.35)';g.fillRect(s.x+4,s.y+s.h,s.w-8,4);}
     else if(s.door){const gr=g.createLinearGradient(s.x,0,s.x+s.w,0);gr.addColorStop(0,'#1a2033');gr.addColorStop(.5,'#2e3854');gr.addColorStop(1,'#1a2033');g.fillStyle=gr;g.fillRect(s.x,s.y,s.w,s.h);g.fillStyle='#e8b96a';g.fillRect(s.x,s.y,2,s.h);g.fillRect(s.x+s.w-2,s.y,2,s.h);g.globalAlpha=0.5+0.3*Math.sin(T*4);g.fillStyle='#ff6b7f';for(let y=s.y+30;y<s.y+s.h-20;y+=70)g.fillRect(s.x+s.w/2-3,y,6,26);g.globalAlpha=1;}
     else if(s.crack){g.fillStyle='#20263a';g.fillRect(s.x,s.y,s.w,s.h);g.beginPath();for(let y=s.y+20;y<s.y+s.h;y+=90){g.moveTo(s.x+8,y);g.lineTo(s.x+28,y+30);g.lineTo(s.x+14,y+52);g.lineTo(s.x+40,y+80);}
       const cb=canBreak();g.strokeStyle=cb?'#8fe3ff':'#4a5674';g.lineWidth=2;if(cb){g.shadowColor='#8fe3ff';g.shadowBlur=12;}g.stroke();g.shadowBlur=0;}
-    else if(s.elev){g.fillStyle='#232a40';g.fillRect(s.x,s.y,s.w,s.h);g.fillStyle='#e8b96a';g.fillRect(s.x,s.y,s.w,3);g.strokeStyle='rgba(232,185,106,.35)';g.lineWidth=2;g.beginPath();g.moveTo(s.x+20,s.y);g.lineTo(s.x+20,900);g.moveTo(s.x+s.w-20,s.y);g.lineTo(s.x+s.w-20,900);g.stroke();}
+    else if(s.elev){g.fillStyle='#232a40';g.fillRect(s.x,s.y,s.w,s.h);g.strokeStyle='rgba(232,185,106,.35)';g.lineWidth=2;g.beginPath();g.moveTo(s.x+20,s.y);g.lineTo(s.x+20,900);g.moveTo(s.x+s.w-20,s.y);g.lineTo(s.x+s.w-20,900);g.stroke();}
     else{g.fillStyle='#141a2b';g.fillRect(s.x,s.y,s.w,s.h);g.fillStyle='#34405f';g.fillRect(s.x,s.y,s.w,3);}
   }
 }
@@ -1358,30 +1358,6 @@ function sceneLayers(){
   g.fillStyle=`rgba(6,10,26,${G.dim})`;g.fillRect(-40,-40,W+80,H+80);
   drawWorld();
 }
-/* 场景里真正能互动的家具要比背景里画着的家具更醒目：外圈描一层光边，能站的顶面有一道金线。
-   迷迷在场时，能躲进去的家具光边变成冰蓝色。 */
-const SIL={};
-function silhouette(type,col){
-  const key=type+col;if(SIL[key])return SIL[key];const im=WORLD.images[type];if(!im)return null;
-  const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const x=c.getContext('2d');x.drawImage(im,0,0);x.globalCompositeOperation='source-in';x.fillStyle=col;x.fillRect(0,0,c.width,c.height);
-  return SIL[key]=c;
-}
-function furnitureGlow(){
-  const mimi=cur().id==='mimi',px=P.x+17;
-  for(const f of WORLD.furniture){if(f.x>cam.x+W+80||f.x+f.w<cam.x-80||f.y>cam.y+H+100||f.y+f.h<cam.y-200)continue;
-    const hang=f.type==='hanging_platform',sil=silhouette(f.type,mimi&&!hang?'#8fe3ff':'#e8b96a');if(!sil)continue;
-    const top=hang?f.y-f.h*.84:f.y-f.h*.065,near=Math.abs(px-(f.x+f.w/2))<f.w/2+90&&Math.abs(P.y-f.y)<260;
-    g.globalAlpha=near?0.75+0.2*Math.sin(T*6):0.42;
-    for(const [ox,oy] of [[-3,0],[3,0],[0,-3],[0,3]])g.drawImage(sil,f.x+ox,top+oy,f.w,f.h);
-    g.globalAlpha=1;}
-}
-function furnitureTops(){
-  g.save();g.globalCompositeOperation='lighter';
-  for(const f of WORLD.furniture){if(f.x>cam.x+W+80||f.x+f.w<cam.x-80||f.y>cam.y+H+100||f.y<cam.y-60)continue;
-    const x0=f.x+f.w*.06,w=f.w*.88,gr=g.createLinearGradient(0,f.y-12,0,f.y+2);gr.addColorStop(0,'rgba(232,185,106,0)');gr.addColorStop(1,'rgba(232,185,106,.4)');
-    g.fillStyle=gr;g.fillRect(x0,f.y-12,w,14);g.fillStyle='rgba(255,236,190,.95)';g.fillRect(x0,f.y-1,w,2);}
-  g.restore();
-}
 function drawScene(){
   const sh=G.shake>0?G.shake:0,z=1+(G.zoom||0)+sh*0.0018,sx=sh?rnd(-sh,sh):0,sy=sh?rnd(-sh,sh)*0.7:0;   // 晃动时略微放大，边缘不露底
   g.fillStyle='#060a14';g.fillRect(0,0,W,H);
@@ -1391,11 +1367,7 @@ function dust(x,y,n){for(let i=0;i<n;i++)fx.push({k:'dust',x:x+rnd(-14,14),y:y-r
 function drawWorld(){
   g.save();g.translate(-Math.round(cam.x),-Math.round(cam.y));
   drawSolids();
-  furnitureGlow();WORLD.drawFurniture(g);furnitureTops();drawSensors();
-  {const ab=enemies.find(e=>e.boss&&e.active&&!e.dead);   // BOSS 战：舞台地面的发光线
-    if(ab){const fy=ab.boss===1?2800:1500,c=ab.boss===1?'255,176,96':'170,255,150',x0=ab.room.x0,x1=ab.room.x1;
-      g.save();g.globalCompositeOperation='lighter';const gr=g.createLinearGradient(0,fy-22,0,fy+10);gr.addColorStop(0,`rgba(${c},0)`);gr.addColorStop(0.7,`rgba(${c},.28)`);gr.addColorStop(1,`rgba(${c},0)`);g.fillStyle=gr;g.fillRect(x0,fy-22,x1-x0,32);
-      g.fillStyle=`rgba(${c},.95)`;g.fillRect(x0,fy-1,x1-x0,2);g.fillStyle='#fff';g.fillRect(x0,fy-0.5,x1-x0,1);g.restore();}}
+  WORLD.drawFurniture(g);drawSensors();
   // 区域
   for(const z of zones){
     if(z.type==='paddy'){const k=Math.min(1,z.life);g.save();g.globalAlpha=k;const gr=g.createLinearGradient(0,z.y-46,0,z.y);gr.addColorStop(0,'rgba(140,200,90,0)');gr.addColorStop(1,'rgba(140,200,90,.38)');g.fillStyle=gr;g.fillRect(z.x,z.y-46,z.w,46);
@@ -1586,7 +1558,7 @@ function drawHUD(){
     g.save();g.beginPath();g.rect(0,252,W,126);g.clip();chibi(260,520,3.2,CH[f.id],1,0,{});g.restore();
     t2(f.text,700,316,40,UI.tx,'center',900);g.restore();}
   t2('Tab 队伍 · M 地图 · N 音乐',W-16,H-14,11,UI.dim,'right');
-  if(G.t<14&&!b){const a=G.t>12?(14-G.t)/2:Math.min(1,G.t);g.globalAlpha=a;const keysH=[['A D','移动'],['空格','跳跃'],['J','攻击'],['K','闪避'],['S+J',AIR_COMBAT.profile(c.id).name],['L','大招']];let x=640-keysH.length*58;   // 开局操作提示，14 秒后消失
+  if(G.t<14&&!b){const a=G.t>12?(14-G.t)/2:Math.min(1,G.t);g.globalAlpha=a;const keysH=[['A D','移动'],['空格','跳跃'],['J',c.id==='mimi'?'攻击/空中下砸':'攻击'],['K','闪避'],...(c.id==='mimi'?[]:[['S+J',AIR_COMBAT.profile(c.id).name]]),['L','大招']];let x=640-keysH.length*58;   // 开局操作提示，14 秒后消失
     for(const [k,l] of keysH){g.font=F2(13,800);const kw=Math.max(30,g.measureText(k).width+16);g.fillStyle='rgba(10,17,30,.85)';g.beginPath();g.roundRect(x,H-106,kw,26,5);g.fill();g.strokeStyle=UI.edge;g.lineWidth=1;g.stroke();t2(k,x+kw/2,H-92,13,UI.gold,'center',800);t2(l,x+kw+8,H-92,13,UI.tx);x+=kw+8+g.measureText(l).width+26;}g.globalAlpha=1;}
 }
 
@@ -1722,7 +1694,7 @@ function drawTitle(){
     for(let i=0;i<5;i++){g.save();g.translate(640+(i-2)*150,130+Math.sin(T*3+i)*8);g.rotate([-0.1,0.06,-0.04,0.08,-0.06][i]);txt(s2[i],5,7,136,INK,INK,20);txt(s2[i],0,0,136,cl[i],'#fff',9);g.restore();}
     txt('云鲸号甜品偷吃大作战！',640,250,32,'#fff',INK,8);
     const b=1+Math.sin(T*5)*0.04;g.save();g.translate(640,560);g.scale(b,b);rr(-190,-38,380,76,22,'#ff5252',INK,6);txt('点击开始偷吃',0,2,38,'#fff',INK,7);g.restore();
-    rr(250,628,780,70,14,'#fffbe9ee',INK,4);txt('WASD/方向键 移动跳跃 · J/左键 攻击 · K/Shift 闪避 · 空中 S+J 角色专属向下攻击',640,650,16,INK);txt('L/右键 大招 · E 交互 · 1~4 切换主控 · B/Tab 招募面板',640,676,16,INK);return;}
+    rr(250,628,780,70,14,'#fffbe9ee',INK,4);txt('WASD/方向键 移动跳跃 · J/左键 攻击 · K/Shift 闪避 · 迷迭香空中 J 下砸 · 其他干员 S+J',640,650,16,INK);txt('L/右键 大招 · E 交互 · 1~4 切换主控 · B/Tab 招募面板',640,676,16,INK);return;}
   burst(640,250,560,300,18,-0.1+Math.sin(T)*0.02);g.fillStyle='#fffbe9';g.fill();g.strokeStyle=INK;g.lineWidth=7;g.stroke();
   const s='炸弹哈基迷',cols=['#ff5252','#ff7043','#ffb300','#ff5d8f','#7c4dff'];
   for(let i=0;i<5;i++){
@@ -1742,7 +1714,7 @@ function drawTitle(){
   const bs=1+Math.sin(T*5)*0.04;g.save();g.translate(640,480);g.scale(bs,bs);rr(-190,-38,380,76,22,'#ff5252',INK,6);txt('点击开始偷吃',0,2,38,'#fff',INK,7);g.restore();
   rr(390,548,500,128,14,'#fffbe9ee',INK,4);
   txt('WASD/方向键 移动跳跃   J/左键 攻击   K/Shift 闪避',640,572,16,INK);
-  txt('空中 S+J 角色专属向下攻击   L/右键 大招   E 交互',640,598,16,INK);
+  txt('迷迭香空中 J 下砸 · 其他干员 S+J   L/右键 大招   E 交互',640,598,16,INK);
   txt('1~4 切换主控干员   B/Tab 招募面板',640,624,16,INK);
   txt('从船员休息舱一路向上，抢走顶层的限定甜品吧！',640,654,15,'#c0392b');
 }

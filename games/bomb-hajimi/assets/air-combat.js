@@ -2,7 +2,7 @@
 (function(root){
   'use strict';
   const profiles=Object.freeze({
-    mimi:Object.freeze({type:'plunge',name:'巨盾下砸',radius:115,damage:26,speed:1500,stun:0}),
+    mimi:Object.freeze({type:'plunge',primaryAir:true,name:'巨盾下砸',radius:115,damage:26,speed:1500,stun:0}),
     bobo:Object.freeze({type:'bomb',name:'向下投弹'}),
     aken:Object.freeze({type:'melee',name:'空中下斩'}),
     lala:Object.freeze({type:'flame',name:'喷火缓降'}),
@@ -10,7 +10,7 @@
   });
   const fallback=Object.freeze({type:'melee',name:'空中下斩'});
   const profile=id=>profiles[id]||fallback;
-  const attackMode=(id,dir,onGround)=>dir==='down'&&!onGround?profile(id).type:'normal';
+  const attackMode=(id,dir,onGround)=>!onGround&&(profile(id).primaryAir||dir==='down')?profile(id).type:'normal';
   const canPogo=(id,dir,onGround)=>dir==='down'&&!onGround&&profile(id).type==='melee';
   const intermediate=s=>!!(s.oneway||s.furniture||s.worldStep||s.worldBridge);
   const canImpact=b=>!!(b.onGround&&b.groundSurface&&!b.groundSurface.off&&!intermediate(b.groundSurface));

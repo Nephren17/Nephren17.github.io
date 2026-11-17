@@ -117,17 +117,16 @@ class HajimiWorld {
   }
   drawSolid(ctx,s){
     if(s.furniture)return true;
-    if(s.worldStep||s.worldBridge){ctx.fillStyle=s.worldBridge?'#376071':'#4d4b45';ctx.fillRect(s.x,s.y,s.w,s.h);ctx.fillStyle=s.worldBridge?'#8be3d2':'#d7b477';ctx.fillRect(s.x,s.y,s.w,3);ctx.fillStyle='#111d29';ctx.fillRect(s.x,s.y+s.h-4,s.w,4);
+    if(s.worldStep||s.worldBridge){ctx.fillStyle=s.worldBridge?'#376071':'#4d4b45';ctx.fillRect(s.x,s.y,s.w,s.h);ctx.fillStyle='#111d29';ctx.fillRect(s.x,s.y+s.h-4,s.w,4);
       ctx.strokeStyle='#8e9eac88';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(s.x+9,s.y);ctx.lineTo(s.x+9,s.y-76);ctx.moveTo(s.x+s.w-9,s.y);ctx.lineTo(s.x+s.w-9,s.y-76);ctx.stroke();return true;}
     if(s.door||s.crack||s.elev||s.oneway)return false;
-    ctx.fillStyle='#111b29';ctx.fillRect(s.x,s.y,s.w,s.h);ctx.fillStyle='#59616b';ctx.fillRect(s.x,s.y,s.w,10);ctx.fillStyle='#b6a17e';ctx.fillRect(s.x,s.y,s.w,3);ctx.fillStyle='#283b49';ctx.fillRect(s.x,s.y+12,s.w,20);
+    ctx.fillStyle='#111b29';ctx.fillRect(s.x,s.y,s.w,s.h);ctx.fillStyle='#59616b';ctx.fillRect(s.x,s.y,s.w,10);ctx.fillStyle='#283b49';ctx.fillRect(s.x,s.y+12,s.w,20);
     for(let x=Math.max(s.x,Math.floor(cam.x/90)*90);x<Math.min(s.x+s.w,cam.x+W);x+=90){ctx.fillStyle='#516775';ctx.fillRect(x+10,s.y+18,4,4);ctx.fillRect(x+70,s.y+18,4,4)}return true;
   }
   drawProp(ctx,type,x,surface,w,h){const im=this.images[type];if(!im)return;ctx.save();ctx.fillStyle='#0005';ctx.beginPath();ctx.ellipse(x+w/2,type==='hanging_platform'?surface+9:surface+h*.91,w*.44,8,0,0,Math.PI*2);ctx.fill();
     const top=type==='hanging_platform'?surface-h*.84:surface-h*.065;ctx.drawImage(im,x,top,w,h);ctx.restore();}
   drawFurniture(ctx){
-    for(const f of this.furniture){if(f.x>cam.x+W+80||f.x+f.w<cam.x-80||f.y>cam.y+H+100||f.y+f.h<cam.y-100)continue;this.drawProp(ctx,f.type,f.x,f.y,f.w,f.h);
-      if(f.type!=='hanging_platform'){ctx.strokeStyle='#ffe9ae77';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(f.x+f.w*.08,f.y+1);ctx.lineTo(f.x+f.w*.92,f.y+1);ctx.stroke()}}
+    for(const f of this.furniture){if(f.x>cam.x+W+80||f.x+f.w<cam.x-80||f.y>cam.y+H+100||f.y+f.h<cam.y-100)continue;this.drawProp(ctx,f.type,f.x,f.y,f.w,f.h);}
     for(const h of this.hazards){if(h.x<cam.x-80||h.x>cam.x+W+80||h.y<cam.y-160||h.y>cam.y+H+100)continue;
       if(h.kind==='lamp'){const x=h.x+Math.sin(G.t*1.4)*64,y=h.y+Math.cos(G.t*1.4)*14+95;ctx.strokeStyle='#9d8c69';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(h.x,h.y-35);ctx.lineTo(x,y-25);ctx.stroke();this.drawProp(ctx,'lamp',x-36,y-25,72,70);continue}
       if(h.kind==='steam'){this.drawProp(ctx,'pipe',h.x-35,h.y-98,70,105);if(h.phase==='warn'||h.phase==='active'){ctx.save();ctx.globalAlpha=h.phase==='warn'?.18+.12*Math.sin(G.t*30):.5;const v=ctx.createLinearGradient(0,h.y-180,0,h.y);v.addColorStop(0,'#c8ffee00');v.addColorStop(1,'#c8ffeded');ctx.fillStyle=v;ctx.fillRect(h.x-27,h.y-180,54,180);ctx.restore()}continue}
@@ -169,7 +168,7 @@ class HajimiWorld {
     ctx.font=F(60);ctx.fillStyle='#fff0ca';ctx.fillText('炸弹哈基迷',615,250);ctx.font=F(22);ctx.fillStyle='#ebd3b1';ctx.fillText('家具之上，还有另一条路。',620,299);
     ctx.font='16px "Microsoft YaHei",sans-serif';ctx.fillStyle='#b1c1ce';ctx.fillText('翻过书桌，穿行竖井，找出藏书夹层的捷径。',620,352);ctx.fillText('避开安保探照灯，带上伙伴穿过守关者的房间。',620,384);
     rr(620,434,390,60,12,'#e2b575','#f7d79b',2);ctx.font=F(23);ctx.fillStyle='#172332';ctx.fillText('开始夜航   J / Enter / 点击',642,472);
-    ctx.font='14px "Microsoft YaHei",sans-serif';ctx.fillStyle='#c0ceda';ctx.fillText('A/D 移动  ·  空格跳跃  ·  J 攻击  ·  K 闪避',620,537);ctx.fillText('E 交互  ·  M 探索地图  ·  数字键切换干员',620,566);ctx.fillText('空中 S+J：角色专属向下攻击',620,595);ctx.restore();return true;
+    ctx.font='14px "Microsoft YaHei",sans-serif';ctx.fillStyle='#c0ceda';ctx.fillText('A/D 移动  ·  空格跳跃  ·  J 攻击  ·  K 闪避',620,537);ctx.fillText('E 交互  ·  M 探索地图  ·  数字键切换干员',620,566);ctx.fillText('迷迭香：空中 J 下砸 · 其他干员：空中 S+J',620,595);ctx.restore();return true;
   }
   drawMap(ctx,full=false){
     const bx=full?125:W-205,by=full?86:18,bw=full?1030:188,bh=full?560:145;
