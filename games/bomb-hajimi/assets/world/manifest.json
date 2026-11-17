@@ -1,0 +1,508 @@
+{
+  "version": 4,
+  "backgrounds": {
+    "dorm_depth": {
+      "file": "backgrounds/dorm_depth.webp",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    "lab_depth": {
+      "file": "backgrounds/lab_depth.webp",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    "archive_depth": {
+      "file": "backgrounds/archive_depth.webp",
+      "size": [
+        1774,
+        887
+      ]
+    },
+    "shaft_depth": {
+      "file": "backgrounds/shaft_depth.webp",
+      "size": [
+        724,
+        2172
+      ]
+    }
+  },
+  "props": {
+    "desk": {
+      "file": "props/desk.webp",
+      "size": [
+        589,
+        302
+      ],
+      "source": "furniture_warm",
+      "sourceBounds": [
+        20,
+        176,
+        577,
+        446
+      ],
+      "sourceCell": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    "cabinet": {
+      "file": "props/cabinet.webp",
+      "size": [
+        406,
+        470
+      ],
+      "source": "furniture_warm",
+      "sourceBounds": [
+        647,
+        27,
+        1021,
+        465
+      ],
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    "sofa": {
+      "file": "props/sofa.webp",
+      "size": [
+        538,
+        309
+      ],
+      "source": "furniture_warm",
+      "sourceBounds": [
+        1012,
+        164,
+        1518,
+        441
+      ],
+      "sourceCell": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    "tea_table": {
+      "file": "props/tea_table.webp",
+      "size": [
+        568,
+        265
+      ],
+      "source": "furniture_warm",
+      "sourceBounds": [
+        18,
+        711,
+        554,
+        944
+      ],
+      "sourceCell": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    "bookshelf": {
+      "file": "props/bookshelf.webp",
+      "size": [
+        374,
+        468
+      ],
+      "source": "furniture_warm",
+      "sourceBounds": [
+        618,
+        541,
+        960,
+        977
+      ],
+      "sourceCell": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    "tea": {
+      "file": "props/tea.webp",
+      "size": [
+        410,
+        405
+      ],
+      "source": "furniture_warm",
+      "sourceBounds": [
+        1084,
+        568,
+        1462,
+        941
+      ],
+      "sourceCell": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    },
+    "planter": {
+      "file": "props/planter.webp",
+      "size": [
+        491,
+        280
+      ],
+      "source": "furniture_lab",
+      "sourceBounds": [
+        27,
+        181,
+        486,
+        429
+      ],
+      "sourceCell": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    "console": {
+      "file": "props/console.webp",
+      "size": [
+        486,
+        301
+      ],
+      "source": "furniture_lab",
+      "sourceBounds": [
+        541,
+        160,
+        995,
+        429
+      ],
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    "hanging_platform": {
+      "file": "props/hanging_platform.webp",
+      "size": [
+        504,
+        433
+      ],
+      "source": "furniture_lab",
+      "sourceBounds": [
+        1049,
+        32,
+        1521,
+        433
+      ],
+      "sourceCell": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    "supply_crate": {
+      "file": "props/supply_crate.webp",
+      "size": [
+        451,
+        309
+      ],
+      "source": "furniture_lab",
+      "sourceBounds": [
+        48,
+        658,
+        467,
+        935
+      ],
+      "sourceCell": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    "pipe": {
+      "file": "props/pipe.webp",
+      "size": [
+        338,
+        466
+      ],
+      "source": "furniture_lab",
+      "sourceBounds": [
+        603,
+        535,
+        909,
+        969
+      ],
+      "sourceCell": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    "lamp": {
+      "file": "props/lamp.webp",
+      "size": [
+        459,
+        472
+      ],
+      "source": "furniture_lab",
+      "sourceBounds": [
+        1067,
+        535,
+        1494,
+        975
+      ],
+      "sourceCell": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  },
+  "effects": {
+    "mimi": {
+      "file": "vfx/mimi.webp",
+      "size": [
+        496,
+        478
+      ],
+      "source": "vfx_party",
+      "sourceBounds": [
+        88,
+        97,
+        552,
+        543
+      ],
+      "sourceCell": [
+        0,
+        0,
+        640,
+        640
+      ],
+      "clip": "operator_mimi_impact"
+    },
+    "ww": {
+      "file": "vfx/ww.webp",
+      "size": [
+        512,
+        474
+      ],
+      "source": "vfx_party",
+      "sourceBounds": [
+        720,
+        99,
+        1200,
+        541
+      ],
+      "sourceCell": [
+        640,
+        0,
+        1280,
+        640
+      ],
+      "clip": "operator_ww_impact"
+    },
+    "niannian": {
+      "file": "vfx/niannian.webp",
+      "size": [
+        512,
+        476
+      ],
+      "source": "vfx_party",
+      "sourceBounds": [
+        1360,
+        98,
+        1840,
+        542
+      ],
+      "sourceCell": [
+        1280,
+        0,
+        1920,
+        640
+      ],
+      "clip": "operator_niannian_impact"
+    },
+    "keke": {
+      "file": "vfx/keke.webp",
+      "size": [
+        504,
+        494
+      ],
+      "source": "vfx_party",
+      "sourceBounds": [
+        84,
+        729,
+        556,
+        1191
+      ],
+      "sourceCell": [
+        0,
+        640,
+        640,
+        1280
+      ],
+      "clip": "operator_keke_impact"
+    },
+    "xiaohuo": {
+      "file": "vfx/xiaohuo.webp",
+      "size": [
+        533,
+        477
+      ],
+      "source": "vfx_party",
+      "sourceBounds": [
+        709,
+        737,
+        1210,
+        1182
+      ],
+      "sourceCell": [
+        640,
+        640,
+        1280,
+        1280
+      ],
+      "clip": "operator_xiaohuo_impact"
+    },
+    "du": {
+      "file": "vfx/du.webp",
+      "size": [
+        476,
+        430
+      ],
+      "source": "vfx_boss",
+      "sourceBounds": [
+        29,
+        71,
+        473,
+        469
+      ],
+      "sourceCell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "clip": "operator_du_impact"
+    },
+    "shushu": {
+      "file": "vfx/shushu.webp",
+      "size": [
+        498,
+        440
+      ],
+      "source": "vfx_boss",
+      "sourceBounds": [
+        537,
+        47,
+        1003,
+        455
+      ],
+      "sourceCell": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "clip": "operator_shushu_impact"
+    },
+    "chenchen": {
+      "file": "vfx/chenchen.webp",
+      "size": [
+        493,
+        457
+      ],
+      "source": "vfx_boss",
+      "sourceBounds": [
+        1052,
+        46,
+        1513,
+        471
+      ],
+      "sourceCell": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "clip": "operator_chenchen_impact"
+    },
+    "tata": {
+      "file": "vfx/tata.webp",
+      "size": [
+        502,
+        440
+      ],
+      "source": "vfx_boss",
+      "sourceBounds": [
+        22,
+        542,
+        492,
+        950
+      ],
+      "sourceCell": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "clip": "operator_tata_impact"
+    },
+    "kaikai": {
+      "file": "vfx/kaikai.webp",
+      "size": [
+        483,
+        430
+      ],
+      "source": "vfx_boss",
+      "sourceBounds": [
+        549,
+        551,
+        1000,
+        949
+      ],
+      "sourceCell": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "clip": "operator_kaikai_impact"
+    },
+    "huanghuang": {
+      "file": "vfx/huanghuang.webp",
+      "size": [
+        499,
+        439
+      ],
+      "source": "vfx_boss",
+      "sourceBounds": [
+        1046,
+        545,
+        1513,
+        952
+      ],
+      "sourceCell": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "clip": "operator_huanghuang_impact"
+    }
+  }
+}
