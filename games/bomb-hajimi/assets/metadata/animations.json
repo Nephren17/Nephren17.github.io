@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "frameSize": 384,
   "clips": {
     "mimi_idle": {
@@ -19,8 +19,9 @@
         360
       ],
       "nominalHeight": 320,
-      "method": "separated-head-body-shields",
-      "events": []
+      "method": "joint-anchored-head-body-shields",
+      "events": [],
+      "contentHash": "a5961ce5fe561ec3"
     },
     "mimi_run": {
       "id": "mimi_run",
@@ -40,7 +41,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "c51f1441486b49c3"
     },
     "mimi_attack": {
       "id": "mimi_attack",
@@ -65,7 +67,8 @@
           "frame": 4,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "af442a245452c772"
     },
     "mimi_hurt": {
       "id": "mimi_hurt",
@@ -85,7 +88,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "d4317b4c4f049e3e"
     },
     "ww_idle": {
       "id": "ww_idle",
@@ -105,7 +109,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "d3adb3bf26b8356c"
     },
     "ww_run": {
       "id": "ww_run",
@@ -125,7 +130,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "5028eae84970e5f1"
     },
     "ww_attack": {
       "id": "ww_attack",
@@ -150,7 +156,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "676c21cd76083784"
     },
     "ww_hurt": {
       "id": "ww_hurt",
@@ -170,7 +177,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "2fb136e9f88b6346"
     },
     "niannian_idle": {
       "id": "niannian_idle",
@@ -190,7 +198,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "a0b85a35ae721c74"
     },
     "niannian_run": {
       "id": "niannian_run",
@@ -210,7 +219,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "fa1618bc80e10a0d"
     },
     "niannian_attack": {
       "id": "niannian_attack",
@@ -235,7 +245,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "de66a373fac09558"
     },
     "niannian_hurt": {
       "id": "niannian_hurt",
@@ -255,7 +266,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "93e02c55db84ccee"
     },
     "keke_idle": {
       "id": "keke_idle",
@@ -275,7 +287,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "fa7eddfaa05ca4f1"
     },
     "keke_run": {
       "id": "keke_run",
@@ -295,7 +308,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "832ab0455d4ca2e3"
     },
     "keke_attack": {
       "id": "keke_attack",
@@ -320,7 +334,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "b17b2fdbc21c91c5"
     },
     "keke_hurt": {
       "id": "keke_hurt",
@@ -340,7 +355,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "56f8a2b61ca8cfb1"
     },
     "xiaohuo_idle": {
       "id": "xiaohuo_idle",
@@ -360,7 +376,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "ab6ae5d4e78abc3f"
     },
     "xiaohuo_run": {
       "id": "xiaohuo_run",
@@ -380,7 +397,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "072f6765cf48e152"
     },
     "xiaohuo_attack": {
       "id": "xiaohuo_attack",
@@ -405,7 +423,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "ca9b429ba29bada2"
     },
     "xiaohuo_hurt": {
       "id": "xiaohuo_hurt",
@@ -425,7 +444,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "345c9471b42630de"
     },
     "du_idle": {
       "id": "du_idle",
@@ -445,7 +465,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "96107a6317e51346"
     },
     "du_run": {
       "id": "du_run",
@@ -465,7 +486,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "b0c3956b5c02242b"
     },
     "du_attack": {
       "id": "du_attack",
@@ -490,7 +512,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "a0c78e1318a96b89"
     },
     "du_hurt": {
       "id": "du_hurt",
@@ -510,7 +533,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "483c6ade320b8d13"
     },
     "shushu_idle": {
       "id": "shushu_idle",
@@ -530,7 +554,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "2f86a72f0ebd9d7a"
     },
     "shushu_run": {
       "id": "shushu_run",
@@ -550,7 +575,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "b57f7aa66cbed7f9"
     },
     "shushu_attack": {
       "id": "shushu_attack",
@@ -575,7 +601,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "455969506e9d0034"
     },
     "shushu_hurt": {
       "id": "shushu_hurt",
@@ -595,7 +622,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "760320d0dafcf393"
     },
     "chenchen_idle": {
       "id": "chenchen_idle",
@@ -615,7 +643,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "866a7372878b13a2"
     },
     "chenchen_run": {
       "id": "chenchen_run",
@@ -635,7 +664,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "949e548d9829c622"
     },
     "chenchen_attack": {
       "id": "chenchen_attack",
@@ -660,7 +690,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "1079c91919b95c1a"
     },
     "chenchen_hurt": {
       "id": "chenchen_hurt",
@@ -680,7 +711,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "a99c8dcdc862d20f"
     },
     "tata_idle": {
       "id": "tata_idle",
@@ -700,7 +732,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "160964202a7ce839"
     },
     "tata_run": {
       "id": "tata_run",
@@ -720,7 +753,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "2c834158d2c77017"
     },
     "tata_attack": {
       "id": "tata_attack",
@@ -745,7 +779,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "771a378670bfaac0"
     },
     "tata_hurt": {
       "id": "tata_hurt",
@@ -765,7 +800,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "6ce135fdcbb37ac2"
     },
     "kaikai_idle": {
       "id": "kaikai_idle",
@@ -785,7 +821,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "53d92582ba9869ce"
     },
     "kaikai_run": {
       "id": "kaikai_run",
@@ -805,7 +842,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "645466fa31db8406"
     },
     "kaikai_attack": {
       "id": "kaikai_attack",
@@ -830,7 +868,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "a131c3f312492881"
     },
     "kaikai_hurt": {
       "id": "kaikai_hurt",
@@ -850,7 +889,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "431028094a5fb928"
     },
     "huanghuang_idle": {
       "id": "huanghuang_idle",
@@ -870,7 +910,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "9e7b5885cde72a10"
     },
     "huanghuang_run": {
       "id": "huanghuang_run",
@@ -890,7 +931,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "76d96a0b74b85aa0"
     },
     "huanghuang_attack": {
       "id": "huanghuang_attack",
@@ -915,7 +957,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "bbc515efb01f9b88"
     },
     "huanghuang_hurt": {
       "id": "huanghuang_hurt",
@@ -935,7 +978,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-deformation-rig",
-      "events": []
+      "events": [],
+      "contentHash": "b82d039c62612973"
     },
     "mimi_follower_idle": {
       "id": "mimi_follower_idle",
@@ -955,7 +999,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "91a9f9557a79b84e"
     },
     "ww_follower_idle": {
       "id": "ww_follower_idle",
@@ -975,7 +1020,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "d82fb0d037677e3c"
     },
     "niannian_follower_idle": {
       "id": "niannian_follower_idle",
@@ -995,7 +1041,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "b46f9c5394e300ef"
     },
     "keke_follower_idle": {
       "id": "keke_follower_idle",
@@ -1015,7 +1062,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "99edc588b48db837"
     },
     "xiaohuo_follower_idle": {
       "id": "xiaohuo_follower_idle",
@@ -1035,7 +1083,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "3d83056a216c03b3"
     },
     "bug_run": {
       "id": "bug_run",
@@ -1055,7 +1104,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "8118ca0998473368"
     },
     "bug_idle": {
       "id": "bug_idle",
@@ -1075,7 +1125,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "8e04129593cdeda1"
     },
     "bug_hurt": {
       "id": "bug_hurt",
@@ -1095,7 +1146,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "b191f4de1d9c8f74"
     },
     "bug_attack": {
       "id": "bug_attack",
@@ -1120,7 +1172,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "60e0751d379d81a5"
     },
     "cart_run": {
       "id": "cart_run",
@@ -1140,7 +1193,8 @@
       ],
       "nominalHeight": 320,
       "method": "hand-drawn-6-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "b662a614cae0bb9b"
     },
     "cart_idle": {
       "id": "cart_idle",
@@ -1160,7 +1214,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "752f03c4ee4c7704"
     },
     "cart_hurt": {
       "id": "cart_hurt",
@@ -1180,7 +1235,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "9bb55706adba0dcd"
     },
     "cart_attack": {
       "id": "cart_attack",
@@ -1205,7 +1261,8 @@
           "frame": 3,
           "name": "impact"
         }
-      ]
+      ],
+      "contentHash": "21f16d046d2209f7"
     },
     "chest_idle": {
       "id": "chest_idle",
@@ -1225,7 +1282,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "e0dfb084175ed0eb"
     },
     "chest_open": {
       "id": "chest_open",
@@ -1250,7 +1308,8 @@
           "frame": 4,
           "name": "loot"
         }
-      ]
+      ],
+      "contentHash": "65d0dcaed376199f"
     },
     "chest_opened": {
       "id": "chest_opened",
@@ -1270,7 +1329,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "7600d4c79950f0d9"
     },
     "vending_idle": {
       "id": "vending_idle",
@@ -1290,7 +1350,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "979ee85393e29daa"
     },
     "vending_attack": {
       "id": "vending_attack",
@@ -1315,7 +1376,8 @@
           "frame": 3,
           "name": "fire"
         }
-      ]
+      ],
+      "contentHash": "a32174d2a72b7c61"
     },
     "vending_hurt": {
       "id": "vending_hurt",
@@ -1335,7 +1397,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "ee281b3d2675bd91"
     },
     "drone_idle": {
       "id": "drone_idle",
@@ -1355,7 +1418,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "5725f10ed2c25fe0"
     },
     "drone_attack": {
       "id": "drone_attack",
@@ -1380,7 +1444,8 @@
           "frame": 3,
           "name": "fire"
         }
-      ]
+      ],
+      "contentHash": "c3c98f8b8c758f7f"
     },
     "drone_hurt": {
       "id": "drone_hurt",
@@ -1400,7 +1465,8 @@
       ],
       "nominalHeight": 320,
       "method": "raster-rig",
-      "events": []
+      "events": [],
+      "contentHash": "219ee6bf9908e366"
     },
     "cyan_attack": {
       "id": "cyan_attack",
@@ -1420,7 +1486,8 @@
       ],
       "nominalHeight": 320,
       "method": "effect-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "e3e5da9e96d01354"
     },
     "explosion_attack": {
       "id": "explosion_attack",
@@ -1440,7 +1507,8 @@
       ],
       "nominalHeight": 320,
       "method": "effect-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "136df36ddbba7275"
     },
     "flame_attack": {
       "id": "flame_attack",
@@ -1460,7 +1528,8 @@
       ],
       "nominalHeight": 320,
       "method": "effect-keyframes",
-      "events": []
+      "events": [],
+      "contentHash": "fefe84d7925f8ced"
     },
     "operator_mimi_impact": {
       "id": "operator_mimi_impact",
@@ -1480,7 +1549,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "dcd47be4688e3ec7"
     },
     "operator_ww_impact": {
       "id": "operator_ww_impact",
@@ -1500,7 +1570,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "9d54063f65f2ad3f"
     },
     "operator_niannian_impact": {
       "id": "operator_niannian_impact",
@@ -1520,7 +1591,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "b6f89c67aa047bef"
     },
     "operator_keke_impact": {
       "id": "operator_keke_impact",
@@ -1540,7 +1612,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "ccc8b0f05becff45"
     },
     "operator_xiaohuo_impact": {
       "id": "operator_xiaohuo_impact",
@@ -1560,7 +1633,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "fcb2db67b2d403d2"
     },
     "operator_du_impact": {
       "id": "operator_du_impact",
@@ -1580,7 +1654,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "0b90225041ed5d40"
     },
     "operator_shushu_impact": {
       "id": "operator_shushu_impact",
@@ -1600,7 +1675,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "dc92d3d2a5d41359"
     },
     "operator_chenchen_impact": {
       "id": "operator_chenchen_impact",
@@ -1620,7 +1696,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "c3e0ee40a12af1a6"
     },
     "operator_tata_impact": {
       "id": "operator_tata_impact",
@@ -1640,7 +1717,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "2c9b45e4b90f7da8"
     },
     "operator_kaikai_impact": {
       "id": "operator_kaikai_impact",
@@ -1660,7 +1738,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "2b4791cf81799b1f"
     },
     "operator_huanghuang_impact": {
       "id": "operator_huanghuang_impact",
@@ -1680,7 +1759,8 @@
       ],
       "nominalHeight": 320,
       "method": "operator-specific-painted-vfx",
-      "events": []
+      "events": [],
+      "contentHash": "0100b6d044d19160"
     },
     "mimi_jump": {
       "id": "mimi_jump",
@@ -1700,7 +1780,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "e06910b112e13692"
     },
     "mimi_fall": {
       "id": "mimi_fall",
@@ -1720,7 +1801,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "4d18acd46e86b247"
     },
     "mimi_land": {
       "id": "mimi_land",
@@ -1740,7 +1822,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "fdf5e33b86036e0e"
     },
     "ww_jump": {
       "id": "ww_jump",
@@ -1760,7 +1843,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "024390e6718243cf"
     },
     "ww_fall": {
       "id": "ww_fall",
@@ -1780,7 +1864,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "619f3e33692761a9"
     },
     "ww_land": {
       "id": "ww_land",
@@ -1800,7 +1885,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "e57ff0544cd2650f"
     },
     "niannian_jump": {
       "id": "niannian_jump",
@@ -1820,7 +1906,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "3806c312782a56fb"
     },
     "niannian_fall": {
       "id": "niannian_fall",
@@ -1840,7 +1927,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "85ccdc9352dbbb24"
     },
     "niannian_land": {
       "id": "niannian_land",
@@ -1860,7 +1948,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "70bfa3c32af18b42"
     },
     "keke_jump": {
       "id": "keke_jump",
@@ -1880,7 +1969,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "c67d005b882e15a4"
     },
     "keke_fall": {
       "id": "keke_fall",
@@ -1900,7 +1990,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "900c1d2eea8e9007"
     },
     "keke_land": {
       "id": "keke_land",
@@ -1920,7 +2011,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "3c670e87558d9da0"
     },
     "xiaohuo_jump": {
       "id": "xiaohuo_jump",
@@ -1940,7 +2032,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "ce5543ee33f0bfc4"
     },
     "xiaohuo_fall": {
       "id": "xiaohuo_fall",
@@ -1960,7 +2053,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "f901d20077fa930a"
     },
     "xiaohuo_land": {
       "id": "xiaohuo_land",
@@ -1980,7 +2074,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "79ee0a6fdf00ba9b"
     },
     "du_jump": {
       "id": "du_jump",
@@ -2000,7 +2095,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "8d4649a94a64d741"
     },
     "du_fall": {
       "id": "du_fall",
@@ -2020,7 +2116,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "30f814031baf38b7"
     },
     "du_land": {
       "id": "du_land",
@@ -2040,7 +2137,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "a734b572b39fb8ac"
     },
     "shushu_jump": {
       "id": "shushu_jump",
@@ -2060,7 +2158,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "ebbcc72ae6af3162"
     },
     "shushu_fall": {
       "id": "shushu_fall",
@@ -2080,7 +2179,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "5d063e72ef5b6781"
     },
     "shushu_land": {
       "id": "shushu_land",
@@ -2100,7 +2200,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "78d468b4f5f8c770"
     },
     "chenchen_jump": {
       "id": "chenchen_jump",
@@ -2120,7 +2221,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "81e0a7daa32d6577"
     },
     "chenchen_fall": {
       "id": "chenchen_fall",
@@ -2140,7 +2242,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "8387b92371c635e3"
     },
     "chenchen_land": {
       "id": "chenchen_land",
@@ -2160,7 +2263,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "4fae5b2d36660e27"
     },
     "tata_jump": {
       "id": "tata_jump",
@@ -2180,7 +2284,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "3c93da7ab55a69c1"
     },
     "tata_fall": {
       "id": "tata_fall",
@@ -2200,7 +2305,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "c8a70e62be7fde2b"
     },
     "tata_land": {
       "id": "tata_land",
@@ -2220,7 +2326,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "c24391216e371c94"
     },
     "kaikai_jump": {
       "id": "kaikai_jump",
@@ -2240,7 +2347,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "37d542eca9648c6e"
     },
     "kaikai_fall": {
       "id": "kaikai_fall",
@@ -2260,7 +2368,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "1a51752261d66b67"
     },
     "kaikai_land": {
       "id": "kaikai_land",
@@ -2280,7 +2389,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "44cffc2ebddf8876"
     },
     "huanghuang_jump": {
       "id": "huanghuang_jump",
@@ -2300,7 +2410,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "28a07b6727c03765"
     },
     "huanghuang_fall": {
       "id": "huanghuang_fall",
@@ -2320,7 +2431,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "f1dfc771cb64d180"
     },
     "huanghuang_land": {
       "id": "huanghuang_land",
@@ -2340,7 +2452,8 @@
       ],
       "nominalHeight": 320,
       "method": "authored-run-pose-transition",
-      "events": []
+      "events": [],
+      "contentHash": "4fc29d3a9fc4245f"
     }
   },
   "groups": [
@@ -2703,5 +2816,6 @@
       }
     }
   ],
-  "movementRevision": "movement-v5"
+  "movementRevision": "movement-v5",
+  "rigRevision": "rig-v6"
 }

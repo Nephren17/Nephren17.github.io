@@ -10,7 +10,7 @@ class HajimiAnimation {
     if(this.pending.has(id))return this.pending.get(id);
     const promise=new Promise(resolve=>{const im=new Image();
       im.onload=()=>{this.images.set(id,im);resolve(im);};
-      im.onerror=()=>resolve(null);im.src=this.base+clip.texture+'?v='+this.data.version;
+      im.onerror=()=>resolve(null);im.src=this.base+clip.texture+'?v='+(clip.contentHash||this.data.version);
     });this.pending.set(id,promise);return promise;
   }
   preload(ids){return Promise.all((ids||Object.keys(this.data.clips)).map(id=>this.load(id)));}
