@@ -19,7 +19,7 @@ canvas{display:block;margin:0 auto;cursor:crosshair}
 <a id="credits-link" href="credits.html" target="_blank" rel="noopener">试玩说明 / 音乐署名</a>
 <script src="assets/metadata/animations.js?v=60b2ffd2f59bfaec"></script>
 <script src="assets/animation-player.js?v=8fe3e6a69add20de"></script>
-<script src="assets/air-combat.js?v=867b7d5f4d360649"></script>
+<script src="assets/air-combat.js?v=765d5f13cd465b93"></script>
 <script src="assets/world/manifest.js?v=d80cbe944e879f82"></script>
 <script src="assets/world/world-runtime.js?v=c447feb4e7ded59b"></script>
 <script>
@@ -551,7 +551,7 @@ function performAttack(c,dir,queued=false,step=0){
   if(n>0&&dir==='fwd'&&id!=='lala')P.rx=-P.face*(o.heavy?200:110); // 命中后坐力
   if(id==='meimei'&&dir==='fwd'){P.lunge=0.1;P.vx=P.face*720;}
   if(id==='lala'&&dir==='down'&&!P.onGround&&n===0){P.vy=Math.max(-240,P.vy-170);}
-  else if(dir==='down'&&n>0){
+  else if(n>0&&AIR_COMBAT.canPogo(id,dir,P.onGround)){
     P.vy=-820*(eq('boots')?1.12:1);P.pogo++;P.airDash=1;P.jumping=false;sfx('pogo');
     if(P.pogo>1&&P.pogo%2===0)ono(cx,P.y+P.h+30,P.pogo+'连弹！',22,'#80deea');
   }
@@ -720,7 +720,7 @@ function solidAt(x,y){for(const s of solids)if(!s.off&&!s.oneway&&x>s.x&&x<s.x+s
 /* ============ 玩家更新 ============ */
 function updPlayer(dt){
   const c=cur(),id=c.id;
-  if(P.plunge&&P.plunge.actor!==id){P.plunge=null;P.drop=false;P.atkAnim=0;}
+  if(P.plunge&&(P.plunge.actor!==id||P.hurtT>0)){P.plunge=null;P.drop=false;P.atkAnim=0;}
   if(P.pendingStrike){const q=P.pendingStrike;q.t-=dt;if(q.c.id!==id||P.hurtT>0)P.pendingStrike=null;
     else if(q.t<=0){P.pendingStrike=null;performAttack(q.c,q.dir,true,q.step);}}
   for(const k of ['atkCd','dashCd','inv','dashI','swT','dropT','shield','teamShield','lunge','jbuf','fireCd','atkAnim','hurtT','focusT'])if(P[k]>0)P[k]-=dt;

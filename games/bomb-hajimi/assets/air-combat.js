@@ -11,6 +11,7 @@
   const fallback=Object.freeze({type:'melee',name:'空中下斩'});
   const profile=id=>profiles[id]||fallback;
   const attackMode=(id,dir,onGround)=>dir==='down'&&!onGround?profile(id).type:'normal';
+  const canPogo=(id,dir,onGround)=>dir==='down'&&!onGround&&profile(id).type==='melee';
   const intermediate=s=>!!(s.oneway||s.furniture||s.worldStep||s.worldBridge);
   const canImpact=b=>!!(b.onGround&&b.groundSurface&&!b.groundSurface.off&&!intermediate(b.groundSurface));
   function bombThrow(dir,face,vx){
@@ -33,7 +34,7 @@
       if(b.vy>0){b.y=s.y-b.h;b.onGround=true;b.groundSurface=s;b.vy=0;}
       else if(b.vy<0){b.y=s.y+s.h;b.vy=0;}}
   }
-  const api=Object.freeze({profiles,profile,attackMode,intermediate,canImpact,bombThrow,moveBody});
+  const api=Object.freeze({profiles,profile,attackMode,canPogo,intermediate,canImpact,bombThrow,moveBody});
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   else root.HajimiAirCombat=api;
 })(globalThis);
